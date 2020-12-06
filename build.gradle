@@ -1,0 +1,30 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'application'
+
+
+mainClassName = 'Metaheuristicas_Practica_3.Main'
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation 'org.apache.commons:commons-lang3:3.0'
+    implementation 'com.formdev:flatlaf:0.44'
+    testImplementation     'junit:junit:4.13'
+}
+
+jar {
+   manifest {
+       attributes (
+            'Class-Path': configurations.runtimeClasspath.collect {it.getName()}.join(' '),
+            'Main-Class': 'Metaheuristicas_Practica_3.Main'
+       )
+   }
+   from {
+    configurations.runtimeClasspath.collect {it.isDirectory() ? it : zipTree(it) }
+    }
+}

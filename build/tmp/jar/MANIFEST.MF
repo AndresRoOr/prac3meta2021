@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: commons-lang3-3.0.jar flatlaf-0.44.jar
+Main-Class: Metaheuristicas_Practica_3.Main
+
