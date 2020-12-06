@@ -67,7 +67,8 @@ public final class Metaheuristicas {
             
             }
         }else{
-                Main.console.presentarSalida("No existe el directorio: " + carpeta.getPath());
+                Main.console.presentarSalida("No existe el directorio: " 
+                        + carpeta.getPath());
             }
 
     }
@@ -106,7 +107,8 @@ public final class Metaheuristicas {
 
                     Timer t = new Timer();
 
-                    Main.gestor.cambiarNombre("colonia/MPX_"+"SEM_" + _config.getSemilla()+"_" + ar.getNombre());
+                    Main.gestor.cambiarNombre("colonia/MPX_"+"SEM_" +
+                            _config.getSemilla()+"_" + ar.getNombre());
                     Main.gestor.abrirArchivo();
 
                     Random_p sem = new Random_p();
@@ -120,8 +122,13 @@ public final class Metaheuristicas {
 
                     double tiempo = t.stopTimer();
 
-                    Main.console.presentarSalida("Datos de la solución al problema: " + ar.getNombre() + ", con SEMILLA: " + _config.getSemilla());
-                    Main.console.presentarSalida("Tiempo de ejecución del algoritmo: " + tiempo + " milisegundos");
+                    Main.console.presentarSalida(
+                            "Datos de la solución al problema: " 
+                                    + ar.getNombre() + ", con SEMILLA: "
+                                    + _config.getSemilla());
+                    Main.console.presentarSalida(
+                            "Tiempo de ejecución del algoritmo: " + tiempo
+                                    + " milisegundos");
 
                     //ch.PresentarResultados();
 
@@ -137,7 +144,8 @@ public final class Metaheuristicas {
                 _config.RecuperarSemilla();
             }
         } else {
-            Main.console.presentarSalida("No hay datos en el directorio: " + _config.directoriosDatos.get(0));
+            Main.console.presentarSalida("No hay datos en el directorio: " 
+                    + _config.directoriosDatos.get(0));
         }
     }
 }

@@ -18,28 +18,31 @@ public final class Random_p {
     private static final int PRIME = 65539;
     private static final double SCALE = 0.4656612875e-9;
 
-    void Set_random(long x) {
-        /* Inicializa la semilla al valor x.
+    /* Inicializa la semilla al valor x.
        Solo debe llamarse a esta funcion una vez en todo el programa */
-
+    void Set_random(long x) {
         Seed = (long) x;
     }
-
-    long Get_random() /* Devuelve el valor actual de la semilla */ {
+    
+    /* Devuelve el valor actual de la semilla */
+    long Get_random() {
         return Seed;
     }
-
-    double Rand() /* Genera un numero aleatorio real en el intervalo [0,1[
-       (incluyendo el 0 pero sin incluir el 1) */ {
+    
+    /* Genera un numero aleatorio real en el intervalo [0,1[
+       (incluyendo el 0 pero sin incluir el 1) */
+    double Rand() {
         return ((Seed = ((Seed * PRIME) & MASK)) * SCALE);
     }
 
-    int Randint(int low, int high) /* Genera un numero aleatorio entero en {low,...,high} */ {
+    /* Genera un numero aleatorio entero en {low,...,high} */
+    int Randint(int low, int high) {
         return (int) (low + (high - (low) + 1) * Rand());
     }
-
-    double Randfloat(float low, float high) /* Genera un numero aleatorio real en el intervalo [low,...,high[
-       (incluyendo 'low' pero sin incluir 'high') */ {
+    
+    /* Genera un numero aleatorio real en el intervalo [low,...,high[
+       (incluyendo 'low' pero sin incluir 'high') */
+    double Randfloat(float low, float high) {
         return (low + (high - (low)) * Rand());
     }
 

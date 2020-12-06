@@ -24,16 +24,14 @@ public class Configurador {
 
     ///Atributos de la clase:
     ArrayList<String> directoriosDatos;///<Almacena los directorios donde se 
-    ///encuentran los archivos con la informaciÃ³n del problema
-    private Long semilla;///<Semilla utilizada para generar nÃºmero aleatorios
-    private int iteraciones;///<NÃºmero de iteraciones
+    ///encuentran los archivos con la información del problema
+    private Long semilla;///<Semilla utilizada para generar números aleatorios
+    private int iteraciones;///<Número de iteraciones
     private long recuperarSemilla;///<Almacena el valor inicial de la semilla
     /// en dos puntos
-    private float fi;///<Probabilidad de que un par de cromosomas
-    ///se crucen
-    private float beta;///<Probabilidad de que un gen mute
-    private float alfa;///<Probabilidad de que un gen del padre se incluya en
-    ///el hijo
+    private float fi;
+    private float beta;
+    private float alfa;
     private int numeroHormigas;///<Número de hormigas
     private float q0;
 
@@ -97,7 +95,8 @@ public class Configurador {
             b.close();
 
         } catch (IOException e) {
-            Main.console.presentarSalida("No se ha encontrado el archivo de configuración");
+            Main.console.presentarSalida(
+                    "No se ha encontrado el archivo de configuración");
         } finally {
             try {
                 if (null != f) {

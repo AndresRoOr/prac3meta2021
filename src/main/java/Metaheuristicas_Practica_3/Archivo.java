@@ -65,14 +65,17 @@ public final class Archivo {
                         _tama_Matriz = Integer.parseInt(linea[0]);
                         _tama_Solucion = Integer.parseInt(linea[1]);
                         _matriz = new float[_tama_Matriz][_tama_Matriz];
-                        _matrizHeuristica = new double[_tama_Matriz][_tama_Matriz];
+                        _matrizHeuristica = 
+                                new double[_tama_Matriz][_tama_Matriz];
                     } else {
                         Integer i = (Integer.parseInt(linea[0]));
                         Integer j = (Integer.parseInt(linea[1]));
                         _matriz[i][j] = (Float.parseFloat(linea[2]));
                         _matriz[j][i] = (Float.parseFloat(linea[2]));
-                        _matrizHeuristica[j][i] = (1/(Double.parseDouble(linea[2])));
-                        _matrizHeuristica[i][j] = (1/(Double.parseDouble(linea[2])));
+                        _matrizHeuristica[j][i] = 
+                                (1/(Double.parseDouble(linea[2])));
+                        _matrizHeuristica[i][j] = 
+                                (1/(Double.parseDouble(linea[2])));
                     }
                     num_linea++;
                 }

@@ -24,11 +24,14 @@ public final class Consola extends javax.swing.JFrame {
      */
     public Consola() {
         List<Image> lista = new LinkedList<>();
-        lista.add(new ImageIcon("src/main/resources/icons/gen_3_16.png").getImage());
-        lista.add(new ImageIcon("src/main/resources/icons/gen_3_20.png").getImage());
-        lista.add(new ImageIcon("src/main/resources/icons/gen_3_40.png").getImage());
-        lista.add(new ImageIcon("src/main/resources/icons/gen_3_64.png").getImage());
-        lista.add(new ImageIcon("src/main/resources/icons/gen_3_128.png").getImage());
+        lista.add(new ImageIcon(
+                "src/main/resources/icons/ant_16.png").getImage());
+        lista.add(new ImageIcon(
+                "src/main/resources/icons/ant_20.png").getImage());
+        lista.add(new ImageIcon(
+                "src/main/resources/icons/ant_40.png").getImage());
+        lista.add(new ImageIcon(
+                "src/main/resources/icons/ant_64.png").getImage());
         
         initComponents();
         this.setIconImages(lista);
@@ -105,7 +108,7 @@ public final class Consola extends javax.swing.JFrame {
 
         jButtonGreedy.setBackground(new java.awt.Color(153, 153, 153));
         jButtonGreedy.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jButtonGreedy.setText("Genético");
+        jButtonGreedy.setText("Colonia de hormigas");
         jButtonGreedy.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButtonGreedy.setBorderPainted(false);
         jButtonGreedy.setFocusPainted(false);
@@ -163,8 +166,8 @@ public final class Consola extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(40, 40, 40)
-                        .addComponent(jButtonGreedy, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 205, Short.MAX_VALUE)
+                        .addComponent(jButtonGreedy, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
                         .addComponent(jButtonReload, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
                         .addComponent(jButtonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -223,7 +226,7 @@ public final class Consola extends javax.swing.JFrame {
         
          eleccion = 2;
          jTextArea.removeAll();
-         jTextArea.setText("Archivo de configuraciÃ³n recargado");
+         jTextArea.setText("Archivo de configuración recargado\n");
          this.jButtonGreedy.setEnabled(false);
          this.jButtonReload.setEnabled(false);
     }//GEN-LAST:event_jButtonReloadActionPerformed

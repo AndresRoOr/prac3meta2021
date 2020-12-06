@@ -5,7 +5,9 @@
  */
 package Metaheuristicas_Practica_3;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -18,15 +20,34 @@ public class ColoniaHormigas {
     private final Archivo archivoDatos;///<Contiene los datos del problema
     private final GestorLog gestor;///<Gestor encargado de la creación del Log
     private double[][] matrizFeromonas;
+    private Random_p generadorAleatorio;
     private Hormiga mejorHormiga;
+    private ArrayList<Hormiga> colonia;
+    private final int tamColonia;
+    private final int tamHormiga;
+    private final int tamMatriz;
+    private float q0;
+    private float fi;
+    private float beta;
+    private float alfa;
+    private int costeGreedy;
     
     
-    public ColoniaHormigas(Archivo _archivoDatos, GestorLog _gestor, int _iteraciones, int _numeroCromosomas) {
+    
+    public ColoniaHormigas(Archivo _archivoDatos, GestorLog _gestor, 
+            int _iteraciones, int _numeroHormigas, long _semilla) {
         int tam = _archivoDatos.getTama_Solucion();
         this.matrizFeromonas = new double[tam][tam];
         this.archivoDatos = _archivoDatos;
         this.gestor = _gestor;
         this.mejorHormiga = new Hormiga(new HashSet<>(), 0.0f);
+        this.colonia = new ArrayList<>();
+        this.tamColonia = _numeroHormigas;
+        this.tamHormiga = archivoDatos.getTama_Solucion();
+        this.generadorAleatorio = new Random_p();
+        this.generadorAleatorio.Set_random(_semilla);
+        this.tamMatriz = archivoDatos.getTama_Matriz();
+        
         
     }
     
@@ -36,6 +57,17 @@ public class ColoniaHormigas {
         
         
         
+        
+    }
+    
+    private void inicializarColonia(){
+        
+        while(colonia.size()<tamColonia){
+            int primerElemento = generadorAleatorio.Randint(0, tamMatriz-1);
+            Set<Integer> aux = new HashSet<>(primerElemento);
+            Hormiga hormiga = new Hormiga(aux, 0.0f);
+            colonia.add(hormiga);
+        }
         
     }
     
