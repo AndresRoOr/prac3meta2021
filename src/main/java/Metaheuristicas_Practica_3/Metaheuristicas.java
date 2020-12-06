@@ -55,15 +55,20 @@ public final class Metaheuristicas {
      */
     void lector_Archivos() throws FileNotFoundException, IOException {
         final File carpeta = new File(_ruta_Carpeta_Archivos);
-        for (final File fichero_Entrada : carpeta.listFiles()) {
+        if(carpeta.exists()){
+            for (final File fichero_Entrada : carpeta.listFiles()) {
 
-            if (fichero_Entrada.isFile()) {
-                Archivo ar = new Archivo(fichero_Entrada.getName(),
-                        _ruta_Carpeta_Archivos + "/"
-                        + fichero_Entrada.getName());
-                _archivos.add(ar);
+                    if (fichero_Entrada.isFile()) {
+                        Archivo ar = new Archivo(fichero_Entrada.getName(),
+                                _ruta_Carpeta_Archivos + "/"
+                                + fichero_Entrada.getName());
+                        _archivos.add(ar);
+                    }
+            
             }
-        }
+        }else{
+                Main.console.presentarSalida("No existe el directorio: " + carpeta.getPath());
+            }
 
     }
 
