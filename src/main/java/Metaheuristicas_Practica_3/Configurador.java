@@ -29,11 +29,13 @@ public class Configurador {
     private int iteraciones;///<N�mero de iteraciones
     private long recuperarSemilla;///<Almacena el valor inicial de la semilla
     /// en dos puntos
-    private float fi;
+    private float phi;
     private float beta;
     private float alfa;
     private int numeroHormigas;///<N�mero de hormigas
     private float q0;
+    private float rho;
+    private float delta;
 
     /**
      * @brief Constructor parametrizado de la clase Configurador
@@ -87,8 +89,14 @@ public class Configurador {
                         numeroHormigas = Integer.parseInt(split[1]);
                         break;
 
-                    case "Fi":
-                        fi = Float.parseFloat(split[1]);
+                    case "Phi":
+                        phi = Float.parseFloat(split[1]);
+                        break;
+                    case "Delta":
+                        delta = Float.parseFloat(split[1]);
+                        break;
+                    case "Rho":
+                        rho = Float.parseFloat(split[1]);
                         break;
                 }
             }
@@ -102,7 +110,7 @@ public class Configurador {
                 if (null != f) {
                     f.close();
                 }
-            } catch (IOException e2) {
+            } catch (IOException e) {
             }
         }
     }
@@ -141,48 +149,32 @@ public class Configurador {
     }
 
    
-    /**
-     * @brief Función getter del atributo cruceMpx
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
-     * @date 22/11/2020
-     * @return cruceMpx Boolean
-     */
+
     public Float getQ0() {
         return q0;
     }
 
-    /**
-     * @brief Función getter del atributo probReproduccion
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
-     * @date 22/11/2020
-     * @return probReproduccion Float
-     */
+
     public Float getBeta() {
         return beta;
     }
 
-    /**
-     * @brief Función getter del atributo probMutacion
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
-     * @date 22/11/2020
-     * @return probMutacion Float
-     */
+
     public Float getAlfa() {
         return alfa;
     }
 
-    /**
-     * @brief Función getter del atributo pobMpx
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
-     * @date 22/11/2020
-     * @return probMpx Float
-     */
-    public Float getFi() {
-        return fi;
+
+    public Float getPhi() {
+        return phi;
+    }
+    
+    public Float getRho() {
+        return rho;
+    }
+    
+    public Float getDelta() {
+        return delta;
     }
 
     /**

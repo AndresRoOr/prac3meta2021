@@ -79,11 +79,11 @@ public final class Metaheuristicas {
      * @author David Díaz Jiménez
      * @date 27/09/2020
      */
-    void mostrar_Datos() {
+    /*void mostrar_Datos() {
         for (Archivo ar : _archivos) {
             ar.presentarDatos();
         }
-    }
+    }*/
 
     /**
      * @brief Calcula la solución para todos los archivos utilizando el

@@ -25,7 +25,7 @@ public final class Hormiga implements Comparable<Hormiga> {
 
     ///Atributos de la clase:
     private Set<Integer> cromosoma;///<Conjunte de genes solución del problema
-    private float _contribucion;///<Coste que aporta a la solución
+    private double _contribucion;///<Coste que aporta a la solución
     private boolean recalcular;///<Indica si es necesario recalcular el coste
 
     /**
@@ -75,8 +75,8 @@ public final class Hormiga implements Comparable<Hormiga> {
 
     @Override
     public int compareTo(Hormiga otro) {
-        Float ele1 = this.getContribucion();
-        Float ele2 = otro.getContribucion();
+        Double ele1 = this.getContribucion();
+        Double ele2 = otro.getContribucion();
         int comparativa = ele1.compareTo(ele2);
 
         if (comparativa < 0) {
@@ -88,6 +88,12 @@ public final class Hormiga implements Comparable<Hormiga> {
         }
 
     }
+    
+    public boolean contains(int elemento){
+        
+        return this.cromosoma.contains(elemento);
+        
+    }
 
     /**
      * @brief Metodo getter del atributo _contribucion
@@ -96,7 +102,7 @@ public final class Hormiga implements Comparable<Hormiga> {
      * @date 02/11/2020
      * @return _contribucion float
      */
-    public float getContribucion() {
+    public double getContribucion() {
         return this._contribucion;
     }
 

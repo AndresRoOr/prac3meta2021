@@ -6,6 +6,7 @@
 package Metaheuristicas_Practica_3;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -26,9 +27,13 @@ public class ColoniaHormigas {
     private final int tamColonia;
     private final int tamHormiga;
     private final int tamMatriz;
+    private final int maxItereaciones;
+    private int iteraciones;
     private float q0;
-    private float fi;
+    private float phi;
     private float beta;
+    private float rho;
+    private float delta;
     private float alfa;
     private int costeGreedy;
     
@@ -47,7 +52,8 @@ public class ColoniaHormigas {
         this.generadorAleatorio = new Random_p();
         this.generadorAleatorio.Set_random(_semilla);
         this.tamMatriz = archivoDatos.getTama_Matriz();
-        
+        this.maxItereaciones = _iteraciones;
+        iteraciones = 1;
         
     }
     
@@ -55,7 +61,42 @@ public class ColoniaHormigas {
     
     public void colonia(){
         
-        
+        while(iteraciones <= maxItereaciones){
+            
+            inicializarColonia();
+            
+            for(int i = 1; i<= tamHormiga; i++ ){
+                
+                for( int j = 0; j < tamColonia; j++){
+                    
+                    ArrayList<Integer> LRC = new ArrayList<>();
+                    
+                    HashMap<Integer,Double> noSeleccionados = new HashMap<>();
+                    for(int a =0; a <= tamMatriz; a++){
+                        if(!colonia.get(j).contains(a)){
+                            
+                            double aporte = 0.0f;
+                            
+                            for (int b : colonia.get(j).getCromosoma()) {
+                                
+                                //aporte += 
+                                
+                            }
+                            
+                            
+                            noSeleccionados.put(a,Double.NaN);
+                        }
+                    }
+                    
+                 actualizarFeromonaLocal();
+                    
+                    
+                }
+                
+            }
+
+            colonia.clear();
+        }
         
         
     }
@@ -70,6 +111,19 @@ public class ColoniaHormigas {
         }
         
     }
+    
+    private void inicializarFeromona(){
+        for(int i=0; i < tamColonia; i++){
+            for(int j=0; j < tamColonia; j++){
+                matrizFeromonas[i][j] = (1/(tamColonia*costeGreedy));
+            }
+        }
+    }
+    
+    private void actualizarFeromonaLocal(){
+        
+    }
+            
     
     /*void PresentarResultados() {
 

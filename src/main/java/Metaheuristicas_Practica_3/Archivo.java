@@ -28,7 +28,7 @@ public final class Archivo {
     private String _ruta;///<Ruta completa del archivo de datos
     private Integer _tama_Matriz;///<Tamaño de la matriz de datos
     private Integer _tama_Solucion;///<Tamaño de la solución             
-    private float[][] _matriz;///<Matriz que almacena los datos del archivo
+    //private float[][] _matriz;///<Matriz que almacena los datos del archivo
     private double[][] _matrizHeuristica;
     
 
@@ -64,14 +64,14 @@ public final class Archivo {
                     if (num_linea == 0) {
                         _tama_Matriz = Integer.parseInt(linea[0]);
                         _tama_Solucion = Integer.parseInt(linea[1]);
-                        _matriz = new float[_tama_Matriz][_tama_Matriz];
+                        //_matriz = new float[_tama_Matriz][_tama_Matriz];
                         _matrizHeuristica = 
                                 new double[_tama_Matriz][_tama_Matriz];
                     } else {
                         Integer i = (Integer.parseInt(linea[0]));
                         Integer j = (Integer.parseInt(linea[1]));
-                        _matriz[i][j] = (Float.parseFloat(linea[2]));
-                        _matriz[j][i] = (Float.parseFloat(linea[2]));
+                        //_matriz[i][j] = (Float.parseFloat(linea[2]));
+                        //_matriz[j][i] = (Float.parseFloat(linea[2]));
                         _matrizHeuristica[j][i] = 
                                 (1/(Double.parseDouble(linea[2])));
                         _matrizHeuristica[i][j] = 
@@ -138,10 +138,10 @@ public final class Archivo {
      * @date 27/09/2020
      * @return _matriz double[][]
      */
-    public float[][] getMatriz() {
-        return _matriz;
+    public double [][] getMatriz() {
+        return _matrizHeuristica;
     }
-
+    
     /**
      * @brief Método setter para el parámetro _matriz
      * @author Andrés Rojas Ortega
@@ -149,10 +149,10 @@ public final class Archivo {
      * @date 27/09/2020
      * @param _matriz double[][] Nuevo valor de _matriz
      */
-    public void setMatriz(float[][] _matriz) {
+    /*public void setMatriz(float[][] _matriz) {
         this._matriz = _matriz;
     }
-
+    */
     /**
      * @brief Muestra por pantalla los datos del Archivo y el contenido de
      * _matriz
@@ -160,7 +160,7 @@ public final class Archivo {
      * @author David Díaz Jiménez
      * @date 27/09/2020
      */
-    void presentarDatos() {
+    /*void presentarDatos() {
         System.out.println(_nombre);
         System.out.println("Datos matriz");
         for (int i = 0; i < _tama_Matriz; i++) {
@@ -170,6 +170,6 @@ public final class Archivo {
             System.out.println("");
         }
 
-    }
+    }*/
 
 }
