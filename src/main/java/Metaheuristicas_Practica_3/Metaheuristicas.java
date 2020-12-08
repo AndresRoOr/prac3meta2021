@@ -23,11 +23,11 @@ import java.util.ArrayList;
 public final class Metaheuristicas {
 
     ///Atributos de la clase:
-    private final Configurador _config;///<Contiene los parámetros principales del programa
-    private final String _nombre;///<Nombre del objeto Metaheuristicas
-    private ArrayList<Archivo> _archivos;///<Contiene el nombre de los archivos que 
+    private final Configurador config;///<Contiene los parámetros principales del programa
+    private final String nombre;///<Nombre del objeto Metaheuristicas
+    private ArrayList<Archivo> archivos;///<Contiene el nombre de los archivos que 
     ///contienen los datos sobre los que hacer los cálculos
-    private String _ruta_Carpeta_Archivos;///<Directorio que contiene los archivos
+    private String ruta_Carpeta_Archivos;///<Directorio que contiene los archivos
 
     /**
      * @brief Constructor parametrizado de la clase Metaheuristicas
@@ -38,11 +38,11 @@ public final class Metaheuristicas {
      * @param ruta String Ruta del directorio que contiene los archivos
      * @param config Configurador Objeto con los parámetros del programa
      */
-    Metaheuristicas(String nombre, String ruta, Configurador config) {
-        _config = config;
-        _nombre = nombre;
-        _ruta_Carpeta_Archivos = ruta;
-        _archivos = new ArrayList<>();
+    Metaheuristicas(String _nombre, String _ruta, Configurador _config) {
+        this.config = _config;
+        this.nombre = _nombre;
+        this.ruta_Carpeta_Archivos = _ruta;
+        this.archivos = new ArrayList<>();
     }
 
     /**
@@ -54,15 +54,15 @@ public final class Metaheuristicas {
      * @throws IOException
      */
     void lector_Archivos() throws FileNotFoundException, IOException {
-        final File carpeta = new File(_ruta_Carpeta_Archivos);
+        final File carpeta = new File(ruta_Carpeta_Archivos);
         if(carpeta.exists()){
             for (final File fichero_Entrada : carpeta.listFiles()) {
 
                     if (fichero_Entrada.isFile()) {
                         Archivo ar = new Archivo(fichero_Entrada.getName(),
-                                _ruta_Carpeta_Archivos + "/"
+                                ruta_Carpeta_Archivos + "/"
                                 + fichero_Entrada.getName());
-                        _archivos.add(ar);
+                        archivos.add(ar);
                     }
             
             }
@@ -94,11 +94,11 @@ public final class Metaheuristicas {
      */
     void coloniaHormigas() {
 
-        if (_archivos.size() > 0) {
+        if (archivos.size() > 0) {
 
-            int aumento = (1000 / (_archivos.size() * 5));
+            int aumento = (1000 / (archivos.size() * 5));
 
-            for (Archivo ar : _archivos) {
+            for (Archivo ar : archivos) {
 
                 int ite = 1;
 
@@ -108,24 +108,30 @@ public final class Metaheuristicas {
                     Timer t = new Timer();
 
                     Main.gestor.cambiarNombre("colonia/MPX_"+"SEM_" +
-                            _config.getSemilla()+"_" + ar.getNombre());
+                            config.getSemilla()+"_" + ar.getNombre());
                     Main.gestor.abrirArchivo();
 
                     Random_p sem = new Random_p();
-                    sem.Set_random(_config.getSemilla());
+                    sem.Set_random(config.getSemilla());
 
-                    //ColoniaHormigas ch = new ColoniaHormigas();
+                    
+                    ColoniaHormigas ch = new ColoniaHormigas(ar, Main.gestor, 
+                            config.getIteraciones(), 
+                            config.getNumeroHormigas(), sem, 
+                            config.getQ0(),config.getPhi(), config.getBeta(),
+                            config.getRho(), config.getDelta(),
+                            config.getAlfa(), 19400);
 
                     t.startTimer();
 
-                    //ch.colonia();
+                    ch.colonia();
 
                     double tiempo = t.stopTimer();
 
                     Main.console.presentarSalida(
                             "Datos de la soluci�n al problema: " 
                                     + ar.getNombre() + ", con SEMILLA: "
-                                    + _config.getSemilla());
+                                    + config.getSemilla());
                     Main.console.presentarSalida(
                             "Tiempo de ejecuci�n del algoritmo: " + tiempo
                                     + " milisegundos");
@@ -138,14 +144,14 @@ public final class Metaheuristicas {
 
                     ite++;
 
-                    _config.rotarSemilla();
+                    config.rotarSemilla();
                 }
 
-                _config.RecuperarSemilla();
+                config.RecuperarSemilla();
             }
         } else {
             Main.console.presentarSalida("No hay datos en el directorio: " 
-                    + _config.directoriosDatos.get(0));
+                    + config.directoriosDatos.get(0));
         }
     }
 }

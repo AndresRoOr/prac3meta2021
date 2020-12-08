@@ -24,7 +24,7 @@ import java.util.Set;
 public final class Hormiga implements Comparable<Hormiga> {
 
     ///Atributos de la clase:
-    private Set<Integer> cromosoma;///<Conjunte de genes solución del problema
+    private Set<Integer> elementos;///<Conjunte de genes solución del problema
     private double _contribucion;///<Coste que aporta a la solución
     private boolean recalcular;///<Indica si es necesario recalcular el coste
 
@@ -33,11 +33,11 @@ public final class Hormiga implements Comparable<Hormiga> {
      * @author Andrés Rojas Ortega
      * @author David Díaz Jiménez
      * @date 22/11/2020
-     * @param cromo Set<Integer>
+     * @param _elementos  Set<Integer>
      * @param _contribucion Float
      */
-    public Hormiga(Set<Integer> cromo, float _contribucion) {
-        this.cromosoma = cromo;
+    public Hormiga(Set<Integer> _elementos, float _contribucion) {
+        this.elementos = _elementos;
         this._contribucion = _contribucion;
         this.recalcular = false;
 
@@ -48,12 +48,12 @@ public final class Hormiga implements Comparable<Hormiga> {
      * @author Andrés Rojas Ortega
      * @author David Díaz Jiménez
      * @date 22/11/2020
-     * @param cromo Set<Integer>
+     * @param _elementos Set<Integer>
      * @param _contribucion float
      * @param recal boolean
      */
-    public Hormiga(Set<Integer> cromo, float _contribucion, boolean recal) {
-        this.cromosoma = cromo;
+    public Hormiga(Set<Integer> _elementos, float _contribucion, boolean recal) {
+        this.elementos = _elementos;
         this._contribucion = _contribucion;
         this.recalcular = recal;
 
@@ -67,7 +67,7 @@ public final class Hormiga implements Comparable<Hormiga> {
      * @param otro Hormiga
      */
     public Hormiga(Hormiga otro) {
-        this.cromosoma = new HashSet<>(otro.getCromosoma());
+        this.elementos = new HashSet<>(otro.getElementos());
         this._contribucion = otro.getContribucion();
         this.recalcular = false;
 
@@ -91,8 +91,7 @@ public final class Hormiga implements Comparable<Hormiga> {
     
     public boolean contains(int elemento){
         
-        return this.cromosoma.contains(elemento);
-        
+        return this.elementos.contains(elemento); 
     }
 
     /**
@@ -122,10 +121,10 @@ public final class Hormiga implements Comparable<Hormiga> {
      * @author David Díaz Jiménez
      * @author Andrés Rojas Ortega
      * @date 22/11/2020
-     * @return cromosoma Set<Integer>
+     * @return elementos Set<Integer>
      */
-    public Set<Integer> getCromosoma() {
-        return cromosoma;
+    public Set<Integer> getElementos() {
+        return elementos;
     }
 
     /**
@@ -133,10 +132,10 @@ public final class Hormiga implements Comparable<Hormiga> {
      * @author David Díaz Jiménez
      * @author Andrés Rojas Ortega
      * @date 22/11/2020
-     * @param cromosoma Set<Integer> 
+     * @param _elementos  Set<Integer> 
      */
-    public void setCromosoma(Set<Integer> cromosoma) {
-        this.cromosoma = cromosoma;
+    public void setEloementos(Set<Integer> _elementos) {
+        this.elementos = _elementos;
     }
 
     /**
