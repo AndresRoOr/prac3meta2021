@@ -29,7 +29,7 @@ public class ColoniaHormigas {
     private final int tamHormiga;
     private final int tamMatriz;
     private final int maxItereaciones;
-    private final int iteraciones;
+    private int iteraciones;
     private final float q0;
     private final float phi;
     private final float beta;
@@ -104,6 +104,9 @@ public class ColoniaHormigas {
             tareasDemonio();
 
             colonia.clear();
+            
+            System.out.println(iteraciones);
+            iteraciones++;
         }
         
         
@@ -164,7 +167,7 @@ public class ColoniaHormigas {
         Iterator<Map.Entry<Integer, Double>> iterator = 
                 noSeleccionados.entrySet().iterator();
 
-        double valorCorte = min + 0.1*(max-min);
+        double valorCorte = min + 0.05*(max-min);
         while(iterator.hasNext()){
 
             Map.Entry<Integer, Double> next = iterator.next();
@@ -186,51 +189,83 @@ public class ColoniaHormigas {
         
         int ultimoElemento = elementosHormiga.get(elementosHormiga.size()-1);
         
-        for(Integer eleLrc : LRC){
-            
-            sumatoria += 
-                Math.pow(matrizFeromonas[ultimoElemento][eleLrc],alfa)*
-                Math.pow(archivoDatos.getMatriz()[ultimoElemento][eleLrc],beta);
-            
-        }
+        double q = generadorAleatorio.Randfloat(0, 1);
         
-        for(Integer elemetoLrc : LRC){
+        if(q0 <= q){
             
-            double prob = (Math.pow(matrizFeromonas[ultimoElemento][elemetoLrc]
-                    ,alfa)
-                *Math.pow(archivoDatos.getMatriz()[ultimoElemento][elemetoLrc]
-                        ,beta))/(sumatoria);
+            int elemento = 0;
+            double mayorValor = Double.MAX_VALUE;
             
-            ProbabilidadTransicion.add(prob);
-            
-        }
-        
-        
-       /* double total = 0;
-        
-        for (Double prob : ProbabilidadTransicion){
-            total+=prob;
-        }
-        */
-        double aleatorio = generadorAleatorio.Randfloat(0,1);
-        
-        int index = 0;
-        double probabilidadAcumulada = ProbabilidadTransicion.get(0);
-        
-        for(Double ProDouble : ProbabilidadTransicion){
-            
-            probabilidadAcumulada += ProDouble;
-            
-            if(aleatorio<probabilidadAcumulada){
-               
-                colonia.get(j).getElementos().add(LRC.get(index));
-                break;
+            for(Integer eleLrc : LRC){
+
+                sumatoria = 
+                    Math.pow(matrizFeromonas[ultimoElemento][eleLrc],alfa)*
+                    Math.pow(archivoDatos.getMatriz()[ultimoElemento][eleLrc]
+                            ,beta);    
                 
-            }    
-            index++;
+                if(mayorValor == Double.MAX_VALUE){
+                    mayorValor = sumatoria;
+                }
+                
+                if(sumatoria <= mayorValor){
+                    sumatoria = mayorValor;
+                    elemento = eleLrc;
+                }
+                
+                colonia.get(j).getElementos().add(elemento);
+
+            }
+            
+        }else{
+                 
+            for(Integer eleLrc : LRC){
+
+                sumatoria += 
+                    Math.pow(matrizFeromonas[ultimoElemento][eleLrc],alfa)*
+                    Math.pow(archivoDatos.getMatriz()[ultimoElemento][eleLrc]
+                            ,beta);
+
+            }
+
+            for(Integer elemetoLrc : LRC){
+
+                double prob = 
+                    (Math.pow(matrizFeromonas[ultimoElemento][elemetoLrc]
+                        ,alfa)*
+                    Math.pow(archivoDatos.getMatriz()
+                            [ultimoElemento][elemetoLrc]
+                        ,beta))/(sumatoria);
+
+                ProbabilidadTransicion.add(prob);
+
+            }
+            
+            /* double total = 0;
+
+            for (Double prob : ProbabilidadTransicion){
+                total+=prob;
+            }
+            */
+            
+            double aleatorio = generadorAleatorio.Randfloat(0,1);
+        
+            int index = 0;
+            double probabilidadAcumulada = ProbabilidadTransicion.get(0);
+
+            for(Double ProDouble : ProbabilidadTransicion){
+
+                probabilidadAcumulada += ProDouble;
+
+                if(aleatorio<probabilidadAcumulada){
+
+                    colonia.get(j).getElementos().add(LRC.get(index));
+                    break;
+
+                }    
+                index++;
+            }
+
         }
-        
-        
         
         
     }
