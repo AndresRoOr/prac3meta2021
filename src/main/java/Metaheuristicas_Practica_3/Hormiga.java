@@ -10,6 +10,7 @@ package Metaheuristicas_Practica_3;
  * @author David
  */
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,7 +25,7 @@ import java.util.Set;
 public final class Hormiga implements Comparable<Hormiga> {
 
     ///Atributos de la clase:
-    private Set<Integer> elementos;///<Conjunte de genes solución del problema
+    private ArrayList<Integer> elementos;///<Conjunte de genes solución del problema
     private double _contribucion;///<Coste que aporta a la solución
     private boolean recalcular;///<Indica si es necesario recalcular el coste
 
@@ -36,7 +37,7 @@ public final class Hormiga implements Comparable<Hormiga> {
      * @param _elementos  Set<Integer>
      * @param _contribucion Float
      */
-    public Hormiga(Set<Integer> _elementos, float _contribucion) {
+    public Hormiga(ArrayList<Integer> _elementos, float _contribucion) {
         this.elementos = _elementos;
         this._contribucion = _contribucion;
         this.recalcular = false;
@@ -52,7 +53,7 @@ public final class Hormiga implements Comparable<Hormiga> {
      * @param _contribucion float
      * @param recal boolean
      */
-    public Hormiga(Set<Integer> _elementos, float _contribucion, boolean recal) {
+    public Hormiga(ArrayList<Integer> _elementos, float _contribucion, boolean recal) {
         this.elementos = _elementos;
         this._contribucion = _contribucion;
         this.recalcular = recal;
@@ -67,7 +68,7 @@ public final class Hormiga implements Comparable<Hormiga> {
      * @param otro Hormiga
      */
     public Hormiga(Hormiga otro) {
-        this.elementos = new HashSet<>(otro.getElementos());
+        this.elementos = new ArrayList<>(otro.getElementos());
         this._contribucion = otro.getContribucion();
         this.recalcular = false;
 
@@ -123,7 +124,7 @@ public final class Hormiga implements Comparable<Hormiga> {
      * @date 22/11/2020
      * @return elementos Set<Integer>
      */
-    public Set<Integer> getElementos() {
+    public ArrayList<Integer> getElementos() {
         return elementos;
     }
 
@@ -134,7 +135,7 @@ public final class Hormiga implements Comparable<Hormiga> {
      * @date 22/11/2020
      * @param _elementos  Set<Integer> 
      */
-    public void setEloementos(Set<Integer> _elementos) {
+    public void setEloementos(ArrayList<Integer> _elementos) {
         this.elementos = _elementos;
     }
 

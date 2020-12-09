@@ -28,7 +28,7 @@ public final class Archivo {
     private String _ruta;///<Ruta completa del archivo de datos
     private Integer _tama_Matriz;///<Tamaño de la matriz de datos
     private Integer _tama_Solucion;///<Tamaño de la solución             
-    //private float[][] _matriz;///<Matriz que almacena los datos del archivo
+    private float[][] _matriz;///<Matriz que almacena los datos del archivo
     private double[][] _matrizHeuristica;
     
 
@@ -64,14 +64,14 @@ public final class Archivo {
                     if (num_linea == 0) {
                         _tama_Matriz = Integer.parseInt(linea[0]);
                         _tama_Solucion = Integer.parseInt(linea[1]);
-                        //_matriz = new float[_tama_Matriz][_tama_Matriz];
+                        _matriz = new float[_tama_Matriz][_tama_Matriz];
                         _matrizHeuristica = 
                                 new double[_tama_Matriz][_tama_Matriz];
                     } else {
                         Integer i = (Integer.parseInt(linea[0]));
                         Integer j = (Integer.parseInt(linea[1]));
-                        //_matriz[i][j] = (Float.parseFloat(linea[2]));
-                        //_matriz[j][i] = (Float.parseFloat(linea[2]));
+                        _matriz[i][j] = (Float.parseFloat(linea[2]));
+                        _matriz[j][i] = (Float.parseFloat(linea[2]));
                         _matrizHeuristica[j][i] = 
                                 (1/(Double.parseDouble(linea[2])));
                         _matrizHeuristica[i][j] = 
@@ -140,6 +140,11 @@ public final class Archivo {
      */
     public double [][] getMatriz() {
         return _matrizHeuristica;
+    }
+    
+    
+    public float [][] getMatrizCostes() {
+        return _matriz;
     }
     
     /**
