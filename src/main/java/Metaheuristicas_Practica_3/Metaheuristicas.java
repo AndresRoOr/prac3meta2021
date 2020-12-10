@@ -120,7 +120,7 @@ public final class Metaheuristicas {
                             config.getNumeroHormigas(), sem, 
                             config.getQ0(),config.getPhi(), config.getBeta(),
                             config.getRho(), config.getDelta(),
-                            config.getAlfa(), 19400);
+                            config.getAlfa(), 19396);
 
                     t.startTimer();
 

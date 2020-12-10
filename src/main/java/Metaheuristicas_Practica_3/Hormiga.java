@@ -25,7 +25,9 @@ import java.util.Set;
 public final class Hormiga implements Comparable<Hormiga> {
 
     ///Atributos de la clase:
-    private ArrayList<Integer> elementos;///<Conjunte de genes solución del problema
+    private ArrayList<Integer> elementos;///<Conjunte de genes solución del 
+    //problema
+    private Set<Integer> aux;
     private double _contribucion;///<Coste que aporta a la solución
     private boolean recalcular;///<Indica si es necesario recalcular el coste
 
@@ -41,6 +43,7 @@ public final class Hormiga implements Comparable<Hormiga> {
         this.elementos = _elementos;
         this._contribucion = _contribucion;
         this.recalcular = false;
+        this.aux = new HashSet<>(elementos);
 
     }
 
@@ -57,6 +60,7 @@ public final class Hormiga implements Comparable<Hormiga> {
         this.elementos = _elementos;
         this._contribucion = _contribucion;
         this.recalcular = recal;
+        this.aux = new HashSet<>(elementos);
 
     }
 
@@ -71,6 +75,7 @@ public final class Hormiga implements Comparable<Hormiga> {
         this.elementos = new ArrayList<>(otro.getElementos());
         this._contribucion = otro.getContribucion();
         this.recalcular = false;
+        this.aux = new HashSet<>(elementos);
 
     }
 
@@ -92,7 +97,7 @@ public final class Hormiga implements Comparable<Hormiga> {
     
     public boolean contains(int elemento){
         
-        return this.elementos.contains(elemento); 
+        return this.aux.contains(elemento); 
     }
 
     /**
@@ -106,6 +111,13 @@ public final class Hormiga implements Comparable<Hormiga> {
         return this._contribucion;
     }
 
+    public void add(int elemento){
+        
+        this.aux.add(elemento);
+        this.elementos.add(elemento);
+        
+    }
+    
     /**
      * @brief Metodo setter del atributo _contribucion
      * @author Andrés Rojas Ortega
