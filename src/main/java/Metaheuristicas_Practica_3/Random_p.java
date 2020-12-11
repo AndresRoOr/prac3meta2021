@@ -1,14 +1,14 @@
 /** @file    Random_p.java
- * @author David DÃ­az JimÃ©nez
+ * @author David Díaz Jiménez
  * @version 1.0
  * @date 03/10/2020
  */
 package Metaheuristicas_Practica_3;
 
 /**
- * @brief Clase para generar nÃºmeros aleatorios
+ * @brief Clase para generar números aleatorios
  * @class Random_p
- * @author David DÃ­az JimÃ©nez
+ * @author David Díaz Jiménez
  * @date 03/10/2020
  */
 public final class Random_p {

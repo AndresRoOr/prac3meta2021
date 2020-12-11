@@ -1,7 +1,7 @@
 /**
  * @file    GestorLog.java
- * @author AndrÃ©s Rojas Ortega
- * @author David DÃ­az JimÃ©nez
+ * @author Andrés Rojas Ortega
+ * @author David Díaz Jiménez
  * @version 1.0
  * @date 02/11/2020
  */
@@ -14,8 +14,8 @@ import java.io.PrintWriter;
 /**
  * @brief Clase encargada de crear y escribir los archivos log del programa
  * @class GestorLog
- * @author AndrÃ©s Rojas Ortega
- * @author David DÃ­az JimÃ©nez
+ * @author Andrés Rojas Ortega
+ * @author David Díaz Jiménez
  * @date 02/11/2020
  */
 public final class GestorLog {
@@ -27,8 +27,8 @@ public final class GestorLog {
 
     /**
      * @brief Constructor parametrizado de la clase GestorLog
-     * @author AndrÃ©s Rojas Ortega
-     * @author David DÃ­az JimÃ©nez
+     * @author Andrés Rojas Ortega
+     * @author David Díaz Jiménez
      * @date 02/11/2020
      * @param name String
      */
@@ -39,8 +39,8 @@ public final class GestorLog {
 
     /**
      * @brief Metodo setter del atributo _archiveName
-     * @author AndrÃ©s Rojas Ortega
-     * @author David DÃ­az JimÃ©nez
+     * @author Andrés Rojas Ortega
+     * @author David Díaz Jiménez
      * @date 02/11/2020
      * @param nombre String
      */
@@ -50,8 +50,8 @@ public final class GestorLog {
 
     /**
      * @brief Abre el archivo _archiveName
-     * @author AndrÃ©s Rojas Ortega
-     * @author David DÃ­az JimÃ©nez
+     * @author Andrés Rojas Ortega
+     * @author David Díaz Jiménez
      * @date 02/11/2020
      */
     void abrirArchivo() {
@@ -64,11 +64,11 @@ public final class GestorLog {
     }
 
     /**
-     * @brief Escribe la informaciÃ³n guardada en line en el archivo
-     * @author AndrÃ©s Rojas Ortega
-     * @author David DÃ­az JimÃ©nez
+     * @brief Escribe la información guardada en line en el archivo
+     * @author Andrés Rojas Ortega
+     * @author David Díaz Jiménez
      * @date 02/11/2020
-     * @param linea String Cadena con la informaciÃ³n para guardar
+     * @param linea String Cadena con la información para guardar
      */
     void escribirArchivo(String linea) {
         pw.println(linea);
@@ -76,8 +76,8 @@ public final class GestorLog {
 
     /**
      * @brief Cierra el archivo.
-     * @author AndrÃ©s Rojas Ortega
-     * @author David DÃ­az JimÃ©nez
+     * @author Andrés Rojas Ortega
+     * @author David Díaz Jiménez
      * @date 02/11/2020
      */
     void cerrarArchivo() {

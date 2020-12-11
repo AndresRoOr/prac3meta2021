@@ -1,7 +1,7 @@
 /**
  * @file    Configurador.java
- * @author Andr√©s Rojas Ortega
- * @author David D√≠az Jim√©nez
+ * @author AndrÈs Rojas Ortega
+ * @author David DÌaz JimÈnez
  * @version 1.0
  * @date 27/09/2020
  */
@@ -14,10 +14,10 @@ import java.io.BufferedReader;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * @brief Clase que almacena todos los par√°metros principales del programa
+ * @brief Clase que almacena todos los par·metros principales del programa
  * @class Configurador
- * @author Andr√©s Rojas Ortega
- * @author David D√≠az Jim√©nez
+ * @author AndrÈs Rojas Ortega
+ * @author David DÌaz JimÈnez
  * @date 27/09/2020
  */
 public class Configurador {
@@ -39,11 +39,11 @@ public class Configurador {
 
     /**
      * @brief Constructor parametrizado de la clase Configurador
-     * @author Andr√©s Rojas Ortega
-     * @author David D√≠az Jim√©nez
+     * @author AndrÈs Rojas Ortega
+     * @author David DÌaz JimÈnez
      * @date 27/09/2020
      * @param ruta String Contiene la ruta completa del archivo que contiene la
-     * informaci√≥n de los par√°metros
+     * informaciÛn de los par·metros
      */
     public Configurador(String ruta) {
 
@@ -117,8 +117,8 @@ public class Configurador {
 
     /**
      * @brief Funcion getter del atributo directoriosDatos
-     * @author Andr√©s Rojas Ortega
-     * @author David D√≠az Jim√©nez
+     * @author AndrÈs Rojas Ortega
+     * @author David DÌaz JimÈnez
      * @date 27/09/2020
      * @return directoriosDatos ArrayList
      */
@@ -128,8 +128,8 @@ public class Configurador {
 
     /**
      * @brief Funcion getter del atributo semilla
-     * @author Andr√©s Rojas Ortega
-     * @author David D√≠az Jim√©nez
+     * @author AndrÈs Rojas Ortega
+     * @author David DÌaz JimÈnez
      * @date 27/09/2020
      * @return semilla Long
      */
@@ -140,7 +140,7 @@ public class Configurador {
     /**
      * @brief Funcion getter del atributo iteraciones
      * @author AndrÈs Rojas Ortega
-     * @author David D√≠az Jim√©nez
+     * @author David DÌaz JimÈnez
      * @date 27/09/2020
      * @return iteraciones Integer
      */
@@ -178,9 +178,9 @@ public class Configurador {
     }
 
     /**
-     * @brief Funci√≥n getter del atributo numeroCromosomas
-     * @author David D√≠az Jim√©nez
-     * @author Andr√©s Rojas Ortega
+     * @brief FunciÛn getter del atributo numeroCromosomas
+     * @author David DÌaz JimÈnez
+     * @author AndrÈs Rojas Ortega
      * @date 22/11/2020
      * @return numeroCromosomas Integer
      */
@@ -189,9 +189,9 @@ public class Configurador {
     }
 
     /**
-     * @brief Rota las posiciones de la semilla una posici√≥n a la derecha
-     * @author Andr√©s Rojas Ortega
-     * @author David D√≠az Jim√©nez
+     * @brief Rota las posiciones de la semilla una posiciÛn a la derecha
+     * @author AndrÈs Rojas Ortega
+     * @author David DÌaz JimÈnez
      * @date 06/10/2020
      */
     void rotarSemilla() {
@@ -220,8 +220,8 @@ public class Configurador {
 
     /**
      * @brief Restaura la semilla a su estado original
-     * @author Andr√©s Rojas Ortega
-     * @author David D√≠az Jim√©nez
+     * @author AndrÈs Rojas Ortega
+     * @author David DÌaz JimÈnez
      * @date 06/10/2020
      */
     void RecuperarSemilla() {

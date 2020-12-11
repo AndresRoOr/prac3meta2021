@@ -7,10 +7,8 @@ package Metaheuristicas_Practica_3;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 /**
  *
  * @author David
@@ -155,7 +153,7 @@ public class ColoniaHormigas {
         Iterator<Map.Entry<Integer, Float>> iterator = 
                 noSeleccionados.entrySet().iterator();
 
-        double valorCorte = min + 0.9*(max-min);
+        double valorCorte = min + 0.8*(max-min);
         while(iterator.hasNext()){
 
             Map.Entry<Integer, Float> next = iterator.next();
@@ -188,14 +186,14 @@ public class ColoniaHormigas {
 
                 sumatoria = 
                     Math.pow(matrizFeromonas[ultimoElemento][eleLrc],alfa)*
-                    Math.pow(archivoDatos.getMatrizCostes()[ultimoElemento][eleLrc]
+                    Math.pow(archivoDatos.getMatriz()[ultimoElemento][eleLrc]
                             ,beta);    
                 
                 if(mayorValor == Double.MAX_VALUE){
                     mayorValor = sumatoria;
                 }
                 
-                if(sumatoria <= mayorValor){
+                if(sumatoria >= mayorValor){
                     sumatoria = mayorValor;
                     elemento = eleLrc;
                 }
@@ -209,7 +207,7 @@ public class ColoniaHormigas {
 
                 sumatoria += 
                     Math.pow(matrizFeromonas[ultimoElemento][eleLrc],alfa)*
-                    Math.pow(archivoDatos.getMatrizCostes()[ultimoElemento][eleLrc]
+                    Math.pow(archivoDatos.getMatriz()[ultimoElemento][eleLrc]
                             ,beta);
 
             }
@@ -219,7 +217,7 @@ public class ColoniaHormigas {
                 double prob = 
                     (Math.pow(matrizFeromonas[ultimoElemento][elemetoLrc]
                         ,alfa)*
-                    Math.pow(archivoDatos.getMatrizCostes()
+                    Math.pow(archivoDatos.getMatriz()
                             [ultimoElemento][elemetoLrc]
                         ,beta))/(sumatoria);
 
@@ -274,7 +272,7 @@ public class ColoniaHormigas {
         
         añadirFeromona( mejorHormigaLocal);
         
-        evaporaciónFeronomaGlobal();
+        evaporacionFeronomaGlobal();
         
     }
     
@@ -296,20 +294,30 @@ public class ColoniaHormigas {
         
     }
             
-    private void evaporaciónFeronomaGlobal(){
+    private void evaporacionFeronomaGlobal(){
         
-        for (int a = 0; a < tamMatriz-2; a++) {
-            for (int b = a+1; b < tamMatriz-1; b++) {
+        for(int i =0; i < tamColonia; i++){
+            int size = colonia.get(i).getElementos().size();
+            for (int a = 0; a < size -1; a++) {
+                
+                int elemento1 = colonia.get(i).getElementos().get(a);
+                
+                for (int b = a+1; size < size; b++) {
+                    
+                    int elemento2 = colonia.get(i).getElementos().get(b);
 
-                double valorAnterior = matrizFeromonas[a][b];
+                    double valorAnterior = 
+                            matrizFeromonas[elemento1][elemento2];
 
-                matrizFeromonas[a][b] = (1-phi)*valorAnterior ;
+                    matrizFeromonas[a][b] = (1-phi)*valorAnterior 
+                            + 100/(1/colonia.get(i).getContribucion());
+                            
+                    matrizFeromonas[b][a] = (1-phi)*valorAnterior 
+                            + 100/(1/colonia.get(i).getContribucion());
 
-                matrizFeromonas[b][a] = (1-phi)*valorAnterior ;
-
-            }  
+                }  
+            }
         }
-        
     }
     
     private int evaluarMejorHormiga(){
@@ -347,11 +355,11 @@ public class ColoniaHormigas {
                     
                     double valorAnterior = matrizFeromonas[a][b];
                     
-                    matrizFeromonas[a][b] = (1-phi)*valorAnterior 
-                        + (delta*costeGreedy);
+                    matrizFeromonas[a][b] = (1-rho)*valorAnterior 
+                        + (costeGreedy);
                     
-                     matrizFeromonas[b][a] = (1-phi)*valorAnterior 
-                        + (delta*costeGreedy);
+                     matrizFeromonas[b][a] = (1-rho)*valorAnterior 
+                        + (costeGreedy);
                 
                 }  
             }
