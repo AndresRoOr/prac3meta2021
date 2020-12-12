@@ -18,7 +18,7 @@ public class ColoniaHormigas {
     
     ///Atributos de la clase:
     private final Archivo archivoDatos;///<Contiene los datos del problema
-    private final GestorLog gestor;///<Gestor encargado de la creación del Log
+    private final GestorLog gestor;///<Gestor encargado de la creaciï¿½n del Log
     private final double [][] matrizFeromonas;
     private final Random_p generadorAleatorio;
     private Hormiga mejorHormiga;
@@ -270,7 +270,7 @@ public class ColoniaHormigas {
         
         int mejorHormigaLocal = evaluarMejorHormiga();
         
-        añadirFeromona( mejorHormigaLocal);
+        anadirFeromona( mejorHormigaLocal);
         
         evaporacionFeronomaGlobal();
         
@@ -345,7 +345,7 @@ public class ColoniaHormigas {
         
     }
     
-    private void añadirFeromona( int mejorHormigaLocal ){
+    private void anadirFeromona( int mejorHormigaLocal ){
         
         int size = colonia.get(mejorHormigaLocal).getElementos().size();
         for (int i = 0; i < size; i++) {
