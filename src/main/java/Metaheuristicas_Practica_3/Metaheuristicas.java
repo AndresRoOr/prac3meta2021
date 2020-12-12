@@ -1,7 +1,7 @@
 /**
  * @file    Metaheuristicas.java
- * @author Andrés Rojas Ortega
- * @author David Díaz Jiménez
+ * @author Andrï¿½s Rojas Ortega
+ * @author David Dï¿½az Jimï¿½nez
  * @version 1.0
  * @date 27/09/2020
  */
@@ -16,23 +16,23 @@ import java.util.ArrayList;
  * @brief Clase que calcula todos los resultados con los algoritmos solicitados
  * sobre todos los datos facilitados
  * @class Metaheuristicas
- * @author Andrés Rojas Ortega
- * @author David Díaz Jiménez
+ * @author Andrï¿½s Rojas Ortega
+ * @author David Dï¿½az Jimï¿½nez
  * @date 27/09/2020
  */
 public final class Metaheuristicas {
 
     ///Atributos de la clase:
-    private final Configurador config;///<Contiene los parámetros principales del programa
+    private final Configurador config;///<Contiene los parï¿½metros principales del programa
     private final String nombre;///<Nombre del objeto Metaheuristicas
     private ArrayList<Archivo> archivos;///<Contiene el nombre de los archivos que 
-    ///contienen los datos sobre los que hacer los cálculos
+    ///contienen los datos sobre los que hacer los cï¿½lculos
     private String ruta_Carpeta_Archivos;///<Directorio que contiene los archivos
 
     /**
      * @brief Constructor parametrizado de la clase Metaheuristicas
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @author Andrï¿½s Rojas Ortega
+     * @author David Dï¿½az Jimï¿½nez
      * @date 27/09/2020
      * @param nombre String Nombre de la nueva instancia
      * @param ruta String Ruta del directorio que contiene los archivos
@@ -47,8 +47,8 @@ public final class Metaheuristicas {
 
     /**
      * @brief Realiza la lectura de todos los datos de todos los archivos
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @author Andrï¿½s Rojas Ortega
+     * @author David Dï¿½az Jimï¿½nez
      * @date 27/09/2020
      * @throws FileNotFoundException
      * @throws IOException
@@ -74,9 +74,9 @@ public final class Metaheuristicas {
     }
 
     /**
-     * @brief Muestra por pantalla los datos de todos los archivos leí­dos
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @brief Muestra por pantalla los datos de todos los archivos leï¿½dos
+     * @author Andrï¿½s Rojas Ortega
+     * @author David Dï¿½az Jimï¿½nez
      * @date 27/09/2020
      */
     /*void mostrar_Datos() {
@@ -86,10 +86,10 @@ public final class Metaheuristicas {
     }*/
 
     /**
-     * @brief Calcula la solución para todos los archivos utilizando el
+     * @brief Calcula la soluciï¿½n para todos los archivos utilizando el
      * algoritmo Greedy y muestra el resultado por pantalla
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @author Andrï¿½s Rojas Ortega
+     * @author David Dï¿½az Jimï¿½nez
      * @date 27/09/2020
      */
     void coloniaHormigas() {
@@ -129,14 +129,14 @@ public final class Metaheuristicas {
                     double tiempo = t.stopTimer();
 
                     Main.console.presentarSalida(
-                            "Datos de la solución al problema: " 
+                            "Datos de la soluciï¿½n al problema: " 
                                     + ar.getNombre() + ", con SEMILLA: "
                                     + config.getSemilla());
                     Main.console.presentarSalida(
-                            "Tiempo de ejecución del algoritmo: " + tiempo
+                            "Tiempo de ejecuciï¿½n del algoritmo: " + tiempo
                                     + " milisegundos");
 
-                    //ch.PresentarResultados();
+                    ch.PresentarResultados();
 
                     Main.gestor.cerrarArchivo();
 
