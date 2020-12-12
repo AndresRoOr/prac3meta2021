@@ -258,9 +258,9 @@ public class ColoniaHormigas {
                 double valorAnterior = matrizFeromonas[a][b];
 
                 matrizFeromonas[a][b] = (1-rho)*valorAnterior 
-                        + (1/(tamColonia*costeGreedy));
+                        + rho*(1/(tamColonia*costeGreedy));
                 matrizFeromonas[b][a] = (1-rho)*valorAnterior 
-                        + (1/(tamColonia*costeGreedy));
+                        + rho*(1/(tamColonia*costeGreedy));
            }
         }
           
