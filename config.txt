@@ -7,4 +7,4 @@ Beta=1
 Alfa=1
 Rho=0.1
 Phi=0.1
-Delta=0.85
+Delta=0.75

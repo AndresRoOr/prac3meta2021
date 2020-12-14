@@ -107,8 +107,11 @@ public final class Metaheuristicas {
 
                     Timer t = new Timer();
 
-                    Main.gestor.cambiarNombre("colonia/MPX_"+"SEM_" +
-                            config.getSemilla()+"_" + ar.getNombre());
+                    String name = ar.getNombre();
+                    
+                    Main.gestor.cambiarNombre("Alfa_"+config.getAlfa()+",Beta_"+
+                            config.getBeta()+"SEM_" +config.getSemilla()+
+                            "_" + name.replaceFirst(".txt",".log"));
                     Main.gestor.abrirArchivo();
 
                     Random_p sem = new Random_p();
