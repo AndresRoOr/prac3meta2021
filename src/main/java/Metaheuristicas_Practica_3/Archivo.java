@@ -1,7 +1,7 @@
 /**
  * @file    Archivo.java
- * @author Andrés Rojas Ortega
- * @author David Dí­az Jiménez
+ * @author AndrÃ©s Rojas Ortega
+ * @author David DÃ­az JimÃ©nez
  * @version 1.0
  * @date 27/09/2020
  */
@@ -14,11 +14,11 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * @brief Clase que almacena toda la información que se encuentra dentro de un
+ * @brief Clase que almacena toda la informaciï¿½n que se encuentra dentro de un
  * archivo
  * @class Archivo
- * @author Andrés Rojas Ortega
- * @author David Díaz Jiménez
+ * @author AndrÃ©s Rojas Ortega
+ * @author David DÃ­az JimÃ©nez
  * @date 27/09/2020
  */
 public final class Archivo {
@@ -26,20 +26,20 @@ public final class Archivo {
     ///Atributos de la clase:
     private String _nombre;///<Nombre del objeto                                        
     private String _ruta;///<Ruta completa del archivo de datos
-    private Integer _tama_Matriz;///<Tamaño de la matriz de datos
-    private Integer _tama_Solucion;///<Tamaño de la solución             
+    private Integer _tama_Matriz;///<Tamaï¿½o de la matriz de datos
+    private Integer _tama_Solucion;///<Tamaï¿½o de la soluciï¿½n             
     private float[][] _matriz;///<Matriz que almacena los datos del archivo
     private double[][] _matrizHeuristica;
     
 
     /**
      * @brief Constructor parametrizado de la clase Archivo
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 27/09/2020
      * @param nombre String Nombre del objeto de la clase Archivo
      * @param ruta String Ruta completa del archivo que contiene los datos
-     * @param semilla long Semilla para generar números aleatorios
+     * @param semilla long Semilla para generar nï¿½meros aleatorios
      * @throws FileNotFoundException
      * @throws IOException
      */
@@ -88,9 +88,9 @@ public final class Archivo {
     }
 
     /**
-     * @brief Método getter para el parmetro _nombre
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @brief Mï¿½todo getter para el parmetro _nombre
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 27/09/2020
      * @return _nombre String
      */
@@ -99,9 +99,9 @@ public final class Archivo {
     }
 
     /**
-     * @brief Método getter para el parámetro _ruta
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @brief Mï¿½todo getter para el parï¿½metro _ruta
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 27/09/2020
      * @return _ruta String
      */
@@ -110,9 +110,9 @@ public final class Archivo {
     }
 
     /**
-     * @brief Método getter para el parámetro _tama_Matriz
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @brief Mï¿½todo getter para el parï¿½metro _tama_Matriz
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 27/09/2020
      * @return _tama_Matriz Integer
      */
@@ -121,9 +121,9 @@ public final class Archivo {
     }
 
     /**
-     * @brief Método getter para el parámetro _tama_Solucion
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @brief Mï¿½todo getter para el parï¿½metro _tama_Solucion
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 27/09/2020
      * @return _tama_Solucion Integer
      */
@@ -132,9 +132,9 @@ public final class Archivo {
     }
 
     /**
-     * @brief Método getter para el parámetro _matriz
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @brief Mï¿½todo getter para el parï¿½metro _matriz
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 27/09/2020
      * @return _matriz double[][]
      */
@@ -148,9 +148,9 @@ public final class Archivo {
     }
     
     /**
-     * @brief Método setter para el parámetro _matriz
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @brief Mï¿½todo setter para el parï¿½metro _matriz
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 27/09/2020
      * @param _matriz double[][] Nuevo valor de _matriz
      */
@@ -161,8 +161,8 @@ public final class Archivo {
     /**
      * @brief Muestra por pantalla los datos del Archivo y el contenido de
      * _matriz
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 27/09/2020
      */
     /*void presentarDatos() {

@@ -1,14 +1,14 @@
 /** @file    Timer.java
- * @author David Díaz Jiménez
+ * @author David DÃ­az JimÃ©nez
  * @version 1.0
  * @date 03/10/2020
  */
 package Metaheuristicas_Practica_3;
 
 /**
- * @brief Clase para gestionar los tiempos de ejecución del algoritmo
+ * @brief Clase para gestionar los tiempos de ejecuciÃ³n del algoritmo
  * @class Timer
- * @author David Díaz Jiménez
+ * @author David DÃ­az JimÃ©nez
  * @date 03/10/2020
  */
 public final class Timer {

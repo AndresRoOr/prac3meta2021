@@ -15,26 +15,26 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * @brief Clase que almacena la información de cada elemento que forma parte de
- * una población
+ * @brief Clase que almacena la informaciï¿½n de cada elemento que forma parte de
+ * una poblaciï¿½n
  * @class Hormiga
- * @author Andrés Rojas Ortega
- * @author David Díaz Jiménez
+ * @author AndrÃ©s Rojas Ortega
+ * @author David DÃ­az JimÃ©nez
  * @date 22/11/2020
  */
 public final class Hormiga implements Comparable<Hormiga> {
 
     ///Atributos de la clase:
-    private ArrayList<Integer> elementos;///<Conjunte de genes solución del 
+    private ArrayList<Integer> elementos;///<Conjunte de genes soluciï¿½n del 
     //problema
     private Set<Integer> aux;
-    private double _contribucion;///<Coste que aporta a la solución
+    private double _contribucion;///<Coste que aporta a la soluciï¿½n
     private boolean recalcular;///<Indica si es necesario recalcular el coste
 
     /**
      * @brief Constructor parametrizado de la clase Hormiga
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 22/11/2020
      * @param _elementos  Set<Integer>
      * @param _contribucion Float
@@ -49,8 +49,8 @@ public final class Hormiga implements Comparable<Hormiga> {
 
     /**
      * @brief Constructor parametrizado de la clase Hormiga
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 22/11/2020
      * @param _elementos Set<Integer>
      * @param _contribucion float
@@ -66,8 +66,8 @@ public final class Hormiga implements Comparable<Hormiga> {
 
     /**
      * @brief Constructor por copia de la clase Cromosoma
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
+     * @author AndrÃ©s Rojas Ortega
      * @date 22/11/2020
      * @param otro Hormiga
      */
@@ -102,8 +102,8 @@ public final class Hormiga implements Comparable<Hormiga> {
 
     /**
      * @brief Metodo getter del atributo _contribucion
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 02/11/2020
      * @return _contribucion float
      */
@@ -120,8 +120,8 @@ public final class Hormiga implements Comparable<Hormiga> {
     
     /**
      * @brief Metodo setter del atributo _contribucion
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 22/11/2020
      * @param cont float
      */
@@ -130,9 +130,9 @@ public final class Hormiga implements Comparable<Hormiga> {
     }
 
     /**
-     * @brief Método getter del atributo cromosoma
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
+     * @brief Mï¿½todo getter del atributo cromosoma
+     * @author David DÃ­az JimÃ©nez
+     * @author AndrÃ©s Rojas Ortega
      * @date 22/11/2020
      * @return elementos Set<Integer>
      */
@@ -141,9 +141,9 @@ public final class Hormiga implements Comparable<Hormiga> {
     }
 
     /**
-     * @brief Método setter del atributo cromosoma
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
+     * @brief Mï¿½todo setter del atributo cromosoma
+     * @author David DÃ­az JimÃ©nez
+     * @author AndrÃ©s Rojas Ortega
      * @date 22/11/2020
      * @param _elementos  Set<Integer> 
      */
@@ -152,9 +152,9 @@ public final class Hormiga implements Comparable<Hormiga> {
     }
 
     /**
-     * @brief Método getter del atributo recalcular
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
+     * @brief Mï¿½todo getter del atributo recalcular
+     * @author David DÃ­az JimÃ©nez
+     * @author AndrÃ©s Rojas Ortega
      * @date 22/11/2020
      * @return recalcular boolean
      */
@@ -163,9 +163,9 @@ public final class Hormiga implements Comparable<Hormiga> {
     }
 
     /**
-     * @brief Método setter del atributo recalcular
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
+     * @brief Mï¿½todo setter del atributo recalcular
+     * @author David DÃ­az JimÃ©nez
+     * @author AndrÃ©s Rojas Ortega
      * @date 22/11/2020
      * @param recalcular boolean 
      */

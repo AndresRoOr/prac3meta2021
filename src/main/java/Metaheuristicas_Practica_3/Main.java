@@ -18,8 +18,8 @@ import javax.swing.UIManager;
 /**
  * @brief Clase Main del programa
  * @class Main
- * @author Andrés Rojas Ortega
- * @author David Díaz Jiménez
+ * @author AndrÃ©s Rojas Ortega
+ * @author David DÃ­az JimÃ©nez
  * @date 27/09/2020
  */
 public class Main {
@@ -30,9 +30,9 @@ public class Main {
     public static final ExecutorService exec = Executors.newFixedThreadPool(4);
 
     /**
-     * @brief Función principal del programa
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @brief Funciï¿½n principal del programa
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 27/09/2020
      * @throws IOException
      */

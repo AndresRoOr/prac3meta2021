@@ -85,7 +85,7 @@ public final class Consola extends javax.swing.JFrame {
         jButtonReload = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Metaheurísticas: Práctica 2");
+        setTitle("MetaheurÃ­sticas: PrÃ¡ctica 2");
         setBackground(new java.awt.Color(0, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setPreferredSize(new java.awt.Dimension(730, 355));
@@ -134,7 +134,7 @@ public final class Consola extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Seleccione una heurística");
+        jLabel1.setText("Seleccione una heurÃ­stica");
         jLabel1.setFocusable(false);
 
         jProgressBarEstado.setBackground(new java.awt.Color(34, 43, 53));
@@ -226,7 +226,7 @@ public final class Consola extends javax.swing.JFrame {
         
          eleccion = 2;
          jTextArea.removeAll();
-         jTextArea.setText("Archivo de configuración recargado\n");
+         jTextArea.setText("Archivo de configuraciï¿½n recargado\n");
          this.jButtonGreedy.setEnabled(false);
          this.jButtonReload.setEnabled(false);
     }//GEN-LAST:event_jButtonReloadActionPerformed

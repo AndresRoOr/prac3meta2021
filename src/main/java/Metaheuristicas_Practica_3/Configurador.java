@@ -1,7 +1,7 @@
 /**
  * @file    Configurador.java
- * @author Andrés Rojas Ortega
- * @author David Díaz Jiménez
+ * @author AndrÃ©s Rojas Ortega
+ * @author David DÃ­az JimÃ©nez
  * @version 1.0
  * @date 27/09/2020
  */
@@ -14,36 +14,36 @@ import java.io.BufferedReader;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * @brief Clase que almacena todos los parámetros principales del programa
+ * @brief Clase que almacena todos los parï¿½metros principales del programa
  * @class Configurador
- * @author Andrés Rojas Ortega
- * @author David Díaz Jiménez
+ * @author AndrÃ©s Rojas Ortega
+ * @author David DÃ­az JimÃ©nez
  * @date 27/09/2020
  */
 public class Configurador {
 
     ///Atributos de la clase:
     ArrayList<String> directoriosDatos;///<Almacena los directorios donde se 
-    ///encuentran los archivos con la información del problema
-    private Long semilla;///<Semilla utilizada para generar números aleatorios
-    private int iteraciones;///<Número de iteraciones
+    ///encuentran los archivos con la informaciï¿½n del problema
+    private Long semilla;///<Semilla utilizada para generar nï¿½meros aleatorios
+    private int iteraciones;///<NÃºmero de iteraciones
     private long recuperarSemilla;///<Almacena el valor inicial de la semilla
     /// en dos puntos
     private float phi;
     private float beta;
     private float alfa;
-    private int numeroHormigas;///<Número de hormigas
+    private int numeroHormigas;///<NÃºmero de hormigas
     private float q0;
     private float rho;
     private float delta;
 
     /**
      * @brief Constructor parametrizado de la clase Configurador
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 27/09/2020
      * @param ruta String Contiene la ruta completa del archivo que contiene la
-     * información de los parámetros
+     * informaciï¿½n de los parÃ¡metros
      */
     public Configurador(String ruta) {
 
@@ -104,7 +104,7 @@ public class Configurador {
 
         } catch (IOException e) {
             Main.console.presentarSalida(
-                    "No se ha encontrado el archivo de configuración");
+                    "No se ha encontrado el archivo de configuraciï¿½n");
         } finally {
             try {
                 if (null != f) {
@@ -117,8 +117,8 @@ public class Configurador {
 
     /**
      * @brief Funcion getter del atributo directoriosDatos
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 27/09/2020
      * @return directoriosDatos ArrayList
      */
@@ -128,8 +128,8 @@ public class Configurador {
 
     /**
      * @brief Funcion getter del atributo semilla
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 27/09/2020
      * @return semilla Long
      */
@@ -139,8 +139,8 @@ public class Configurador {
 
     /**
      * @brief Funcion getter del atributo iteraciones
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 27/09/2020
      * @return iteraciones Integer
      */
@@ -178,9 +178,9 @@ public class Configurador {
     }
 
     /**
-     * @brief Función getter del atributo numeroCromosomas
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
+     * @brief Funciï¿½n getter del atributo numeroCromosomas
+     * @author David DÃ­az JimÃ©nez
+     * @author AndrÃ©s Rojas Ortega
      * @date 22/11/2020
      * @return numeroCromosomas Integer
      */
@@ -189,9 +189,9 @@ public class Configurador {
     }
 
     /**
-     * @brief Rota las posiciones de la semilla una posición a la derecha
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @brief Rota las posiciones de la semilla una posiciï¿½n a la derecha
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 06/10/2020
      */
     void rotarSemilla() {
@@ -220,8 +220,8 @@ public class Configurador {
 
     /**
      * @brief Restaura la semilla a su estado original
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 06/10/2020
      */
     void RecuperarSemilla() {

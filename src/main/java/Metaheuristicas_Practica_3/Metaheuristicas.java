@@ -1,7 +1,7 @@
 /**
  * @file    Metaheuristicas.java
- * @author Andr�s Rojas Ortega
- * @author David D�az Jim�nez
+ * @author Andrés Rojas Ortega
+ * @author David Díaz Jiménez
  * @version 1.0
  * @date 27/09/2020
  */
@@ -16,8 +16,8 @@ import java.util.ArrayList;
  * @brief Clase que calcula todos los resultados con los algoritmos solicitados
  * sobre todos los datos facilitados
  * @class Metaheuristicas
- * @author Andr�s Rojas Ortega
- * @author David D�az Jim�nez
+ * @author Andrés Rojas Ortega
+ * @author David Díaz Jiménez
  * @date 27/09/2020
  */
 public final class Metaheuristicas {
@@ -31,8 +31,8 @@ public final class Metaheuristicas {
 
     /**
      * @brief Constructor parametrizado de la clase Metaheuristicas
-     * @author Andr�s Rojas Ortega
-     * @author David D�az Jim�nez
+     * @author Andrés Rojas Ortega
+     * @author David Díaz Jiménez
      * @date 27/09/2020
      * @param nombre String Nombre de la nueva instancia
      * @param ruta String Ruta del directorio que contiene los archivos
@@ -47,8 +47,8 @@ public final class Metaheuristicas {
 
     /**
      * @brief Realiza la lectura de todos los datos de todos los archivos
-     * @author Andr�s Rojas Ortega
-     * @author David D�az Jim�nez
+     * @author Andrés Rojas Ortega
+     * @author David Díaz Jiménez
      * @date 27/09/2020
      * @throws FileNotFoundException
      * @throws IOException
@@ -75,8 +75,8 @@ public final class Metaheuristicas {
 
     /**
      * @brief Muestra por pantalla los datos de todos los archivos le�dos
-     * @author Andr�s Rojas Ortega
-     * @author David D�az Jim�nez
+     * @author Andrés Rojas Ortega
+     * @author David Díaz Jiménez
      * @date 27/09/2020
      */
     /*void mostrar_Datos() {
@@ -88,8 +88,8 @@ public final class Metaheuristicas {
     /**
      * @brief Calcula la soluci�n para todos los archivos utilizando el
      * algoritmo Greedy y muestra el resultado por pantalla
-     * @author Andr�s Rojas Ortega
-     * @author David D�az Jim�nez
+     * @author Andrés Rojas Ortega
+     * @author David Díaz Jiménez
      * @date 27/09/2020
      */
     void coloniaHormigas() {

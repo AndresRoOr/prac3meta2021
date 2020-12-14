@@ -18,7 +18,7 @@ public class ColoniaHormigas {
 
     ///Atributos de la clase:
     private final Archivo archivoDatos;///<Contiene los datos del problema
-    private final GestorLog gestor;///<Gestor encargado de la creaci�n del Log
+    private final GestorLog gestor;///<Gestor encargado de la creación del Log
     private final double[][] matrizFeromonas;
     private final Random_p generadorAleatorio;
     private Hormiga mejorHormiga;
