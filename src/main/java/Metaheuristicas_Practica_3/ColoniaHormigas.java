@@ -69,7 +69,8 @@ public class ColoniaHormigas {
 
             ArrayList<Integer> elementosHormiga = colonia.get(j).getElementos();
 
-            //int ultimoElemento = elementosHormiga.get(elementosHormiga.size() - 1);
+            //int ultimoElemento = elementosHormiga.get(elementosHormiga.size()
+            //- 1);
             double q = generadorAleatorio.Randfloat(0, 1);
 
             if (q0 <= q) {
@@ -82,9 +83,10 @@ public class ColoniaHormigas {
                     for (Integer eleHormiga : colonia.get(j).getElementos()) {
 
                         sumatoria
-                                += Math.pow(matrizFeromonas[eleHormiga][eleLrc],
+                            += Math.pow(matrizFeromonas[eleHormiga][eleLrc],
                                         alfa)
-                                * Math.pow(archivoDatos.getMatrizCostes()[eleHormiga][eleLrc], beta);
+                            * Math.pow(archivoDatos.getMatrizCostes()
+                                    [eleHormiga][eleLrc], beta);
                     }
 
                     if (mayorValor == Double.MAX_VALUE) {
@@ -126,7 +128,7 @@ public class ColoniaHormigas {
                     index++;
                 }
 
-                double uniforme = generadorAleatorio.Randfloat(0, 1);
+                double uniforme = aleatorios.get(j);
                 index = 0;
                 double probabilidadAcumulada = ProbabilidadTransicion.get(0);
 
@@ -157,6 +159,7 @@ public class ColoniaHormigas {
     private final Random_p generadorAleatorio;
     private Hormiga mejorHormiga;
     private final ArrayList<Hormiga> colonia;
+    private final ArrayList<Double> aleatorios;
     private final int tamColonia;
     private final int tamHormiga;
     private final int tamMatriz;
@@ -169,11 +172,6 @@ public class ColoniaHormigas {
     private final float delta;
     private final float alfa;
     private final float costeGreedy;
-    
-    private ReadWriteLock lockColonia;
-    private ReadWriteLock lockarchivosDatos;
-    private ReadWriteLock lockgeneradorAleatorio;
-    private ReadWriteLock lockmatrizFeromonas;
 
     public ColoniaHormigas(Archivo _archivoDatos, GestorLog _gestor,
             int _iteraciones, int _numeroHormigas, Random_p _semilla, float _q0,
@@ -199,27 +197,28 @@ public class ColoniaHormigas {
         this.phi = _phi;
         this.q0 = _q0;
         this.costeGreedy = _coste;
-        
-        this.lockColonia = new ReentrantReadWriteLock();
-        this.lockarchivosDatos = new ReentrantReadWriteLock();
-        this.lockgeneradorAleatorio = new ReentrantReadWriteLock();
-        this.lockmatrizFeromonas = new ReentrantReadWriteLock();
-
+        this.aleatorios = new ArrayList<>();
     }
 
     public void colonia() {
 
         inicializarFeromona();
 
-        while (iteraciones <= maxItereaciones) {
+        double time = System.currentTimeMillis();
+        while (iteraciones <= maxItereaciones && System.currentTimeMillis() -
+                time>= 600000) {
 
             inicializarColonia();
 
             for (int i = 1; i < tamHormiga; i++) {
                 
+                for(int b = 0; b < tamColonia; b++){
+                    aleatorios.add(generadorAleatorio.Randfloat(0,1));
+                }
+                
                 ArrayList<Future<Boolean>> futures = new ArrayList<>();
                 
-                for (int a = 0; a < 10; a++) {
+                for (int a = 0; a < tamColonia; a++) {
                     
                     futures.add(Main.exec.submit(new ApliclarRTTask(a)));
                     
@@ -229,13 +228,16 @@ public class ColoniaHormigas {
                     try {
                         futures.get(j).get();
                     } catch (InterruptedException ex) {
-                        Logger.getLogger(ColoniaHormigas.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(ColoniaHormigas.class.getName())
+                                .log(Level.SEVERE, null, ex);
                     } catch (ExecutionException ex) {
-                        Logger.getLogger(ColoniaHormigas.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(ColoniaHormigas.class.getName())
+                                .log(Level.SEVERE, null, ex);
                     }
                 }
 
                 actualizarFeromonaLocal();
+                aleatorios.clear();
 
             }
 

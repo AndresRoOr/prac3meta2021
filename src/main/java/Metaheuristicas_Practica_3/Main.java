@@ -27,7 +27,8 @@ public class Main {
     
     public static Consola console = new Consola();
     public static GestorLog gestor = new GestorLog("");
-    public static final ExecutorService exec = Executors.newFixedThreadPool(4);
+    public static final ExecutorService exec = Executors.newFixedThreadPool(
+            Runtime.getRuntime().availableProcessors());
 
     /**
      * @brief Funci�n principal del programa
