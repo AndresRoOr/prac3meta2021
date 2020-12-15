@@ -204,9 +204,9 @@ public class ColoniaHormigas {
 
         inicializarFeromona();
 
-        double time = System.currentTimeMillis();
-        while (iteraciones <= maxItereaciones && System.currentTimeMillis() -
-                time>= 600000) {
+        long time = System.currentTimeMillis();
+        while (iteraciones <= maxItereaciones && (System.currentTimeMillis() -
+                time)<= 600000) {
 
             inicializarColonia();
 
