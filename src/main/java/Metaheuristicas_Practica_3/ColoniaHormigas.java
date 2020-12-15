@@ -8,13 +8,177 @@ package Metaheuristicas_Practica_3;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author David
  */
 public class ColoniaHormigas {
+
+    private class GenerarLRCTask implements Callable<ArrayList<Integer>> {
+
+        private final int j;
+
+        public GenerarLRCTask(int j) {
+            this.j = j;
+        }
+
+        @Override
+        public ArrayList<Integer> call() throws Exception {
+
+            ArrayList<Integer> LRC = new ArrayList<>();
+            HashMap<Integer, Float> noSeleccionados = new HashMap<>();
+
+            float max = 0;
+            float min = Float.MAX_VALUE;
+
+            for (int a = 0; a < tamMatriz; a++) {
+                if (!colonia.get(j).contains(a)) {
+
+                    float aporte = 0.0f;
+
+                    for (int b : colonia.get(j).getElementos()) {
+
+                        aporte += archivoDatos.getMatrizCostes()[b][a];
+
+                    }
+                    if (min == Double.MAX_VALUE) {
+                        max = aporte;
+                        min = aporte;
+                    }
+
+                    if (aporte > max) {
+                        max = aporte;
+                    } else if (aporte < min) {
+                        min = aporte;
+                    }
+
+                    noSeleccionados.put(a, aporte);
+                }
+            }
+
+            Iterator<Map.Entry<Integer, Float>> iterator
+                    = noSeleccionados.entrySet().iterator();
+
+            double valorCorte = min + delta * (max - min);
+            while (iterator.hasNext()) {
+
+                Map.Entry<Integer, Float> next = iterator.next();
+                if (next.getValue() >= valorCorte) {
+                    LRC.add(next.getKey());
+                }
+            }
+
+            return LRC;
+        }
+    }
+
+    private class ApliclarRTTask implements Runnable {
+
+        private final ArrayList<Integer> LRC;
+        private final int j;
+
+        public ApliclarRTTask(ArrayList<Integer> LRC, int j) {
+            this.LRC = LRC;
+            this.j = j;
+        }
+
+        @Override
+        public void run() {
+            ArrayList<Double> ProbabilidadTransicion = new ArrayList<>();
+
+            double sumatoria = 0;
+
+            ArrayList<Integer> elementosHormiga = colonia.get(j).getElementos();
+
+            //int ultimoElemento = elementosHormiga.get(elementosHormiga.size() - 1);
+            double q = generadorAleatorio.Randfloat(0, 1);
+
+            if (q0 <= q) {
+
+                int elemento = 0;
+                double mayorValor = Double.MAX_VALUE;
+
+                for (Integer eleLrc : LRC) {
+
+                    for (Integer eleHormiga : colonia.get(j).getElementos()) {
+
+                        sumatoria
+                                += Math.pow(matrizFeromonas[eleHormiga][eleLrc],
+                                        alfa)
+                                * Math.pow(archivoDatos.getMatrizCostes()[eleHormiga][eleLrc], beta);
+                    }
+
+                    if (mayorValor == Double.MAX_VALUE) {
+                        mayorValor = sumatoria;
+                    }
+
+                    if (sumatoria >= mayorValor) {
+                        sumatoria = mayorValor;
+                        elemento = eleLrc;
+                    }
+                }
+                colonia.get(j).add(elemento);
+
+            } else {
+
+                for (Integer eleLrc : LRC) {
+
+                    double valorSuperior = 0.0;
+                    Hormiga aux = new Hormiga(colonia.get(j));
+                    for (Integer eleHormiga : aux.getElementos()) {
+                        valorSuperior
+                                += Math.pow(archivoDatos.getMatrizCostes()[eleHormiga][eleLrc], beta)
+                                * Math.pow(matrizFeromonas[eleHormiga][eleLrc],
+                                        alfa);
+                    }
+
+                    sumatoria += valorSuperior;
+                    ProbabilidadTransicion.add(valorSuperior);
+
+                }
+
+                double total = 0.0;
+                int index = 0;
+                for (Double valor : ProbabilidadTransicion) {
+
+                    Double prob = (valor / sumatoria);
+                    ProbabilidadTransicion.set(index, prob);
+                    total += valor;
+                    index++;
+                }
+
+                double uniforme = generadorAleatorio.Randfloat(0, 1);
+                index = 0;
+                double probabilidadAcumulada = ProbabilidadTransicion.get(0);
+
+                for (Double ProDouble : ProbabilidadTransicion) {
+
+                    probabilidadAcumulada += ProDouble;
+
+                    if (uniforme <= probabilidadAcumulada) {
+                        colonia.get(j).add(LRC.get(index));
+                        break;
+                    }
+                    index++;
+                }
+            }
+            LRC.clear();
+        }
+
+    }
 
     ///Atributos de la clase:
     private final Archivo archivoDatos;///<Contiene los datos del problema
@@ -35,6 +199,11 @@ public class ColoniaHormigas {
     private final float delta;
     private final float alfa;
     private final float costeGreedy;
+    
+    private ReadWriteLock lockColonia;
+    private ReadWriteLock lockarchivosDatos;
+    private ReadWriteLock lockgeneradorAleatorio;
+    private ReadWriteLock lockmatrizFeromonas;
 
     public ColoniaHormigas(Archivo _archivoDatos, GestorLog _gestor,
             int _iteraciones, int _numeroHormigas, Random_p _semilla, float _q0,
@@ -60,6 +229,11 @@ public class ColoniaHormigas {
         this.phi = _phi;
         this.q0 = _q0;
         this.costeGreedy = _coste;
+        
+        this.lockColonia = new ReentrantReadWriteLock();
+        this.lockarchivosDatos = new ReentrantReadWriteLock();
+        this.lockgeneradorAleatorio = new ReentrantReadWriteLock();
+        this.lockmatrizFeromonas = new ReentrantReadWriteLock();
 
     }
 
@@ -73,12 +247,37 @@ public class ColoniaHormigas {
 
             for (int i = 1; i < tamHormiga; i++) {
 
+                List<Future<ArrayList<Integer>>> future = new ArrayList<>();
+                List<GenerarLRCTask> tareas = new ArrayList<>();
+
                 for (int j = 0; j < tamColonia; j++) {
 
-                    ArrayList<Integer> LRC = generarLRC(j);
+                    Future<ArrayList<Integer>> f = null;
+                    future.add(f);
+                    tareas.add(new GenerarLRCTask(j));
 
-                    aplicarReglaTransicion(LRC, j);
+                    /*ArrayList<Integer> LRC = generarLRC(j);
 
+                    aplicarReglaTransicion(LRC, j);*/
+                }
+
+                List<ApliclarRTTask> tareas2 = new ArrayList<>();
+
+                try {
+                    future = Main.exec.invokeAll(tareas);
+                    
+                    Boolean terminado = false;
+                    
+                    while(!terminado){
+                        terminado = Main.exec.awaitTermination(1, TimeUnit.MICROSECONDS);
+                    }
+
+                    for (int k = 0; k < tamColonia; k++) {
+                        ArrayList<Integer> c = future.get(k).get();
+                        Main.exec.execute(new ApliclarRTTask(c, k));
+                    }
+                } catch (InterruptedException | ExecutionException ex) {
+                    Logger.getLogger(ColoniaHormigas.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
                 actualizarFeromonaLocal();
@@ -118,7 +317,7 @@ public class ColoniaHormigas {
         }
     }
 
-    private ArrayList<Integer> generarLRC(int j) {
+    /*private ArrayList<Integer> generarLRC(int j) {
 
         ArrayList<Integer> LRC = new ArrayList<>();
         HashMap<Integer, Float> noSeleccionados = new HashMap<>();
@@ -175,7 +374,6 @@ public class ColoniaHormigas {
         ArrayList<Integer> elementosHormiga = colonia.get(j).getElementos();
 
         //int ultimoElemento = elementosHormiga.get(elementosHormiga.size() - 1);
-
         double q = generadorAleatorio.Randfloat(0, 1);
 
         if (q0 <= q) {
@@ -184,14 +382,13 @@ public class ColoniaHormigas {
             double mayorValor = Double.MAX_VALUE;
 
             for (Integer eleLrc : LRC) {
-                
-                for(Integer eleHormiga : colonia.get(j).getElementos()){
+
+                for (Integer eleHormiga : colonia.get(j).getElementos()) {
 
                     sumatoria
                             += Math.pow(matrizFeromonas[eleHormiga][eleLrc],
                                     alfa)
-                            * Math.pow(archivoDatos.getMatrizCostes()
-                                    [eleHormiga][eleLrc],beta);
+                            * Math.pow(archivoDatos.getMatrizCostes()[eleHormiga][eleLrc], beta);
                 }
 
                 if (mayorValor == Double.MAX_VALUE) {
@@ -201,7 +398,7 @@ public class ColoniaHormigas {
                 if (sumatoria >= mayorValor) {
                     sumatoria = mayorValor;
                     elemento = eleLrc;
-                }                       
+                }
             }
             colonia.get(j).add(elemento);
 
@@ -210,25 +407,24 @@ public class ColoniaHormigas {
             for (Integer eleLrc : LRC) {
 
                 double valorSuperior = 0.0;
-                for(Integer eleHormiga : colonia.get(j).getElementos()){
+                for (Integer eleHormiga : colonia.get(j).getElementos()) {
 
                     valorSuperior
                             += Math.pow(matrizFeromonas[eleHormiga][eleLrc],
                                     alfa)
-                            * Math.pow(archivoDatos.getMatrizCostes()
-                                    [eleHormiga][eleLrc],beta);
+                            * Math.pow(archivoDatos.getMatrizCostes()[eleHormiga][eleLrc], beta);
                 }
-                
-                sumatoria+=valorSuperior;
+
+                sumatoria += valorSuperior;
                 ProbabilidadTransicion.add(valorSuperior);
-                
+
             }
 
-            double total = 0.0; 
+            double total = 0.0;
             int index = 0;
             for (Double valor : ProbabilidadTransicion) {
-               
-                Double prob  = (valor / sumatoria);
+
+                Double prob = (valor / sumatoria);
                 ProbabilidadTransicion.set(index, prob);
                 total += valor;
                 index++;
@@ -250,7 +446,7 @@ public class ColoniaHormigas {
             }
         }
         LRC.clear();
-    }
+    }*/
 
     private void actualizarFeromonaLocal() {
 
@@ -298,7 +494,7 @@ public class ColoniaHormigas {
     }
 
     private void actualizaFeromonaGlobal(int mejorHormigaLocal) {
-        
+
         //Evaporacion
         for (int i = 0; i < tamMatriz - 1; i++) {
             for (int j = i + 1; j < tamMatriz; j++) {
@@ -312,22 +508,22 @@ public class ColoniaHormigas {
         }
 
         //Aporte mejor hormiga
-        Iterator<Integer> iterador = 
-                mejorHormiga.getElementos().iterator();
-        
-        Object[] elementos = 
-                mejorHormiga.getElementos().toArray();
-        
+        Iterator<Integer> iterador
+                = mejorHormiga.getElementos().iterator();
+
+        Object[] elementos
+                = mejorHormiga.getElementos().toArray();
+
         int length = elementos.length;
 
         for (int i = 0; i < length - 1; i++) {
             int a = (int) elementos[i];
             for (int j = i + 1; j < length; j++) {
                 int b = (int) elementos[j];
-                matrizFeromonas[a][b] += phi * 
-                        (mejorHormiga.getContribucion());
-                matrizFeromonas[b][a] += phi * 
-                        (mejorHormiga.getContribucion());
+                matrizFeromonas[a][b] += phi
+                        * (mejorHormiga.getContribucion());
+                matrizFeromonas[b][a] += phi
+                        * (mejorHormiga.getContribucion());
             }
         }
     }
@@ -365,11 +561,11 @@ public class ColoniaHormigas {
         float coste = calcularCoste(mejorHormiga.getElementos());
         gestor.escribirArchivo("");
         gestor.escribirArchivo("Mejor coste: " + coste);
-        gestor.escribirArchivo("Mejor hormiga: " 
-            + mejorHormiga.getElementos());
-        
-        Main.console.presentarSalida("Mejor Coste:  " 
-            + mejorHormiga.getContribucion());
+        gestor.escribirArchivo("Mejor hormiga: "
+                + mejorHormiga.getElementos());
+
+        Main.console.presentarSalida("Mejor Coste:  "
+                + mejorHormiga.getContribucion());
         Main.console.presentarSalida("");
 
     }
