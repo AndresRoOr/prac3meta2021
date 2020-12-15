@@ -12,8 +12,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Callable;
+import java.util.concurrent.CompletionService;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorCompletionService;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReadWriteLock;
@@ -39,67 +41,31 @@ public class ColoniaHormigas {
         public ArrayList<Integer> call() throws Exception {
 
             ArrayList<Integer> LRC = new ArrayList<>();
-            HashMap<Integer, Float> noSeleccionados = new HashMap<>();
-
-            float max = 0;
-            float min = Float.MAX_VALUE;
-
-            for (int a = 0; a < tamMatriz; a++) {
-                if (!colonia.get(j).contains(a)) {
-
-                    float aporte = 0.0f;
-
-                    for (int b : colonia.get(j).getElementos()) {
-
-                        aporte += archivoDatos.getMatrizCostes()[b][a];
-
-                    }
-                    if (min == Double.MAX_VALUE) {
-                        max = aporte;
-                        min = aporte;
-                    }
-
-                    if (aporte > max) {
-                        max = aporte;
-                    } else if (aporte < min) {
-                        min = aporte;
-                    }
-
-                    noSeleccionados.put(a, aporte);
-                }
-            }
-
-            Iterator<Map.Entry<Integer, Float>> iterator
-                    = noSeleccionados.entrySet().iterator();
-
-            double valorCorte = min + delta * (max - min);
-            while (iterator.hasNext()) {
-
-                Map.Entry<Integer, Float> next = iterator.next();
-                if (next.getValue() >= valorCorte) {
-                    LRC.add(next.getKey());
-                }
-            }
-
+           
             return LRC;
         }
     }
 
-    private class ApliclarRTTask implements Runnable {
+    private class ApliclarRTTask implements Callable<Boolean> {
 
-        private final ArrayList<Integer> LRC;
         private final int j;
 
-        public ApliclarRTTask(ArrayList<Integer> LRC, int j) {
-            this.LRC = LRC;
+        public ApliclarRTTask( int j) {
+
             this.j = j;
         }
 
         @Override
-        public void run() {
+        public Boolean call() throws Exception {
+            
+            
+            ArrayList<Integer> LRC = generarLRC(j);
+            
             ArrayList<Double> ProbabilidadTransicion = new ArrayList<>();
 
             double sumatoria = 0;
+            
+            
 
             ArrayList<Integer> elementosHormiga = colonia.get(j).getElementos();
 
@@ -176,7 +142,11 @@ public class ColoniaHormigas {
                 }
             }
             LRC.clear();
+            return true;
         }
+
+        
+         
 
     }
 
@@ -246,38 +216,23 @@ public class ColoniaHormigas {
             inicializarColonia();
 
             for (int i = 1; i < tamHormiga; i++) {
-
-                List<Future<ArrayList<Integer>>> future = new ArrayList<>();
-                List<GenerarLRCTask> tareas = new ArrayList<>();
-
-                for (int j = 0; j < tamColonia; j++) {
-
-                    Future<ArrayList<Integer>> f = null;
-                    future.add(f);
-                    tareas.add(new GenerarLRCTask(j));
-
-                    /*ArrayList<Integer> LRC = generarLRC(j);
-
-                    aplicarReglaTransicion(LRC, j);*/
+                
+                ArrayList<Future<Boolean>> futures = new ArrayList<>();
+                
+                for (int a = 0; a < 10; a++) {
+                    
+                    futures.add(Main.exec.submit(new ApliclarRTTask(a)));
+                    
                 }
-
-                List<ApliclarRTTask> tareas2 = new ArrayList<>();
-
-                try {
-                    future = Main.exec.invokeAll(tareas);
-                    
-                    Boolean terminado = false;
-                    
-                    while(!terminado){
-                        terminado = Main.exec.awaitTermination(1, TimeUnit.MICROSECONDS);
+                
+                for (int j = 0; j < 10; j++) {
+                    try {
+                        futures.get(j).get();
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(ColoniaHormigas.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (ExecutionException ex) {
+                        Logger.getLogger(ColoniaHormigas.class.getName()).log(Level.SEVERE, null, ex);
                     }
-
-                    for (int k = 0; k < tamColonia; k++) {
-                        ArrayList<Integer> c = future.get(k).get();
-                        Main.exec.execute(new ApliclarRTTask(c, k));
-                    }
-                } catch (InterruptedException | ExecutionException ex) {
-                    Logger.getLogger(ColoniaHormigas.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
                 actualizarFeromonaLocal();
@@ -317,7 +272,7 @@ public class ColoniaHormigas {
         }
     }
 
-    /*private ArrayList<Integer> generarLRC(int j) {
+    private ArrayList<Integer> generarLRC(int j) {
 
         ArrayList<Integer> LRC = new ArrayList<>();
         HashMap<Integer, Float> noSeleccionados = new HashMap<>();
@@ -365,6 +320,7 @@ public class ColoniaHormigas {
         return LRC;
     }
 
+    /*
     private void aplicarReglaTransicion(ArrayList<Integer> LRC, int j) {
 
         ArrayList<Double> ProbabilidadTransicion = new ArrayList<>();
