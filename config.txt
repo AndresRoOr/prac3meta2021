@@ -1,4 +1,4 @@
-Datos=archivos/Datos/GKD
+Datos=archivos/Datos/GKD archivos/Datos/SOM archivos/Datos/MDG
 Semilla=77356084
 Iteraciones=10000
 Numero de hormigas=10

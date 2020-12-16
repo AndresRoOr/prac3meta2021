@@ -117,13 +117,14 @@ public final class Metaheuristicas {
                     Random_p sem = new Random_p();
                     sem.Set_random(config.getSemilla());
 
+                    Greedy gredy = new Greedy(ar);
                     
                     ColoniaHormigas ch = new ColoniaHormigas(ar, Main.gestor, 
                             config.getIteraciones(), 
                             config.getNumeroHormigas(), sem, 
                             config.getQ0(),config.getPhi(), config.getBeta(),
                             config.getRho(), config.getDelta(),
-                            config.getAlfa(), 19396);
+                            config.getAlfa(), gredy.greedy(sem));
 
                     t.startTimer();
 
