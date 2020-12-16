@@ -71,7 +71,7 @@ public class ColoniaHormigas {
 
             //int ultimoElemento = elementosHormiga.get(elementosHormiga.size()
             //- 1);
-            double q = generadorAleatorio.Randfloat(0, 1);
+            double q = aleatoriosq.get(j);
 
             if (q0 <= q) {
 
@@ -160,6 +160,7 @@ public class ColoniaHormigas {
     private Hormiga mejorHormiga;
     private final ArrayList<Hormiga> colonia;
     private final ArrayList<Double> aleatorios;
+    private final ArrayList<Double> aleatoriosq;
     private final int tamColonia;
     private final int tamHormiga;
     private final int tamMatriz;
@@ -198,6 +199,7 @@ public class ColoniaHormigas {
         this.q0 = _q0;
         this.costeGreedy = _coste;
         this.aleatorios = new ArrayList<>();
+        this.aleatoriosq = new ArrayList<>();
     }
 
     public void colonia() {
@@ -206,7 +208,7 @@ public class ColoniaHormigas {
 
         double time = System.currentTimeMillis();
         while (iteraciones <= maxItereaciones && System.currentTimeMillis() -
-                time>= 600000) {
+                time<= 600000) {
 
             inicializarColonia();
 
@@ -214,6 +216,7 @@ public class ColoniaHormigas {
                 
                 for(int b = 0; b < tamColonia; b++){
                     aleatorios.add(generadorAleatorio.Randfloat(0,1));
+                    aleatoriosq.add(generadorAleatorio.Randfloat(0, 1));
                 }
                 
                 ArrayList<Future<Boolean>> futures = new ArrayList<>();
