@@ -61,6 +61,11 @@ public final class Consola extends javax.swing.JFrame {
         return eleccion;
     }
     
+    void borrarTexto(){
+        jTextArea.removeAll();
+        jTextArea.setText("");
+    }
+    
     
     void setValue( int estado){
         jProgressBarEstado.setValue(jProgressBarEstado.getValue()+estado);
@@ -226,7 +231,6 @@ public final class Consola extends javax.swing.JFrame {
         
          eleccion = 2;
          jTextArea.removeAll();
-         jTextArea.setText("Archivo de configuraci�n recargado\n");
          this.jButtonGreedy.setEnabled(false);
          this.jButtonReload.setEnabled(false);
     }//GEN-LAST:event_jButtonReloadActionPerformed

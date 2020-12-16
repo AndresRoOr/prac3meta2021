@@ -101,8 +101,13 @@ public class Configurador {
                 }
             }
             b.close();
+            Main.console.borrarTexto();
+            Main.console.presentarSalida(
+                    "Archivo de configuración cargado");
+            
 
         } catch (IOException e) {
+            Main.console.borrarTexto();
             Main.console.presentarSalida(
                     "No se ha encontrado el archivo de configuración");
         } finally {

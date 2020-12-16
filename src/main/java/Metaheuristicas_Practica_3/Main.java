@@ -6,6 +6,7 @@
 package Metaheuristicas_Practica_3;
 
 import com.formdev.flatlaf.FlatLightLaf;
+import com.formdev.flatlaf.ui.FlatListCellBorder;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -68,9 +69,6 @@ public class Main {
                     Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            if (console.getEleccion() == 4) {
-                System.exit(0);
-            }
 
             for (int i = 0; i < config.getDirectoriosDatos().size(); i++) {
                 Metaheuristicas M1 = new Metaheuristicas(config.getDirectoriosDatos().get(i),
@@ -82,18 +80,21 @@ public class Main {
                     case 1:
 
                         M1.coloniaHormigas();
-                        break;
-
-                    case 2:
-                        config = null;
-                        config = new Configurador("./config.txt");
                         console.restaurarEleccion();
                         break;
 
+                    default:
+                        break;
                 }
                 M1 = null;
             }
-            console.restaurarEleccion();
+            
+            if(console.getEleccion()==2){
+                config = null;
+                config = new Configurador("./config.txt");
+                console.restaurarEleccion();
+            }
+            
         }
         exec.shutdownNow();
         System.exit(0);
