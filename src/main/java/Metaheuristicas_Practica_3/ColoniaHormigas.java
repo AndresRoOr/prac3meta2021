@@ -208,6 +208,7 @@ public class ColoniaHormigas {
 
                 actualizarFeromonaLocal();
                 aleatorios.clear();
+                aleatoriosq.clear();
 
             }
 
