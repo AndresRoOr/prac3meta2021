@@ -214,7 +214,6 @@ public class ColoniaHormigas {
             tareasDemonio();
 
             colonia.clear();
-            mejorHormiga=null;
 
             iteraciones++;
 
