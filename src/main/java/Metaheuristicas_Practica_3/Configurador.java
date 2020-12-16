@@ -104,7 +104,7 @@ public class Configurador {
 
         } catch (IOException e) {
             Main.console.presentarSalida(
-                    "No se ha encontrado el archivo de configuraci�n");
+                    "No se ha encontrado el archivo de configuración");
         } finally {
             try {
                 if (null != f) {
@@ -189,7 +189,7 @@ public class Configurador {
     }
 
     /**
-     * @brief Rota las posiciones de la semilla una posici�n a la derecha
+     * @brief Rota las posiciones de la semilla una posición a la derecha
      * @author Andrés Rojas Ortega
      * @author David Díaz Jiménez
      * @date 06/10/2020
