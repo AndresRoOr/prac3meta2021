@@ -247,6 +247,7 @@ public class ColoniaHormigas {
             tareasDemonio();
 
             colonia.clear();
+            mejorHormiga=null;
 
             iteraciones++;
 
@@ -505,10 +506,8 @@ public class ColoniaHormigas {
                 valorMejor = coste;
             }
         }
-
-        if (valorMejor > mejorHormiga.getContribucion()) {
+        
             mejorHormiga = new Hormiga(colonia.get(indexMejorH));
-        }
 
         return indexMejorH;
 
