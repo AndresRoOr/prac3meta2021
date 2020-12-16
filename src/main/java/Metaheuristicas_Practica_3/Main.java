@@ -24,7 +24,6 @@ import javax.swing.UIManager;
  */
 public class Main {
 
-    
     public static Consola console = new Consola();
     public static GestorLog gestor = new GestorLog("");
     public static final ExecutorService exec = Executors.newFixedThreadPool(
@@ -73,25 +72,27 @@ public class Main {
                 System.exit(0);
             }
 
-            Metaheuristicas M1 = new Metaheuristicas(config.getDirectoriosDatos().get(0),
-            config.getDirectoriosDatos().get(0), config);
-            M1.lector_Archivos();
+            for (int i = 0; i < config.getDirectoriosDatos().size(); i++) {
+                Metaheuristicas M1 = new Metaheuristicas(config.getDirectoriosDatos().get(i),
+                        config.getDirectoriosDatos().get(i), config);
+                M1.lector_Archivos();
 
-            switch (console.getEleccion()) {
+                switch (console.getEleccion()) {
 
-                case 1:
-                    
-                    M1.coloniaHormigas();
-                    break;
-                    
-                case 2:
-                    config = null;
-                    config = new Configurador("./config.txt");
-                    console.restaurarEleccion();
-                    break;
-                   
+                    case 1:
+
+                        M1.coloniaHormigas();
+                        break;
+
+                    case 2:
+                        config = null;
+                        config = new Configurador("./config.txt");
+                        console.restaurarEleccion();
+                        break;
+
+                }
+                M1 = null;
             }
-            M1 = null;
             console.restaurarEleccion();
         }
         exec.shutdownNow();
