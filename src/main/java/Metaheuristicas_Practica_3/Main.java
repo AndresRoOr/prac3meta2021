@@ -80,7 +80,6 @@ public class Main {
                     case 1:
 
                         M1.coloniaHormigas();
-                        console.restaurarEleccion();
                         break;
 
                     default:
@@ -92,9 +91,9 @@ public class Main {
             if(console.getEleccion()==2){
                 config = null;
                 config = new Configurador("./config.txt");
-                console.restaurarEleccion();
+                
             }
-            
+            console.restaurarEleccion();
         }
         exec.shutdownNow();
         System.exit(0);
