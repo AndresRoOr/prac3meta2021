@@ -31,11 +31,13 @@ public class Greedy {
      * @author David Díaz Jiménez
      * @date 27/09/2020
      * @param archivoDatos Archivo Contiene los datos sobre los que operar
+     * @param g GestorLog Encargado de guardar los datos Log
      */
     public Greedy(Archivo archivoDatos) {
         _archivoDatos = archivoDatos;
         _suma_Resultado = 0.0f;
         _solucionB = new HashSet<>();
+
     }
 
     /**
@@ -59,6 +61,7 @@ public class Greedy {
 
         while (!FuncionSolucion()) {
 
+
             candidato = FuncionSeleccion(candidatos, ultimo);
 
             if (FuncionFactible(candidato.getCandidato())) {
@@ -71,6 +74,7 @@ public class Greedy {
 
             ite++;
         }
+        
         return calculoValorSolucion();
     }
 
@@ -113,7 +117,8 @@ public class Greedy {
         while (iterador.hasNext()) {
             candidato = iterador.next();
 
-            candidato.setCoste((float) _archivoDatos.getMatriz()[ultimo][candidato.getCandidato()]);
+            candidato.setCoste(_archivoDatos.getMatrizCostes()
+                    [ultimo][candidato.getCandidato()]);
 
             if (candidato.getCoste() > max) {
                 max = candidato.getCoste();
@@ -168,6 +173,21 @@ public class Greedy {
     }
 
     /**
+     * @brief Muestra los resultados del algoritmo Greedy por pantalla.
+     * @author Andrés Rojas Ortega
+     * @author David Díaz Jiménez
+     * @date 27/09/2020
+     */
+    void PresentarResultados() {
+        _suma_Resultado = calculoValorSolucion();
+        Main.console.presentarSalida("Coste de la solución: " + _suma_Resultado + "\n");
+
+        _solucionB = null;
+
+        System.out.println("");
+    }
+
+    /**
      * @brief Calcula el valor heurístico de un conjunto solución
      * @author Andrés Rojas Ortega
      * @author David Díaz Jiménez
@@ -184,7 +204,7 @@ public class Greedy {
             int a = (int) sol[i];
             for (int j = i + 1; j < sol.length; j++) {
                 int b = (int) sol[j];
-                coste += _archivoDatos.getMatriz()[a][b];
+                coste += _archivoDatos.getMatrizCostes()[a][b];
             }
         }
 

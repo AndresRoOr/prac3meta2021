@@ -473,8 +473,9 @@ public class ColoniaHormigas {
             }
         }
         
+        if(valorMejor >= mejorHormiga.getContribucion()){
             mejorHormiga = new Hormiga(colonia.get(indexMejorH));
-
+        }
         return indexMejorH;
 
     }

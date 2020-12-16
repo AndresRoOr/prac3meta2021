@@ -101,6 +101,11 @@ public final class Metaheuristicas {
             for (Archivo ar : archivos) {
 
                 int ite = 1;
+                
+                Greedy gredy = new Greedy(ar);
+                Random_p semGre = new Random_p();
+                semGre.Set_random(config.getSemilla());
+                float greedy = gredy.greedy(semGre);
 
                 while (ite <= 5) {
                     Main.console.setValue(aumento / 2);
@@ -117,14 +122,14 @@ public final class Metaheuristicas {
                     Random_p sem = new Random_p();
                     sem.Set_random(config.getSemilla());
 
-                    Greedy gredy = new Greedy(ar);
+                    
                     
                     ColoniaHormigas ch = new ColoniaHormigas(ar, Main.gestor, 
                             config.getIteraciones(), 
                             config.getNumeroHormigas(), sem, 
                             config.getQ0(),config.getPhi(), config.getBeta(),
                             config.getRho(), config.getDelta(),
-                            config.getAlfa(), gredy.greedy(sem));
+                            config.getAlfa(),greedy);
 
                     t.startTimer();
 
