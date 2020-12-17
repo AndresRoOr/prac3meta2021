@@ -29,7 +29,6 @@ public final class Hormiga implements Comparable<Hormiga> {
     //problema
     private Set<Integer> aux;
     private double _contribucion;///<Coste que aporta a la soluci�n
-    private boolean recalcular;///<Indica si es necesario recalcular el coste
 
     /**
      * @brief Constructor parametrizado de la clase Hormiga
@@ -42,7 +41,6 @@ public final class Hormiga implements Comparable<Hormiga> {
     public Hormiga(ArrayList<Integer> _elementos, float _contribucion) {
         this.elementos = _elementos;
         this._contribucion = _contribucion;
-        this.recalcular = false;
         this.aux = new HashSet<>(elementos);
 
     }
@@ -59,7 +57,6 @@ public final class Hormiga implements Comparable<Hormiga> {
     public Hormiga(ArrayList<Integer> _elementos, float _contribucion, boolean recal) {
         this.elementos = _elementos;
         this._contribucion = _contribucion;
-        this.recalcular = recal;
         this.aux = new HashSet<>(elementos);
 
     }
@@ -74,7 +71,6 @@ public final class Hormiga implements Comparable<Hormiga> {
     public Hormiga(Hormiga otro) {
         this.elementos = new ArrayList<>(otro.getElementos());
         this._contribucion = otro.getContribucion();
-        this.recalcular = false;
         this.aux = new HashSet<>(elementos);
 
     }
@@ -149,28 +145,6 @@ public final class Hormiga implements Comparable<Hormiga> {
      */
     public void setEloementos(ArrayList<Integer> _elementos) {
         this.elementos = _elementos;
-    }
-
-    /**
-     * @brief M�todo getter del atributo recalcular
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
-     * @date 22/11/2020
-     * @return recalcular boolean
-     */
-    public boolean isRecalcular() {
-        return recalcular;
-    }
-
-    /**
-     * @brief M�todo setter del atributo recalcular
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
-     * @date 22/11/2020
-     * @param recalcular boolean 
-     */
-    public void setRecalcular(boolean recalcular) {
-        this.recalcular = recalcular;
     }
 
 }

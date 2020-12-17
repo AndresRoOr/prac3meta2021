@@ -29,7 +29,6 @@ public final class Archivo {
     private Integer _tama_Matriz;///<Tama�o de la matriz de datos
     private Integer _tama_Solucion;///<Tama�o de la soluci�n             
     private float[][] _matriz;///<Matriz que almacena los datos del archivo
-    private double[][] _matrizHeuristica;
     
 
     /**
@@ -65,17 +64,15 @@ public final class Archivo {
                         _tama_Matriz = Integer.parseInt(linea[0]);
                         _tama_Solucion = Integer.parseInt(linea[1]);
                         _matriz = new float[_tama_Matriz][_tama_Matriz];
-                        _matrizHeuristica = 
-                                new double[_tama_Matriz][_tama_Matriz];
                     } else {
                         Integer i = (Integer.parseInt(linea[0]));
                         Integer j = (Integer.parseInt(linea[1]));
                         _matriz[i][j] = (Float.parseFloat(linea[2]));
                         _matriz[j][i] = (Float.parseFloat(linea[2]));
-                        _matrizHeuristica[j][i] = 
-                                (1/(Double.parseDouble(linea[2])));
-                        _matrizHeuristica[i][j] = 
-                                (1/(Double.parseDouble(linea[2])));
+                        //_matrizHeuristica[j][i] = 
+                                //(1/(Double.parseDouble(linea[2])));
+                        //_matrizHeuristica[i][j] = 
+                          //      (1/(Double.parseDouble(linea[2])));
                     }
                     num_linea++;
                 }
@@ -131,18 +128,6 @@ public final class Archivo {
         return _tama_Solucion;
     }
 
-    /**
-     * @brief M�todo getter para el par�metro _matriz
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
-     * @date 27/09/2020
-     * @return _matriz double[][]
-     */
-    public double [][] getMatriz() {
-        return _matrizHeuristica;
-    }
-    
-    
     public float [][] getMatrizCostes() {
         return _matriz;
     }

@@ -222,7 +222,7 @@ public final class Consola extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonGreedyActionPerformed
 
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
-        Main.exec.shutdownNow();
+        Main.exec.shutdown();
         System.exit(0);
     }//GEN-LAST:event_jButtonExitActionPerformed
 

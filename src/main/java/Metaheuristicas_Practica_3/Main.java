@@ -6,7 +6,6 @@
 package Metaheuristicas_Practica_3;
 
 import com.formdev.flatlaf.FlatLightLaf;
-import com.formdev.flatlaf.ui.FlatListCellBorder;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
