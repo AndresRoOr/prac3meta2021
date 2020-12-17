@@ -138,11 +138,11 @@ public final class Metaheuristicas {
                     double tiempo = t.stopTimer();
 
                     Main.console.presentarSalida(
-                            "Datos de la soluci�n al problema: " 
+                            "Datos de la solución al problema: " 
                                     + ar.getNombre() + ", con SEMILLA: "
                                     + config.getSemilla());
                     Main.console.presentarSalida(
-                            "Tiempo de ejecuci�n del algoritmo: " + tiempo
+                            "Tiempo de ejecución del algoritmo: " + tiempo
                                     + " milisegundos");
 
                     ch.PresentarResultados();
