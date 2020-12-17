@@ -33,6 +33,8 @@ public class ColoniaHormigas {
         @Override
         public Boolean call() throws Exception {
             
+            // Invocamos a la función de cálculo de las LRC  
+            
             ArrayList<Integer> LRC = generarLRC(j);
             
             ArrayList<Double> ProbabilidadTransicion = new ArrayList<>();
@@ -41,6 +43,9 @@ public class ColoniaHormigas {
             
             ArrayList<Integer> elementosHormiga = colonia.get(j).getElementos();
 
+            // Comprobamos que regla aplicar para la transición, en función del
+            // valor de q
+            
             double q = aleatoriosq.get(j);
 
             if (q0 <= q) {
@@ -48,6 +53,8 @@ public class ColoniaHormigas {
                 int elemento = 0;
                 double mayorValor = Double.MAX_VALUE;
 
+                // Calculamos el elemento de la LRC que más aporta
+                
                 for (Integer eleLrc : LRC) {
                     
                     sumatoria = 0;
@@ -76,6 +83,9 @@ public class ColoniaHormigas {
                 Hormiga aux = new Hormiga(colonia.get(j));
                 for (Integer eleLrc : LRC) {
 
+                    // Calculamos el valor superior de la formula de transición,
+                    // para cada elemento de la LRC
+                    
                     double valorSuperior = 0.0;
                    
                     for (Integer eleHormiga : aux.getElementos()) {
@@ -86,6 +96,7 @@ public class ColoniaHormigas {
                                         alfa);
                     }
 
+                    // Calculamos la sumatoria
                     sumatoria += valorSuperior;
                     ProbabilidadTransicion.add(valorSuperior);
 
@@ -93,6 +104,9 @@ public class ColoniaHormigas {
 
                 double total = 0.0;
                 int index = 0;
+                
+                // Obtemos las probabilidades
+                
                 for (Double valor : ProbabilidadTransicion) {
 
                     Double prob = (valor / sumatoria);
@@ -105,6 +119,8 @@ public class ColoniaHormigas {
                 index = 0;
                 double probabilidadAcumulada = 0.0;
 
+                // Calculamos el rango al que pertenece el uniforme
+                
                 for (Double ProDouble : ProbabilidadTransicion) {
 
                     probabilidadAcumulada += ProDouble;
@@ -135,7 +151,7 @@ public class ColoniaHormigas {
     private final int tamMatriz;
     private final int maxItereaciones;
     private int iteraciones;
-    private float q0;
+    private final float q0;
     private final float phi;
     private final float beta;
     private final float rho;
@@ -183,6 +199,9 @@ public class ColoniaHormigas {
 
             for (int i = 1; i < tamHormiga; i++) {
                 
+                //Creamos los números aleatorios, para que el orden de ejecución
+                // de los hilos no altere el resultado
+                
                 for(int b = 0; b < tamColonia; b++){
                     aleatorios.add(generadorAleatorio.Randfloat(0,1));
                     aleatoriosq.add(generadorAleatorio.Randfloat(0, 1));
@@ -190,19 +209,21 @@ public class ColoniaHormigas {
                 
                 ArrayList<Future<Boolean>> futures = new ArrayList<>();
                 
+                //Lanzamos el cálculo de las LRC y la regla de Transición en un
+                //hilo independiente para cada hormiga
+                
                 for (int a = 0; a < tamColonia; a++) {
                     
                     futures.add(Main.exec.submit(new ApliclarRTTask(a)));
                     
                 }
                 
+                //Esperamos a que finalizen todos los hilos
+                
                 for (int j = 0; j < 10; j++) {
                     try {
                         futures.get(j).get();
-                    } catch (InterruptedException ex) {
-                        Logger.getLogger(ColoniaHormigas.class.getName())
-                                .log(Level.SEVERE, null, ex);
-                    } catch (ExecutionException ex) {
+                    } catch (InterruptedException | ExecutionException ex) {
                         Logger.getLogger(ColoniaHormigas.class.getName())
                                 .log(Level.SEVERE, null, ex);
                     }
@@ -495,6 +516,7 @@ public class ColoniaHormigas {
 
         Main.console.presentarSalida("Mejor Coste:  "
                 + mejorHormiga.getContribucion());
+        Main.console.presentarSalida("Iteraciones completadas: " + iteraciones);
         Main.console.presentarSalida("");
 
     }
