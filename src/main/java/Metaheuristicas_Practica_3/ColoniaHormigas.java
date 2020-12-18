@@ -60,8 +60,6 @@ public class ColoniaHormigas {
                     
                     sumatoria = 0;
                     
-                    
-
                     for (Integer eleHormiga : elementosHormiga) {
 
                         sumatoria
@@ -179,7 +177,7 @@ public class ColoniaHormigas {
         this.generadorAleatorio = _semilla;
         this.tamMatriz = archivoDatos.getTama_Matriz();
         this.maxItereaciones = _iteraciones;
-        this.iteraciones = 1;
+        this.iteraciones = 0;
         this.alfa = _alfa;
         this.beta = _beta;
         this.rho = _rho;

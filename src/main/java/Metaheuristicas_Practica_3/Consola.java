@@ -231,6 +231,7 @@ public final class Consola extends javax.swing.JFrame {
         
          eleccion = 2;
          jTextArea.removeAll();
+         jTextArea.setText("Cargando archivo de configuración...");
          this.jButtonGreedy.setEnabled(false);
          this.jButtonReload.setEnabled(false);
     }//GEN-LAST:event_jButtonReloadActionPerformed

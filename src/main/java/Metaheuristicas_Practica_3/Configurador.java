@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.BufferedReader;
+import java.util.Arrays;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -60,10 +61,9 @@ public class Configurador {
                 switch (split[0]) {
                     case "Datos":
                         String[] v = split[1].split(" ");
-                        for (int i = 0; i < v.length; i++) {
-                            directoriosDatos.add(v[i]);
-                        }
+                        directoriosDatos.addAll(Arrays.asList(v));
                         break;
+
 
                     case "Semilla":
                         semilla = Long.parseLong(split[1]);
@@ -104,7 +104,8 @@ public class Configurador {
             Main.console.borrarTexto();
             Main.console.presentarSalida(
                     "Archivo de configuración cargado");
-            
+            Main.console.presentarSalida("Directorios de datos: " + 
+                    directoriosDatos);
 
         } catch (IOException e) {
             Main.console.borrarTexto();

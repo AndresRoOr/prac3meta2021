@@ -91,6 +91,7 @@ public class Main {
                 config = null;
                 config = new Configurador("./config.txt");
                 
+                
             }
             console.restaurarEleccion();
         }
