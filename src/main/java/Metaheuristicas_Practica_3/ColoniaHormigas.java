@@ -41,7 +41,8 @@ public class ColoniaHormigas {
 
             double sumatoria = 0;
             
-            ArrayList<Integer> elementosHormiga = colonia.get(j).getElementos();
+            ArrayList<Integer> elementosHormiga = 
+                    new ArrayList<>(colonia.get(j).getElementos());
 
             // Comprobamos que regla aplicar para la transición, en función del
             // valor de q
@@ -58,8 +59,10 @@ public class ColoniaHormigas {
                 for (Integer eleLrc : LRC) {
                     
                     sumatoria = 0;
+                    
+                    
 
-                    for (Integer eleHormiga : colonia.get(j).getElementos()) {
+                    for (Integer eleHormiga : elementosHormiga) {
 
                         sumatoria
                             += Math.pow(matrizFeromonas[eleHormiga][eleLrc],
@@ -80,6 +83,7 @@ public class ColoniaHormigas {
                 colonia.get(j).add(elemento);
 
             } else {
+                
                 Hormiga aux = new Hormiga(colonia.get(j));
                 for (Integer eleLrc : LRC) {
 
@@ -230,6 +234,7 @@ public class ColoniaHormigas {
                 }
 
                 actualizarFeromonaLocal();
+                
                 aleatorios.clear();
                 aleatoriosq.clear();
 
@@ -406,16 +411,17 @@ public class ColoniaHormigas {
 
         for (int i = 0; i < colonia.size(); i++) {
             int size = colonia.get(i).getElementos().size();
+            ArrayList<Integer> aux = colonia.get(i).getElementos();
             for (int j = 0; j <= size-1; j++){
                 
-                int a = colonia.get(i).getElementos().get(j);
+                int a = aux.get(j);
                 
-                int b = colonia.get(i).getElementos().get(size - 1);
+                int b = aux.get(size - 1);
 
                 double valorAnterior = matrizFeromonas[a][b];
 
                 matrizFeromonas[a][b] = (1 - rho) * valorAnterior
-                        + rho * ( costeGreedy);
+                        + rho * (costeGreedy);
                 matrizFeromonas[b][a] = (1 - rho) * valorAnterior
                         + rho * (costeGreedy);
             }
