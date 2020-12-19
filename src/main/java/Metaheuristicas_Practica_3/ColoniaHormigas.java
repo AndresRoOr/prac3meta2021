@@ -20,6 +20,21 @@ import java.util.logging.Logger;
  * @author David
  */
 public class ColoniaHormigas {
+    
+    private class costesTask implements Callable<Float>{
+        private int j;
+
+        public costesTask(int j) {
+            this.j = j;
+        }
+
+        @Override
+        public Float call() throws Exception {
+            return calcularCoste(colonia.get(j).getElementos());
+        }
+        
+        
+    }
 
     private class ApliclarRTTask implements Callable<Boolean> {
 
@@ -184,7 +199,7 @@ public class ColoniaHormigas {
         this.delta = _delta;
         this.phi = _phi;
         this.q0 = _q0;
-        this.costeGreedy = _coste;
+        this.costeGreedy = 1000;
         this.aleatorios = new ArrayList<>();
         this.aleatoriosq = new ArrayList<>();
     }
@@ -319,94 +334,22 @@ public class ColoniaHormigas {
         return LRC;
     }
 
-    /*
-    private void aplicarReglaTransicion(ArrayList<Integer> LRC, int j) {
-
-        ArrayList<Double> ProbabilidadTransicion = new ArrayList<>();
-
-        double sumatoria = 0;
-
-        ArrayList<Integer> elementosHormiga = colonia.get(j).getElementos();
-
-        //int ultimoElemento = elementosHormiga.get(elementosHormiga.size()-1);
-        double q = generadorAleatorio.Randfloat(0, 1);
-
-        if (q0 <= q) {
-
-            int elemento = 0;
-            double mayorValor = Double.MAX_VALUE;
-
-            for (Integer eleLrc : LRC) {
-
-                for (Integer eleHormiga : colonia.get(j).getElementos()) {
-
-                    sumatoria
-                            += Math.pow(matrizFeromonas[eleHormiga][eleLrc],
-                                    alfa)
-                            * Math.pow(archivoDatos.getMatrizCostes()
-                                [eleHormiga][eleLrc], beta);
-                }
-
-                if (mayorValor == Double.MAX_VALUE) {
-                    mayorValor = sumatoria;
-                }
-
-                if (sumatoria >= mayorValor) {
-                    sumatoria = mayorValor;
-                    elemento = eleLrc;
-                }
-            }
-            colonia.get(j).add(elemento);
-
-        } else {
-
-            for (Integer eleLrc : LRC) {
-
-                double valorSuperior = 0.0;
-                for (Integer eleHormiga : colonia.get(j).getElementos()) {
-
-                    valorSuperior
-                            += Math.pow(matrizFeromonas[eleHormiga][eleLrc],
-                                    alfa)
-                            * Math.pow(archivoDatos.getMatrizCostes()
-                                [eleHormiga][eleLrc], beta);
-                }
-
-                sumatoria += valorSuperior;
-                ProbabilidadTransicion.add(valorSuperior);
-
-            }
-
-            double total = 0.0;
-            int index = 0;
-            for (Double valor : ProbabilidadTransicion) {
-
-                Double prob = (valor / sumatoria);
-                ProbabilidadTransicion.set(index, prob);
-                total += valor;
-                index++;
-            }
-
-            double uniforme = generadorAleatorio.Randfloat(0, 1);
-            index = 0;
-            double probabilidadAcumulada = ProbabilidadTransicion.get(0);
-
-            for (Double ProDouble : ProbabilidadTransicion) {
-
-                probabilidadAcumulada += ProDouble;
-
-                if (uniforme <= probabilidadAcumulada) {
-                    colonia.get(j).add(LRC.get(index));
-                    break;
-                }
-                index++;
+    private void actualizarFeromonaLocal() {
+        
+        ArrayList<Future<Float>> future = new ArrayList<>();
+        
+        for(int i = 0; i< colonia.size();i++){
+            future.add(Main.exec.submit(new costesTask(i)));
+        }
+        
+        for(int i = 0; i< colonia.size();i++){
+            try {
+                future.get(i).get();
+            } catch (InterruptedException | ExecutionException ex) {
+                Logger.getLogger(ColoniaHormigas.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        LRC.clear();
-    }*/
-
-    private void actualizarFeromonaLocal() {
-
+        
         for (int i = 0; i < colonia.size(); i++) {
             int size = colonia.get(i).getElementos().size();
             ArrayList<Integer> aux = colonia.get(i).getElementos();
@@ -418,10 +361,14 @@ public class ColoniaHormigas {
 
                 double valorAnterior = matrizFeromonas[a][b];
 
-                matrizFeromonas[a][b] = (1 - rho) * valorAnterior
-                        + rho * (costeGreedy);
-                matrizFeromonas[b][a] = (1 - rho) * valorAnterior
-                        + rho * (costeGreedy);
+                try {
+                    matrizFeromonas[a][b] = (1 - rho) * valorAnterior
+                            + rho * (1/(tamColonia*future.get(i).get()));
+                    matrizFeromonas[b][a] = (1 - rho) * valorAnterior
+                            + rho * (1/(tamColonia*future.get(i).get()));
+                } catch (InterruptedException | ExecutionException ex) {
+                    Logger.getLogger(ColoniaHormigas.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         }
     }
