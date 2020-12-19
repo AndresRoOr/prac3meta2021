@@ -20,48 +20,31 @@ import java.util.logging.Logger;
  * @author David
  */
 public class ColoniaHormigas {
-    
-    private class costesTask implements Callable<Float>{
-        private int j;
-
-        public costesTask(int j) {
-            this.j = j;
-        }
-
-        @Override
-        public Float call() throws Exception {
-            return calcularCoste(colonia.get(j).getElementos());
-        }
-        
-        
-    }
 
     private class ApliclarRTTask implements Callable<Boolean> {
 
         private final int j;
 
-        public ApliclarRTTask( int j) {
+        public ApliclarRTTask(int j) {
 
             this.j = j;
         }
 
         @Override
         public Boolean call() throws Exception {
-            
+
             // Invocamos a la función de cálculo de las LRC  
-            
             ArrayList<Integer> LRC = generarLRC(j);
-            
+
             ArrayList<Double> ProbabilidadTransicion = new ArrayList<>();
 
             double sumatoria = 0;
-            
-            ArrayList<Integer> elementosHormiga = 
-                    new ArrayList<>(colonia.get(j).getElementos());
+
+            ArrayList<Integer> elementosHormiga
+                    = new ArrayList<>(colonia.get(j).getElementos());
 
             // Comprobamos que regla aplicar para la transición, en función del
             // valor de q
-            
             double q = aleatoriosq.get(j);
 
             if (q0 <= q) {
@@ -70,18 +53,16 @@ public class ColoniaHormigas {
                 double mayorValor = Double.MAX_VALUE;
 
                 // Calculamos el elemento de la LRC que más aporta
-                
                 for (Integer eleLrc : LRC) {
-                    
+
                     sumatoria = 0;
-                    
+
                     for (Integer eleHormiga : elementosHormiga) {
 
                         sumatoria
-                            += Math.pow(matrizFeromonas[eleHormiga][eleLrc],
+                                += Math.pow(matrizFeromonas[eleHormiga][eleLrc],
                                         alfa)
-                            * Math.pow(archivoDatos.getMatrizCostes()
-                                    [eleHormiga][eleLrc], beta);
+                                * Math.pow(archivoDatos.getMatrizCostes()[eleHormiga][eleLrc], beta);
                     }
 
                     if (mayorValor == Double.MAX_VALUE) {
@@ -96,19 +77,17 @@ public class ColoniaHormigas {
                 colonia.get(j).add(elemento);
 
             } else {
-                
+
                 Hormiga aux = new Hormiga(colonia.get(j));
                 for (Integer eleLrc : LRC) {
 
                     // Calculamos el valor superior de la formula de transición,
                     // para cada elemento de la LRC
-                    
                     double valorSuperior = 0.0;
-                   
+
                     for (Integer eleHormiga : aux.getElementos()) {
                         valorSuperior
-                                += Math.pow(archivoDatos.getMatrizCostes()
-                                        [eleHormiga][eleLrc], beta)
+                                += Math.pow(archivoDatos.getMatrizCostes()[eleHormiga][eleLrc], beta)
                                 * Math.pow(matrizFeromonas[eleHormiga][eleLrc],
                                         alfa);
                     }
@@ -121,9 +100,8 @@ public class ColoniaHormigas {
 
                 double total = 0.0;
                 int index = 0;
-                
+
                 // Obtemos las probabilidades
-                
                 for (Double valor : ProbabilidadTransicion) {
 
                     Double prob = (valor / sumatoria);
@@ -137,7 +115,6 @@ public class ColoniaHormigas {
                 double probabilidadAcumulada = 0.0;
 
                 // Calculamos el rango al que pertenece el uniforme
-                
                 for (Double ProDouble : ProbabilidadTransicion) {
 
                     probabilidadAcumulada += ProDouble;
@@ -209,34 +186,31 @@ public class ColoniaHormigas {
         inicializarFeromona();
 
         double time = System.currentTimeMillis();
-        while (iteraciones <= maxItereaciones && System.currentTimeMillis() -
-                time<= 600000) {
+        while (iteraciones <= maxItereaciones && System.currentTimeMillis()
+                - time <= 600000) {
 
             inicializarColonia();
 
             for (int i = 1; i < tamHormiga; i++) {
-                
+
                 //Creamos los números aleatorios, para que el orden de ejecución
                 // de los hilos no altere el resultado
-                
-                for(int b = 0; b < tamColonia; b++){
-                    aleatorios.add(generadorAleatorio.Randfloat(0,1));
+                for (int b = 0; b < tamColonia; b++) {
+                    aleatorios.add(generadorAleatorio.Randfloat(0, 1));
                     aleatoriosq.add(generadorAleatorio.Randfloat(0, 1));
                 }
-                
+
                 ArrayList<Future<Boolean>> futures = new ArrayList<>();
-                
+
                 //Lanzamos el cálculo de las LRC y la regla de Transición en un
                 //hilo independiente para cada hormiga
-                
                 for (int a = 0; a < tamColonia; a++) {
-                    
+
                     futures.add(Main.exec.submit(new ApliclarRTTask(a)));
-                    
+
                 }
-                
+
                 //Esperamos a que finalizen todos los hilos
-                
                 for (int j = 0; j < 10; j++) {
                     try {
                         futures.get(j).get();
@@ -247,7 +221,7 @@ public class ColoniaHormigas {
                 }
 
                 actualizarFeromonaLocal();
-                
+
                 aleatorios.clear();
                 aleatoriosq.clear();
 
@@ -258,7 +232,7 @@ public class ColoniaHormigas {
             colonia.clear();
 
             iteraciones++;
-            
+
             System.out.println(mejorHormiga.getContribucion());
         }
     }
@@ -291,7 +265,7 @@ public class ColoniaHormigas {
 
         float max = 0;
         float min = Float.MAX_VALUE;
-        
+
         ArrayList<Integer> elementosHormiga = colonia.get(j).getElementos();
 
         for (int a = 0; a < tamMatriz; a++) {
@@ -335,40 +309,21 @@ public class ColoniaHormigas {
     }
 
     private void actualizarFeromonaLocal() {
-        
-        ArrayList<Future<Float>> future = new ArrayList<>();
-        
-        for(int i = 0; i< colonia.size();i++){
-            future.add(Main.exec.submit(new costesTask(i)));
-        }
-        
-        for(int i = 0; i< colonia.size();i++){
-            try {
-                future.get(i).get();
-            } catch (InterruptedException | ExecutionException ex) {
-                Logger.getLogger(ColoniaHormigas.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        
+
         for (int i = 0; i < colonia.size(); i++) {
             int size = colonia.get(i).getElementos().size();
             ArrayList<Integer> aux = colonia.get(i).getElementos();
-            for (int j = 0; j <= size-1; j++){
-                
+            for (int j = 0; j <= size - 1; j++) {
+
                 int a = aux.get(j);
-                
+
                 int b = aux.get(size - 1);
 
                 double valorAnterior = matrizFeromonas[a][b];
-
-                try {
-                    matrizFeromonas[a][b] = (1 - rho) * valorAnterior
-                            + rho * (1/(tamColonia*future.get(i).get()));
-                    matrizFeromonas[b][a] = (1 - rho) * valorAnterior
-                            + rho * (1/(tamColonia*future.get(i).get()));
-                } catch (InterruptedException | ExecutionException ex) {
-                    Logger.getLogger(ColoniaHormigas.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                matrizFeromonas[a][b] = (1 - rho) * valorAnterior
+                        + rho * (1 / (tamColonia * costeGreedy));
+                matrizFeromonas[b][a] = (1 - rho) * valorAnterior
+                        + rho * (1 / (tamColonia * costeGreedy));
             }
         }
     }
@@ -401,7 +356,7 @@ public class ColoniaHormigas {
 
         //Evaporacion
         for (int i = 0; i < tamMatriz - 1; i++) {
-            for (int j = i+1 ; j < tamMatriz; j++) {
+            for (int j = i + 1; j < tamMatriz; j++) {
                 double valorAnterior
                         = matrizFeromonas[i][j];
 
@@ -415,7 +370,7 @@ public class ColoniaHormigas {
                 = colonia.get(posMHL).getElementos().toArray();
 
         int length = elementos.length;
-        
+
         double contribucion = colonia.get(posMHL).getContribucion();
 
         for (int i = 0; i < length - 1; i++) {
@@ -446,8 +401,8 @@ public class ColoniaHormigas {
                 valorMejor = coste;
             }
         }
-        
-        if(valorMejor >= mejorHormiga.getContribucion()){
+
+        if (valorMejor >= mejorHormiga.getContribucion()) {
             mejorHormiga = new Hormiga(colonia.get(indexMejorH));
         }
         return indexMejorH;
