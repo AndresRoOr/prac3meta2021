@@ -64,11 +64,11 @@ public final class GestorLog {
     }
 
     /**
-     * @brief Escribe la información guardada en line en el archivo
+     * @brief Escribe la informaci�n guardada en line en el archivo
      * @author Andrés Rojas Ortega
      * @author David Díaz Jiménez
      * @date 02/11/2020
-     * @param linea String Cadena con la información para guardar
+     * @param linea String Cadena con la informaci�n para guardar
      */
     void escribirArchivo(String linea) {
         pw.println(linea);

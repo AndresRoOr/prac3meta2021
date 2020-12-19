@@ -10,73 +10,75 @@ package Metaheuristicas_Practica_3;
  * @author David
  */
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
- * @brief Clase que almacena la información de cada elemento que forma parte de
- * una población
+ * @brief Clase que almacena la informaciï¿½n de cada elemento que forma parte de
+ * una poblaciï¿½n
  * @class Hormiga
- * @author Andrés Rojas Ortega
- * @author David Díaz Jiménez
+ * @author AndrÃ©s Rojas Ortega
+ * @author David DÃ­az JimÃ©nez
  * @date 22/11/2020
  */
 public final class Hormiga implements Comparable<Hormiga> {
 
     ///Atributos de la clase:
-    private Set<Integer> cromosoma;///<Conjunte de genes solución del problema
-    private float _contribucion;///<Coste que aporta a la solución
-    private boolean recalcular;///<Indica si es necesario recalcular el coste
+    private ArrayList<Integer> elementos;///<Conjunte de genes soluciï¿½n del 
+    //problema
+    private Set<Integer> aux;
+    private double _contribucion;///<Coste que aporta a la soluciï¿½n
 
     /**
      * @brief Constructor parametrizado de la clase Hormiga
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 22/11/2020
-     * @param cromo Set<Integer>
+     * @param _elementos  Set<Integer>
      * @param _contribucion Float
      */
-    public Hormiga(Set<Integer> cromo, float _contribucion) {
-        this.cromosoma = cromo;
+    public Hormiga(ArrayList<Integer> _elementos, float _contribucion) {
+        this.elementos = _elementos;
         this._contribucion = _contribucion;
-        this.recalcular = false;
+        this.aux = new HashSet<>(elementos);
 
     }
 
     /**
      * @brief Constructor parametrizado de la clase Hormiga
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 22/11/2020
-     * @param cromo Set<Integer>
+     * @param _elementos Set<Integer>
      * @param _contribucion float
      * @param recal boolean
      */
-    public Hormiga(Set<Integer> cromo, float _contribucion, boolean recal) {
-        this.cromosoma = cromo;
+    public Hormiga(ArrayList<Integer> _elementos, float _contribucion, boolean recal) {
+        this.elementos = _elementos;
         this._contribucion = _contribucion;
-        this.recalcular = recal;
+        this.aux = new HashSet<>(elementos);
 
     }
 
     /**
      * @brief Constructor por copia de la clase Cromosoma
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
+     * @author AndrÃ©s Rojas Ortega
      * @date 22/11/2020
      * @param otro Hormiga
      */
     public Hormiga(Hormiga otro) {
-        this.cromosoma = new HashSet<>(otro.getCromosoma());
+        this.elementos = new ArrayList<>(otro.getElementos());
         this._contribucion = otro.getContribucion();
-        this.recalcular = false;
+        this.aux = new HashSet<>(elementos);
 
     }
 
     @Override
     public int compareTo(Hormiga otro) {
-        Float ele1 = this.getContribucion();
-        Float ele2 = otro.getContribucion();
+        Double ele1 = this.getContribucion();
+        Double ele2 = otro.getContribucion();
         int comparativa = ele1.compareTo(ele2);
 
         if (comparativa < 0) {
@@ -88,22 +90,34 @@ public final class Hormiga implements Comparable<Hormiga> {
         }
 
     }
-
-    /**
-     * @brief Metodo getter del atributo _contribucion
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
-     * @date 02/11/2020
-     * @return _contribucion float
-     */
-    public float getContribucion() {
-        return this._contribucion;
+    
+    public boolean contains(int elemento){
+        
+        return this.aux.contains(elemento); 
     }
 
     /**
+     * @brief Metodo getter del atributo _contribucion
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
+     * @date 02/11/2020
+     * @return _contribucion float
+     */
+    public double getContribucion() {
+        return this._contribucion;
+    }
+
+    public void add(int elemento){
+        
+        this.aux.add(elemento);
+        this.elementos.add(elemento);
+        
+    }
+    
+    /**
      * @brief Metodo setter del atributo _contribucion
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 22/11/2020
      * @param cont float
      */
@@ -112,47 +126,25 @@ public final class Hormiga implements Comparable<Hormiga> {
     }
 
     /**
-     * @brief Método getter del atributo cromosoma
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
+     * @brief Mï¿½todo getter del atributo cromosoma
+     * @author David DÃ­az JimÃ©nez
+     * @author AndrÃ©s Rojas Ortega
      * @date 22/11/2020
-     * @return cromosoma Set<Integer>
+     * @return elementos Set<Integer>
      */
-    public Set<Integer> getCromosoma() {
-        return cromosoma;
+    public ArrayList<Integer> getElementos() {
+        return elementos;
     }
 
     /**
-     * @brief Método setter del atributo cromosoma
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
+     * @brief Mï¿½todo setter del atributo cromosoma
+     * @author David DÃ­az JimÃ©nez
+     * @author AndrÃ©s Rojas Ortega
      * @date 22/11/2020
-     * @param cromosoma Set<Integer> 
+     * @param _elementos  Set<Integer> 
      */
-    public void setCromosoma(Set<Integer> cromosoma) {
-        this.cromosoma = cromosoma;
-    }
-
-    /**
-     * @brief Método getter del atributo recalcular
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
-     * @date 22/11/2020
-     * @return recalcular boolean
-     */
-    public boolean isRecalcular() {
-        return recalcular;
-    }
-
-    /**
-     * @brief Método setter del atributo recalcular
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
-     * @date 22/11/2020
-     * @param recalcular boolean 
-     */
-    public void setRecalcular(boolean recalcular) {
-        this.recalcular = recalcular;
+    public void setEloementos(ArrayList<Integer> _elementos) {
+        this.elementos = _elementos;
     }
 
 }

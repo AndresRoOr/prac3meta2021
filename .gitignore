@@ -1,13 +1,4 @@
-
-# Created by https://www.gitignore.io/api/code-java,java,java-web
-# Edit at https://www.gitignore.io/?templates=code-java,java,java-web
-
-### Code-Java ###
-# Language Support for Java(TM) by Red Hat extension for Visual Studio Code - https://marketplace.visualstudio.com/items?itemName=redhat.java
-
-.project
-.classpath
-factoryConfiguration.json
+# Created by https://www.gitignore.io/api/gradle
 
 ### Java ###
 # Compiled class file
@@ -40,5 +31,23 @@ hs_err_pid*
 ## ignoring target file
 target/
 
-# End of https://www.gitignore.io/api/code-java,java,java-web
+
+### Gradle ###
+.gradle
+**/build/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+# Cache of project
+.gradletasknamecache
+
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties
+
+
+# End of https://www.gitignore.io/api/gradle
 
