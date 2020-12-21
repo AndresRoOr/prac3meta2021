@@ -24,11 +24,14 @@ public final class Consola extends javax.swing.JFrame {
      */
     public Consola() {
         List<Image> lista = new LinkedList<>();
-        lista.add(new ImageIcon("src/main/resources/icons/gen_3_16.png").getImage());
-        lista.add(new ImageIcon("src/main/resources/icons/gen_3_20.png").getImage());
-        lista.add(new ImageIcon("src/main/resources/icons/gen_3_40.png").getImage());
-        lista.add(new ImageIcon("src/main/resources/icons/gen_3_64.png").getImage());
-        lista.add(new ImageIcon("src/main/resources/icons/gen_3_128.png").getImage());
+        lista.add(new ImageIcon(
+                "src/main/resources/icons/ant_16.png").getImage());
+        lista.add(new ImageIcon(
+                "src/main/resources/icons/ant_20.png").getImage());
+        lista.add(new ImageIcon(
+                "src/main/resources/icons/ant_40.png").getImage());
+        lista.add(new ImageIcon(
+                "src/main/resources/icons/ant_64.png").getImage());
         
         initComponents();
         this.setIconImages(lista);
@@ -58,6 +61,11 @@ public final class Consola extends javax.swing.JFrame {
         return eleccion;
     }
     
+    void borrarTexto(){
+        jTextArea.removeAll();
+        jTextArea.setText("");
+    }
+    
     
     void setValue( int estado){
         jProgressBarEstado.setValue(jProgressBarEstado.getValue()+estado);
@@ -82,7 +90,7 @@ public final class Consola extends javax.swing.JFrame {
         jButtonReload = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("MetaheurÌsticas: Pr·ctica 2");
+        setTitle("Metaheur√≠sticas: Pr√°ctica 2");
         setBackground(new java.awt.Color(0, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setPreferredSize(new java.awt.Dimension(730, 355));
@@ -105,7 +113,7 @@ public final class Consola extends javax.swing.JFrame {
 
         jButtonGreedy.setBackground(new java.awt.Color(153, 153, 153));
         jButtonGreedy.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jButtonGreedy.setText("GenÈtico");
+        jButtonGreedy.setText("Colonia de hormigas");
         jButtonGreedy.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButtonGreedy.setBorderPainted(false);
         jButtonGreedy.setFocusPainted(false);
@@ -131,7 +139,7 @@ public final class Consola extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Seleccione una heurÌstica");
+        jLabel1.setText("Seleccione una heur√≠stica");
         jLabel1.setFocusable(false);
 
         jProgressBarEstado.setBackground(new java.awt.Color(34, 43, 53));
@@ -163,8 +171,8 @@ public final class Consola extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(40, 40, 40)
-                        .addComponent(jButtonGreedy, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 205, Short.MAX_VALUE)
+                        .addComponent(jButtonGreedy, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
                         .addComponent(jButtonReload, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
                         .addComponent(jButtonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -214,7 +222,7 @@ public final class Consola extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonGreedyActionPerformed
 
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
-        Main.exec.shutdownNow();
+        Main.exec.shutdown();
         System.exit(0);
     }//GEN-LAST:event_jButtonExitActionPerformed
 
@@ -223,7 +231,7 @@ public final class Consola extends javax.swing.JFrame {
         
          eleccion = 2;
          jTextArea.removeAll();
-         jTextArea.setText("Archivo de configuraci√≥n recargado");
+         jTextArea.setText("Cargando archivo de configuraci√≥n...");
          this.jButtonGreedy.setEnabled(false);
          this.jButtonReload.setEnabled(false);
     }//GEN-LAST:event_jButtonReloadActionPerformed

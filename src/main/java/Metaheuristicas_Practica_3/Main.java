@@ -18,21 +18,21 @@ import javax.swing.UIManager;
 /**
  * @brief Clase Main del programa
  * @class Main
- * @author Andrés Rojas Ortega
- * @author David Díaz Jiménez
+ * @author AndrÃ©s Rojas Ortega
+ * @author David DÃ­az JimÃ©nez
  * @date 27/09/2020
  */
 public class Main {
 
-    
     public static Consola console = new Consola();
     public static GestorLog gestor = new GestorLog("");
-    public static final ExecutorService exec = Executors.newFixedThreadPool(4);
+    public static final ExecutorService exec = Executors.newFixedThreadPool(
+            Runtime.getRuntime().availableProcessors());
 
     /**
-     * @brief Función principal del programa
-     * @author Andrés Rojas Ortega
-     * @author David Díaz Jiménez
+     * @brief Funciï¿½n principal del programa
+     * @author AndrÃ©s Rojas Ortega
+     * @author David DÃ­az JimÃ©nez
      * @date 27/09/2020
      * @throws IOException
      */
@@ -68,29 +68,31 @@ public class Main {
                     Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-            if (console.getEleccion() == 4) {
-                System.exit(0);
+
+            for (int i = 0; i < config.getDirectoriosDatos().size(); i++) {
+                Metaheuristicas M1 = new Metaheuristicas(config.getDirectoriosDatos().get(i),
+                        config.getDirectoriosDatos().get(i), config);
+                M1.lector_Archivos();
+
+                switch (console.getEleccion()) {
+
+                    case 1:
+
+                        M1.coloniaHormigas();
+                        break;
+
+                    default:
+                        break;
+                }
+                M1 = null;
             }
-
-            Metaheuristicas M1 = new Metaheuristicas(config.getDirectoriosDatos().get(0),
-            config.getDirectoriosDatos().get(0), config);
-            M1.lector_Archivos();
-
-            switch (console.getEleccion()) {
-
-                case 1:
-                    
-                    M1.coloniaHormigas();
-                    break;
-                    
-                case 2:
-                    config = null;
-                    config = new Configurador("./config.txt");
-                    console.restaurarEleccion();
-                    break;
-                   
+            
+            if(console.getEleccion()==2){
+                config = null;
+                config = new Configurador("./config.txt");
+                
+                
             }
-            M1 = null;
             console.restaurarEleccion();
         }
         exec.shutdownNow();

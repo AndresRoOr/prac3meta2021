@@ -11,10 +11,11 @@ import java.util.ArrayList;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.BufferedReader;
+import java.util.Arrays;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * @brief Clase que almacena todos los parámetros principales del programa
+ * @brief Clase que almacena todos los par�metros principales del programa
  * @class Configurador
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
@@ -24,18 +25,18 @@ public class Configurador {
 
     ///Atributos de la clase:
     ArrayList<String> directoriosDatos;///<Almacena los directorios donde se 
-    ///encuentran los archivos con la información del problema
-    private Long semilla;///<Semilla utilizada para generar número aleatorios
+    ///encuentran los archivos con la informaci�n del problema
+    private Long semilla;///<Semilla utilizada para generar n�meros aleatorios
     private int iteraciones;///<Número de iteraciones
     private long recuperarSemilla;///<Almacena el valor inicial de la semilla
     /// en dos puntos
-    private float fi;///<Probabilidad de que un par de cromosomas
-    ///se crucen
-    private float beta;///<Probabilidad de que un gen mute
-    private float alfa;///<Probabilidad de que un gen del padre se incluya en
-    ///el hijo
-    private int numeroHormigas;///<N�mero de hormigas
+    private float phi;
+    private float beta;
+    private float alfa;
+    private int numeroHormigas;///<Número de hormigas
     private float q0;
+    private float rho;
+    private float delta;
 
     /**
      * @brief Constructor parametrizado de la clase Configurador
@@ -43,7 +44,7 @@ public class Configurador {
      * @author David Díaz Jiménez
      * @date 27/09/2020
      * @param ruta String Contiene la ruta completa del archivo que contiene la
-     * información de los parámetros
+     * informaci�n de los parámetros
      */
     public Configurador(String ruta) {
 
@@ -60,10 +61,9 @@ public class Configurador {
                 switch (split[0]) {
                     case "Datos":
                         String[] v = split[1].split(" ");
-                        for (int i = 0; i < v.length; i++) {
-                            directoriosDatos.add(v[i]);
-                        }
+                        directoriosDatos.addAll(Arrays.asList(v));
                         break;
+
 
                     case "Semilla":
                         semilla = Long.parseLong(split[1]);
@@ -89,21 +89,34 @@ public class Configurador {
                         numeroHormigas = Integer.parseInt(split[1]);
                         break;
 
-                    case "Fi":
-                        fi = Float.parseFloat(split[1]);
+                    case "Phi":
+                        phi = Float.parseFloat(split[1]);
+                        break;
+                    case "Delta":
+                        delta = Float.parseFloat(split[1]);
+                        break;
+                    case "Rho":
+                        rho = Float.parseFloat(split[1]);
                         break;
                 }
             }
             b.close();
+            Main.console.borrarTexto();
+            Main.console.presentarSalida(
+                    "Archivo de configuración cargado");
+            Main.console.presentarSalida("Directorios de datos: " + 
+                    directoriosDatos);
 
         } catch (IOException e) {
-            Main.console.presentarSalida("No se ha encontrado el archivo de configuraci�n");
+            Main.console.borrarTexto();
+            Main.console.presentarSalida(
+                    "No se ha encontrado el archivo de configuración");
         } finally {
             try {
                 if (null != f) {
                     f.close();
                 }
-            } catch (IOException e2) {
+            } catch (IOException e) {
             }
         }
     }
@@ -132,7 +145,7 @@ public class Configurador {
 
     /**
      * @brief Funcion getter del atributo iteraciones
-     * @author Andr�s Rojas Ortega
+     * @author Andrés Rojas Ortega
      * @author David Díaz Jiménez
      * @date 27/09/2020
      * @return iteraciones Integer
@@ -142,52 +155,36 @@ public class Configurador {
     }
 
    
-    /**
-     * @brief Función getter del atributo cruceMpx
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
-     * @date 22/11/2020
-     * @return cruceMpx Boolean
-     */
+
     public Float getQ0() {
         return q0;
     }
 
-    /**
-     * @brief Función getter del atributo probReproduccion
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
-     * @date 22/11/2020
-     * @return probReproduccion Float
-     */
+
     public Float getBeta() {
         return beta;
     }
 
-    /**
-     * @brief Función getter del atributo probMutacion
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
-     * @date 22/11/2020
-     * @return probMutacion Float
-     */
+
     public Float getAlfa() {
         return alfa;
     }
 
-    /**
-     * @brief Función getter del atributo pobMpx
-     * @author David Díaz Jiménez
-     * @author Andrés Rojas Ortega
-     * @date 22/11/2020
-     * @return probMpx Float
-     */
-    public Float getFi() {
-        return fi;
+
+    public Float getPhi() {
+        return phi;
+    }
+    
+    public Float getRho() {
+        return rho;
+    }
+    
+    public Float getDelta() {
+        return delta;
     }
 
     /**
-     * @brief Función getter del atributo numeroCromosomas
+     * @brief Funci�n getter del atributo numeroCromosomas
      * @author David Díaz Jiménez
      * @author Andrés Rojas Ortega
      * @date 22/11/2020
