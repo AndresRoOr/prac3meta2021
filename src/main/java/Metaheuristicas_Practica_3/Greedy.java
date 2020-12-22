@@ -31,7 +31,6 @@ public class Greedy {
      * @author David Díaz Jiménez
      * @date 27/09/2020
      * @param archivoDatos Archivo Contiene los datos sobre los que operar
-     * @param g GestorLog Encargado de guardar los datos Log
      */
     public Greedy(Archivo archivoDatos) {
         _archivoDatos = archivoDatos;
@@ -135,7 +134,7 @@ public class Greedy {
      * @author Andrés Rojas Ortega
      * @author David Díaz Jiménez
      * @date 28/09/2020
-     * @return
+     * @return booleano
      */
     boolean FuncionSolucion() {
         return !(_solucionB.size() < _archivoDatos.getTama_Solucion());
