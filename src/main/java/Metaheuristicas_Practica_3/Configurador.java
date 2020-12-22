@@ -15,7 +15,7 @@ import java.util.Arrays;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * @brief Clase que almacena todos los par�metros principales del programa
+ * @brief Clase que almacena todos los parámetros principales del programa
  * @class Configurador
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
@@ -25,8 +25,8 @@ public class Configurador {
 
     ///Atributos de la clase:
     ArrayList<String> directoriosDatos;///<Almacena los directorios donde se 
-    ///encuentran los archivos con la informaci�n del problema
-    private Long semilla;///<Semilla utilizada para generar n�meros aleatorios
+    ///encuentran los archivos con la información del problema
+    private Long semilla;///<Semilla utilizada para generar números aleatorios
     private int iteraciones;///<Número de iteraciones
     private long recuperarSemilla;///<Almacena el valor inicial de la semilla
     /// en dos puntos
@@ -44,7 +44,7 @@ public class Configurador {
      * @author David Díaz Jiménez
      * @date 27/09/2020
      * @param ruta String Contiene la ruta completa del archivo que contiene la
-     * informaci�n de los parámetros
+     * información de los parámetros
      */
     public Configurador(String ruta) {
 
@@ -64,7 +64,6 @@ public class Configurador {
                         directoriosDatos.addAll(Arrays.asList(v));
                         break;
 
-
                     case "Semilla":
                         semilla = Long.parseLong(split[1]);
                         recuperarSemilla = semilla;
@@ -74,7 +73,7 @@ public class Configurador {
                         break;
 
                     case "Q0":
-                        q0 =  Float.parseFloat(split[1]);
+                        q0 = Float.parseFloat(split[1]);
                         break;
 
                     case "Beta":
@@ -104,8 +103,8 @@ public class Configurador {
             Main.console.borrarTexto();
             Main.console.presentarSalida(
                     "Archivo de configuración cargado");
-            Main.console.presentarSalida("Directorios de datos: " + 
-                    directoriosDatos);
+            Main.console.presentarSalida("Directorios de datos: "
+                    + directoriosDatos);
 
         } catch (IOException e) {
             Main.console.borrarTexto();
@@ -122,7 +121,7 @@ public class Configurador {
     }
 
     /**
-     * @brief Funcion getter del atributo directoriosDatos
+     * @brief Función getter del atributo directoriosDatos
      * @author Andrés Rojas Ortega
      * @author David Díaz Jiménez
      * @date 27/09/2020
@@ -133,7 +132,7 @@ public class Configurador {
     }
 
     /**
-     * @brief Funcion getter del atributo semilla
+     * @brief Función getter del atributo semilla
      * @author Andrés Rojas Ortega
      * @author David Díaz Jiménez
      * @date 27/09/2020
@@ -144,7 +143,7 @@ public class Configurador {
     }
 
     /**
-     * @brief Funcion getter del atributo iteraciones
+     * @brief Función getter del atributo iteraciones
      * @author Andrés Rojas Ortega
      * @author David Díaz Jiménez
      * @date 27/09/2020
@@ -154,41 +153,78 @@ public class Configurador {
         return iteraciones;
     }
 
-   
-
+    /**
+     * @brief Función getter del atributo q0
+     * @author Andrés Rojas Ortega
+     * @author David Díaz Jiménez
+     * @date 22/12/2020
+     * @return q0 float
+     */
     public Float getQ0() {
         return q0;
     }
 
-
+    /**
+     * @brief Función getter del atributo beta
+     * @author Andrés Rojas Ortega
+     * @author David Díaz Jiménez
+     * @date 22/12/2020
+     * @return beta float
+     */
     public Float getBeta() {
         return beta;
     }
 
-
+    /**
+     * @brief Función getter del atributo alfa
+     * @author Andrés Rojas Ortega
+     * @author David Díaz Jiménez
+     * @date 22/12/2020
+     * @return alfa float
+     */
     public Float getAlfa() {
         return alfa;
     }
 
-
+    /**
+     * @brief Función getter del atributo phi
+     * @author Andrés Rojas Ortega
+     * @author David Díaz Jiménez
+     * @date 22/12/2020
+     * @return phi float
+     */
     public Float getPhi() {
         return phi;
     }
-    
+
+    /**
+     * @brief Función getter del atributo rho
+     * @author Andrés Rojas Ortega
+     * @author David Díaz Jiménez
+     * @date 22/12/2020
+     * @return rho float
+     */
     public Float getRho() {
         return rho;
     }
-    
+
+    /**
+     * @brief Función getter del atributo delta
+     * @author Andrés Rojas Ortega
+     * @author David Díaz Jiménez
+     * @date 22/12/2020
+     * @return delta float
+     */
     public Float getDelta() {
         return delta;
     }
 
     /**
-     * @brief Funci�n getter del atributo numeroCromosomas
+     * @brief Función getter del atributo numeroHormigas
      * @author David Díaz Jiménez
      * @author Andrés Rojas Ortega
      * @date 22/11/2020
-     * @return numeroCromosomas Integer
+     * @return numeroHormigas Integer
      */
     public Integer getNumeroHormigas() {
         return numeroHormigas;
