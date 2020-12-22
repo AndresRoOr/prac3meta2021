@@ -1,7 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @file    ColoniaHormigas.java
+ * @author Andrés Rojas Ortega
+ * @author David Díaz Jiménez
+ * @version 1.0
+ * @date 22/12/2020
  */
 package Metaheuristicas_Practica_3;
 
@@ -16,21 +18,46 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author David
+ * @brief Clase que implementa la funcionalidad de un sistema de colonias de
+ * hormigas
+ * @class ColoniaHormigas
+ * @author Andrés Rojas Ortega
+ * @author David Díaz Jiménez
+ * @date 22/12/2020
  */
 public class ColoniaHormigas {
 
+    /**
+     * @brief Clase que implementa la funcionalidad de una hormiga
+     * @class AplicarRTTask
+     * @author David Díaz Jiménez
+     * @author Andrés Rojas Ortega
+     * @date 22/12/2020
+     */
     private class ApliclarRTTask implements Callable<Boolean> {
 
-        private final int j;
+        //Atributos de la clase:
+        private final int j;///<Hormiga de la colonia
 
+        /**
+         * @brief Constructor parametrizado de la clase
+         * @author David Díaz Jiménez
+         * @author Andrés Rojas Ortega
+         * @date 22/12/2020
+         * @param j int
+         */
         public ApliclarRTTask(int j) {
 
             this.j = j;
         }
 
         @Override
+        /**
+         * @brief Metodo call de la tarea
+         * @author David Díaz Jiménez
+         * @author Andrés Rojas Ortega
+         * @date 22/12/2020
+         */
         public Boolean call() throws Exception {
 
             // Invocamos a la función de cálculo de las LRC  
@@ -134,25 +161,48 @@ public class ColoniaHormigas {
     ///Atributos de la clase:
     private final Archivo archivoDatos;///<Contiene los datos del problema
     private final GestorLog gestor;///<Gestor encargado de la creación del Log
-    private final double[][] matrizFeromonas;
-    private final Random_p generadorAleatorio;
-    private Hormiga mejorHormiga;
-    private final ArrayList<Hormiga> colonia;
-    private final ArrayList<Double> aleatorios;
-    private final ArrayList<Double> aleatoriosq;
-    private final int tamColonia;
-    private final int tamHormiga;
-    private final int tamMatriz;
-    private final int maxItereaciones;
-    private int iteraciones;
+    private final double[][] matrizFeromonas;///<Contiene el valor de la 
+    ///feromona de todos los arcos
+    private final Random_p generadorAleatorio;///<Utilizado para generar números
+    ///aleatorios
+    private Hormiga mejorHormiga;///<Mejor hormiga hasta el momento
+    private final ArrayList<Hormiga> colonia;///<Contiene todas las hormigas
+    private final ArrayList<Double> aleatorios;///<Contiene números generados
+    ///aleatoriamente
+    private final ArrayList<Double> aleatoriosq;///<Contiene números generados
+    ///aleatoriamente
+    private final int tamColonia;///<Número de hormigas de la colonia
+    private final int tamHormiga;///<Número de arcos de la hormiga
+    private final int tamMatriz;///<Tamaño de la matriz de datos
+    private final int maxItereaciones;///<Límite máximo de iteraciones
+    private int iteraciones;///<Iteraciones realizadas hasta el momento
     private final float q0;
     private final float phi;
     private final float beta;
     private final float rho;
     private final float delta;
     private final float alfa;
-    private final float costeGreedy;
+    private final float costeGreedy;///<Coste obtenido para el problema 
+    ///aplicando el algoritmo Greedy
 
+    /**
+     * @brief Constructor parametrizado de la clase
+     * @author David Díaz Jiménez
+     * @author Andrés Rojas Ortega
+     * @date 22/11/2020
+     * @param _archivoDatos Archivo
+     * @param _gestor GestorLog
+     * @param _iteraciones int
+     * @param _numeroHormigas int
+     * @param _semilla Random_p
+     * @param _q0 float
+     * @param _phi float
+     * @param _beta float
+     * @param _rho float
+     * @param _delta float
+     * @param _alfa float
+     * @param _coste float
+     */
     public ColoniaHormigas(Archivo _archivoDatos, GestorLog _gestor,
             int _iteraciones, int _numeroHormigas, Random_p _semilla, float _q0,
             float _phi, float _beta, float _rho, float _delta, float _alfa,
@@ -181,6 +231,12 @@ public class ColoniaHormigas {
         this.aleatoriosq = new ArrayList<>();
     }
 
+    /**
+     * @brief Algoritmo principal
+     * @author David Díaz Jiménez
+     * @author Andrés Rojas Ortega
+     * @date 22/12/2020
+     */
     public void colonia() {
 
         inicializarFeromona();
@@ -240,6 +296,12 @@ public class ColoniaHormigas {
         }
     }
 
+    /**
+     * @brief Inicializa el primer elemento de todas las hormigas de la colonia
+     * @author David Díaz Jiménez
+     * @author Andrés Rojas Ortega
+     * @date 22/12/2020
+     */
     private void inicializarColonia() {
 
         while (colonia.size() < tamColonia) {
@@ -251,6 +313,12 @@ public class ColoniaHormigas {
         }
     }
 
+    /**
+     * @brief Inicializa el valor de la feromona de todos los arcos
+     * @author David Díaz Jiménez
+     * @author Andrés Rojas Ortega
+     * @date 22/12/2020
+     */
     private void inicializarFeromona() {
         double feromonaInicial = (costeGreedy);
         for (int i = 0; i < tamMatriz; i++) {
@@ -261,6 +329,14 @@ public class ColoniaHormigas {
         }
     }
 
+    /**
+     * @brief Genera la lista restringida de candidatos para una hormiga
+     * @author David Díaz Jiménez
+     * @author Andrés Rojas Ortega
+     * @date 22/12/2020
+     * @param j int Hormiga para la que queremos obtener la LRC
+     * @return LRC ArrayList<Integer> Lista Restringida de Candidatos
+     */
     private ArrayList<Integer> generarLRC(int j) {
 
         ArrayList<Integer> LRC = new ArrayList<>();
@@ -311,6 +387,12 @@ public class ColoniaHormigas {
         return LRC;
     }
 
+    /**
+     * @brief Actualiza la feromona local de todas las hormigas de la colonia
+     * @author David Díaz Jiménez
+     * @author Andrés Rojas Ortega
+     * @date 22/12/2020
+     */
     private void actualizarFeromonaLocal() {
 
         for (int i = 0; i < colonia.size(); i++) {
@@ -331,6 +413,12 @@ public class ColoniaHormigas {
         }
     }
 
+    /**
+     * @brief Actualiza la mejor hormiga hasta el momento y la feromona global
+     * @author David Díaz Jiménez
+     * @author Andrés Rojas Ortega
+     * @date 22/12/2020
+     */
     private void tareasDemonio() {
 
         int mejorHormigaLocal = evaluarMejorHormiga();
@@ -339,6 +427,14 @@ public class ColoniaHormigas {
 
     }
 
+    /**
+     * @brief Calcula el coste de una solución
+     * @author David Díaz Jiménez
+     * @author Andrés Rojas Ortega
+     * @date 22/12/2020
+     * @param elementos ArrayList<Integer> Elementos de la solución
+     * @return coste float Coste de la solución
+     */
     private float calcularCoste(ArrayList<Integer> elementos) {
 
         float coste = 0.0f;
@@ -355,6 +451,13 @@ public class ColoniaHormigas {
         return coste;
     }
 
+    /**
+     * @brief Actualiza la feromona global de la matriz de feromonas
+     * @author David Díaz Jiménez
+     * @author Andrés Rojas Ortega
+     * @date 22/12/2020
+     * @param posMHL int Posicion de la mejor hormiga en la colonia
+     */
     private void actualizaFeromonaGlobal(int posMHL) {
 
         //Evaporacion
@@ -369,6 +472,7 @@ public class ColoniaHormigas {
             }
         }
 
+        //Aporte de feromona mejor hormiga
         Object[] elementos
                 = colonia.get(posMHL).getElementos().toArray();
 
@@ -388,6 +492,13 @@ public class ColoniaHormigas {
         }
     }
 
+    /**
+     * @brief Obtiene la mejor hormiga de la colonia
+     * @author David Díaz Jiménez
+     * @author Andrés Rojas Ortega
+     * @date 22/12/2020
+     * @return indexMejorH int Indice de la mejor hormiga en la colonia
+     */
     private int evaluarMejorHormiga() {
 
         int indexMejorH = 0;
@@ -412,6 +523,12 @@ public class ColoniaHormigas {
 
     }
 
+    /**
+     * @biref Presenta los resultados de la solución al problema
+     * @author David Díaz Jiménez
+     * @author Andrés Rojas Ortega
+     * @date 22/12/2020
+     */
     void PresentarResultados() {
 
         gestor.escribirArchivo("");
