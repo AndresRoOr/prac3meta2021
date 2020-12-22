@@ -176,7 +176,7 @@ public class ColoniaHormigas {
         this.delta = _delta;
         this.phi = _phi;
         this.q0 = _q0;
-        this.costeGreedy = 1000;
+        this.costeGreedy = _coste;
         this.aleatorios = new ArrayList<>();
         this.aleatoriosq = new ArrayList<>();
     }
@@ -234,6 +234,9 @@ public class ColoniaHormigas {
             iteraciones++;
 
             System.out.println(mejorHormiga.getContribucion());
+
+            gestor.escribirArchivo("ITERACION: " + iteraciones + "\n" + "Mejor homiga: " + mejorHormiga.getElementos().toString() + "\n"
+                    + "Coste mejor hormiga: " + mejorHormiga.getContribucion() + "\n");
         }
     }
 
