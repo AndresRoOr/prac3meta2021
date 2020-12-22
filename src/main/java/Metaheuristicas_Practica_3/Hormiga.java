@@ -1,41 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/** @file    Hormiga.java
+ * @author Andrés Rojas Ortega
+ * @author David Díaz Jiménez
+ * @version 1.0
+ * @date 22/12/2020
  */
 package Metaheuristicas_Practica_3;
-
-/**
- *
- * @author David
- */
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
- * @brief Clase que almacena la informaci�n de cada elemento que forma parte de
- * una poblaci�n
+ * @brief Clase que almacena la información de cada hormiga que forma parte de
+ * una colonia
  * @class Hormiga
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
- * @date 22/11/2020
+ * @date 22/12/2020
  */
 public final class Hormiga implements Comparable<Hormiga> {
 
     ///Atributos de la clase:
-    private ArrayList<Integer> elementos;///<Conjunte de genes soluci�n del 
+    private ArrayList<Integer> elementos;///<Conjunte de elementos solución del 
     //problema
     private Set<Integer> aux;
-    private double _contribucion;///<Coste que aporta a la soluci�n
+    private double _contribucion;///<Coste que aporta a la solución
 
     /**
      * @brief Constructor parametrizado de la clase Hormiga
      * @author Andrés Rojas Ortega
      * @author David Díaz Jiménez
-     * @date 22/11/2020
-     * @param _elementos  Set<Integer>
+     * @date 22/12/2020
+     * @param _elementos ArrayList<Integer>
      * @param _contribucion Float
      */
     public Hormiga(ArrayList<Integer> _elementos, float _contribucion) {
@@ -49,8 +45,8 @@ public final class Hormiga implements Comparable<Hormiga> {
      * @brief Constructor parametrizado de la clase Hormiga
      * @author Andrés Rojas Ortega
      * @author David Díaz Jiménez
-     * @date 22/11/2020
-     * @param _elementos Set<Integer>
+     * @date 22/12/2020
+     * @param _elementos ArrayList<Integer>
      * @param _contribucion float
      * @param recal boolean
      */
@@ -62,10 +58,10 @@ public final class Hormiga implements Comparable<Hormiga> {
     }
 
     /**
-     * @brief Constructor por copia de la clase Cromosoma
+     * @brief Constructor por copia de la clase Hormiga
      * @author David Díaz Jiménez
      * @author Andrés Rojas Ortega
-     * @date 22/11/2020
+     * @date 22/12/2020
      * @param otro Hormiga
      */
     public Hormiga(Hormiga otro) {
@@ -76,6 +72,13 @@ public final class Hormiga implements Comparable<Hormiga> {
     }
 
     @Override
+    /**
+     * @brief Función compareTo sobrecargada
+     * @author David Díaz Jiménez
+     * @author Andrés Rojas Ortega
+     * @date 22/12/2020
+     * @return int
+     */
     public int compareTo(Hormiga otro) {
         Double ele1 = this.getContribucion();
         Double ele2 = otro.getContribucion();
@@ -90,10 +93,18 @@ public final class Hormiga implements Comparable<Hormiga> {
         }
 
     }
-    
-    public boolean contains(int elemento){
-        
-        return this.aux.contains(elemento); 
+
+    /**
+     * @brief Función contains sobrecargada
+     * @author David Díaz Jiménez
+     * @author Andrés Rojas Ortega
+     * @date 22/12/2020
+     * @param elemento int
+     * @return boolean
+     */
+    public boolean contains(int elemento) {
+
+        return this.aux.contains(elemento);
     }
 
     /**
@@ -107,13 +118,20 @@ public final class Hormiga implements Comparable<Hormiga> {
         return this._contribucion;
     }
 
-    public void add(int elemento){
-        
+    /**
+     * @brief Función de adición de un elemento nuevo
+     * @author David Díaz Jiménez
+     * @author Andrés Rojas Ortega
+     * @date 22/12/2020
+     * @param elemento int
+     */
+    public void add(int elemento) {
+
         this.aux.add(elemento);
         this.elementos.add(elemento);
-        
+
     }
-    
+
     /**
      * @brief Metodo setter del atributo _contribucion
      * @author Andrés Rojas Ortega
@@ -126,22 +144,22 @@ public final class Hormiga implements Comparable<Hormiga> {
     }
 
     /**
-     * @brief M�todo getter del atributo cromosoma
+     * @brief Método getter del atributo elementos
      * @author David Díaz Jiménez
      * @author Andrés Rojas Ortega
      * @date 22/11/2020
-     * @return elementos Set<Integer>
+     * @return elementos ArrayList<Integer>
      */
     public ArrayList<Integer> getElementos() {
         return elementos;
     }
 
     /**
-     * @brief M�todo setter del atributo cromosoma
+     * @brief Método setter del atributo elementos
      * @author David Díaz Jiménez
      * @author Andrés Rojas Ortega
      * @date 22/11/2020
-     * @param _elementos  Set<Integer> 
+     * @param _elementos ArrayList<Integer>
      */
     public void setEloementos(ArrayList<Integer> _elementos) {
         this.elementos = _elementos;
