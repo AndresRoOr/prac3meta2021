@@ -152,11 +152,13 @@ public class ColoniaHormigas {
     private final float delta;
     private final float alfa;
     private final float costeGreedy;
+    private final GestorCSV gestorCsv;
+    private long semilla;
 
     public ColoniaHormigas(Archivo _archivoDatos, GestorLog _gestor,
             int _iteraciones, int _numeroHormigas, Random_p _semilla, float _q0,
             float _phi, float _beta, float _rho, float _delta, float _alfa,
-            float _coste) {
+            float _coste, GestorCSV gestorCsv, long semilla) {
 
         int tam = _archivoDatos.getTama_Matriz();
         this.matrizFeromonas = new double[tam][tam];
@@ -179,6 +181,8 @@ public class ColoniaHormigas {
         this.costeGreedy = _coste;
         this.aleatorios = new ArrayList<>();
         this.aleatoriosq = new ArrayList<>();
+        this.gestorCsv = gestorCsv;
+        this.semilla = semilla;
     }
 
     public void colonia() {
@@ -186,6 +190,11 @@ public class ColoniaHormigas {
         inicializarFeromona();
 
         double time = System.currentTimeMillis();
+
+        if (this.semilla == 35608477) {
+            gestorCsv.escribirArchivo("ITERACION;COSTE");
+        }
+
         while (iteraciones <= maxItereaciones && System.currentTimeMillis()
                 - time <= 600000) {
 
@@ -237,6 +246,10 @@ public class ColoniaHormigas {
 
             gestor.escribirArchivo("ITERACION: " + iteraciones + "\n" + "Mejor homiga: " + mejorHormiga.getElementos().toString() + "\n"
                     + "Coste mejor hormiga: " + mejorHormiga.getContribucion() + "\n");
+
+            if (this.semilla == 35608477) {
+                gestorCsv.escribirArchivo(iteraciones + ";" + mejorHormiga.getContribucion());
+            }
         }
     }
 

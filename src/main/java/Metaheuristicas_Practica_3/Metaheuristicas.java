@@ -55,21 +55,21 @@ public final class Metaheuristicas {
      */
     void lector_Archivos() throws FileNotFoundException, IOException {
         final File carpeta = new File(ruta_Carpeta_Archivos);
-        if(carpeta.exists()){
+        if (carpeta.exists()) {
             for (final File fichero_Entrada : carpeta.listFiles()) {
 
-                    if (fichero_Entrada.isFile()) {
-                        Archivo ar = new Archivo(fichero_Entrada.getName(),
-                                ruta_Carpeta_Archivos + "/"
-                                + fichero_Entrada.getName());
-                        archivos.add(ar);
-                    }
-            
+                if (fichero_Entrada.isFile()) {
+                    Archivo ar = new Archivo(fichero_Entrada.getName(),
+                            ruta_Carpeta_Archivos + "/"
+                            + fichero_Entrada.getName());
+                    archivos.add(ar);
+                }
+
             }
-        }else{
-                Main.console.presentarSalida("No existe el directorio: " 
-                        + carpeta.getPath());
-            }
+        } else {
+            Main.console.presentarSalida("No existe el directorio: "
+                    + carpeta.getPath());
+        }
 
     }
 
@@ -84,7 +84,6 @@ public final class Metaheuristicas {
             ar.presentarDatos();
         }
     }*/
-
     /**
      * @brief Calcula la soluci�n para todos los archivos utilizando el
      * algoritmo Greedy y muestra el resultado por pantalla
@@ -101,7 +100,7 @@ public final class Metaheuristicas {
             for (Archivo ar : archivos) {
 
                 int ite = 1;
-                
+
                 Greedy gredy = new Greedy(ar);
                 Random_p semGre = new Random_p();
                 semGre.Set_random(config.getSemilla());
@@ -113,23 +112,28 @@ public final class Metaheuristicas {
                     Timer t = new Timer();
 
                     String name = ar.getNombre();
-                    
-                    Main.gestor.cambiarNombre("Alfa_"+config.getAlfa()+",Beta_"+
-                            config.getBeta()+"SEM_" +config.getSemilla()+
-                            "_" + name.replaceFirst(".txt",".log"));
+
+                    Main.gestor.cambiarNombre("Alfa_" + config.getAlfa() + ",Beta_"
+                            + config.getBeta() + "SEM_" + config.getSemilla()
+                            + "_" + name.replaceFirst(".txt", ".log"));
                     Main.gestor.abrirArchivo();
+
+                    if (config.getSemilla() == 35608477) {
+                        Main.gestorCsv.cambiarNombre("Alfa_" + config.getAlfa() + ",Beta_"
+                                + config.getBeta() + "SEM_" + config.getSemilla()
+                                + "_" + name.replaceFirst(".txt", ".log"));
+                        Main.gestorCsv.abrirArchivo();
+                    }
 
                     Random_p sem = new Random_p();
                     sem.Set_random(config.getSemilla());
 
-                    
-                    
-                    ColoniaHormigas ch = new ColoniaHormigas(ar, Main.gestor, 
-                            config.getIteraciones(), 
-                            config.getNumeroHormigas(), sem, 
-                            config.getQ0(),config.getPhi(), config.getBeta(),
+                    ColoniaHormigas ch = new ColoniaHormigas(ar, Main.gestor,
+                            config.getIteraciones(),
+                            config.getNumeroHormigas(), sem,
+                            config.getQ0(), config.getPhi(), config.getBeta(),
                             config.getRho(), config.getDelta(),
-                            config.getAlfa(),greedy);
+                            config.getAlfa(), greedy, Main.gestorCsv, config.getSemilla());
 
                     t.startTimer();
 
@@ -138,16 +142,20 @@ public final class Metaheuristicas {
                     double tiempo = t.stopTimer();
 
                     Main.console.presentarSalida(
-                            "Datos de la solución al problema: " 
-                                    + ar.getNombre() + ", con SEMILLA: "
-                                    + config.getSemilla());
+                            "Datos de la solución al problema: "
+                            + ar.getNombre() + ", con SEMILLA: "
+                            + config.getSemilla());
                     Main.console.presentarSalida(
                             "Tiempo de ejecución del algoritmo: " + tiempo
-                                    + " milisegundos");
+                            + " milisegundos");
 
                     ch.PresentarResultados();
 
                     Main.gestor.cerrarArchivo();
+
+                    if (config.getSemilla() == 35608477) {
+                        Main.gestorCsv.cerrarArchivo();
+                    }
 
                     Main.console.setValue(aumento / 2);
 
@@ -159,7 +167,7 @@ public final class Metaheuristicas {
                 config.RecuperarSemilla();
             }
         } else {
-            Main.console.presentarSalida("No hay datos en el directorio: " 
+            Main.console.presentarSalida("No hay datos en el directorio: "
                     + config.directoriosDatos.get(0));
         }
     }
