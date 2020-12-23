@@ -88,12 +88,11 @@ public class Main {
                 }
                 M1 = null;
             }
-            
-            if(console.getEleccion()==2){
+
+            if (console.getEleccion() == 2) {
                 config = null;
                 config = new Configurador("./config.txt");
-                
-                
+
             }
             console.restaurarEleccion();
         }
