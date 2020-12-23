@@ -267,7 +267,7 @@ public class ColoniaHormigas {
                 }
 
                 //Esperamos a que finalizen todos los hilos
-                for (int j = 0; j < 10; j++) {
+                for (int j = 0; j < tamColonia; j++) {
                     try {
                         futures.get(j).get();
                     } catch (InterruptedException | ExecutionException ex) {

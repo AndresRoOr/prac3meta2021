@@ -1,2 +1,23 @@
 	\section{Pseudocódigo}
 	
+	\subsection{algoritmo principal}
+	
+	\begin{algorithm}[H]
+		\caption{Sistema Colonia Hormigas}
+		\begin{algorithmic}
+			\STATE $matrizFeromonas \leftarrow InicializarFeromona()$
+			\WHILE {iteracionesRealizadas$<$= limiteIteraciones $\wedge$  tiempoEjecucion $<$= 600}
+			\STATE $colonia \leftarrow InicializarColonia()$
+			\FOR {i=1; i$<$tamñoHormiga; i++}
+			\FOR {$hormiga \in colonia$}
+			\STATE $lrc \leftarrow GenerarLRC(hormiga)$
+			\STATE AplicarReglaTransicion(lrc, hormiga)
+			\ENDFOR
+			\STATE ActualizarFeromonaLocal()
+			\ENDFOR
+			\STATE TareasDemonio()
+			\STATE $\emptyset \leftarrow colonia$
+			\STATE $iteracionesRealizadas \leftarrow iteracionesRealizadas+1$
+			\ENDWHILE	
+		\end{algorithmic}
+	\end{algorithm}
