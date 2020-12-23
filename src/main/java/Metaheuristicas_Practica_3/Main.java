@@ -1,7 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @file    Main.java
+ * @author Andrés Rojas Ortega
+ * @author David Díaz Jiménez
+ * @version 1.0
+ * @date 22/12/2020
  */
 package Metaheuristicas_Practica_3;
 
@@ -20,7 +22,7 @@ import javax.swing.UIManager;
  * @class Main
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
- * @date 27/09/2020
+ * @date 22/12/2020
  */
 public class Main {
 
@@ -30,10 +32,10 @@ public class Main {
             Runtime.getRuntime().availableProcessors());
 
     /**
-     * @brief Funci�n principal del programa
+     * @brief Función principal del programa
      * @author Andrés Rojas Ortega
      * @author David Díaz Jiménez
-     * @date 27/09/2020
+     * @date 22/12/2020
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
