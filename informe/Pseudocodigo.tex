@@ -6,7 +6,7 @@
 		\caption{Sistema Colonia Hormigas}
 		\begin{algorithmic}
 			\STATE $matrizFeromonas \leftarrow InicializarFeromona()$
-			\WHILE {iteracionesRealizadas$<$= limiteIteraciones $\wedge$  tiempoEjecucion $<$= 600}
+			\WHILE {iteracionesRealizadas$<$= limiteIteraciones $\wedge$  tiempoEjecucion $<$= limiteTiempoEjecucion}
 			\STATE $colonia \leftarrow InicializarColonia()$
 			\FOR {i=1; i$<$tamñoHormiga; i++}
 			\FOR {$hormiga \in colonia$}
@@ -21,3 +21,21 @@
 			\ENDWHILE	
 		\end{algorithmic}
 	\end{algorithm}
+
+	\paragraph{}Lo primero que realiza el algoritmo es inicializar la matriz de feromonas con el valor inicial. Esta tarea la realiza la función "InicializarFeromona()", la matriz de feromonas se almacena en la variable "matrizFeromonas". El valor inicial de feromona se pasa como parámetro del programa.
+	
+	\paragraph{}A continuación, entramos en un bucle while cuyas condiciones de parada son: las iteraciones realizadas y el tiempo de ejecución del algoritmo. En el caso de las iteraciones realizadas, almacenadas en la variable "iteracionesRealizadas",  deben ser inferiores al límite almacenado en la variable "limiteIteraciones". El valor de "limiteIteraciones" se pasa como parámetro del programa. En el caso del tiempo de ejecución, que se almacena en la variable "tiempoEjecucion", debe de ser inferior al valor almacenado en la variable "limiteTiempoEjecucion". El valor de "limiteTiempoEjecucion" se pasa como parámetro del programa.
+	
+	\paragraph{}Cada vez que empieza una nueva iteración del bucle, lo primero que se realiza es inicializar la colonia de hormigas. La colonia se almacena en la variable "colonia" y la función encargada de inicializarla es "InicializarColonia()".
+	
+	\paragraph{}Una vez inicializada la colonia, iniciamos dos bucles for. El primero se ejecutará hasta que el valor de "i" alcance el número de elementos que debe contener cualquier solución (parámetro del programa, almacenado en la variable "tamañoHormiga"). El segundo bucle for recorrerá cada una de las hormigas pertenecientes a la variable "colonia".
+	
+	\paragraph{}Lo primero que realizamos es almacenar en la variable "lrc" la lista de candidatos restringida de la hormiga, calculada por la función "GenerarLRC(hormiga)".
+	
+	\paragraph{}Una vez almacenada la lista restringida, seleccionamos uno de los candidatos que contiene aplicando la regla de la transición y lo añadimos como parte de la solución de la hormiga. La función que realiza dicha tarea es "AplicarReglaTransicion(lrc,hormiga)".
+	
+	\paragraph{}Se finaliza el bucle for interior y la función "ActualizarFeromonaLocal()" se encarga de actualizar la feromona local de todas las hormigas después de haber añadido un nuevo elemento.
+	
+	\paragraph{}Una vez finalice el bucle for tendremos todas las hormigas completas, por lo que pasamos a seleccionar la mejor hormiga de la colonia y realizar la actualización de la feromona global. La función encargada de dichas tareas es "TareasDemonio()".
+	
+	\paragraph{}Para finalizar el bucle while, vaciamos la variable "colonia" y actualizamos el valor de la variable "iteracionesRealizadas".
