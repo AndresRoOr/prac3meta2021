@@ -57,3 +57,22 @@
 	\end{algorithm}
 
 	\paragraph{}El funcionamiento de esta función es trivial: se inicializan todos los elementos de la matriz de feromonas con el valor de "feromonaInicial" (parámetro del programa).
+	
+	\subsection{Inicialización de la colonia de hormigas}
+	
+	\paragraph{Salida}Devuelve la colonia de hormigas inicializada.
+	
+	\begin{algorithm}[H]
+		\caption{Inicialización de la colonia de hormigas}
+		\begin{algorithmic}
+			\WHILE{colonia.tamaño()$<$tamañoColonia}
+			\STATE$hormiga \leftarrow \emptyset$
+			\STATE$primerElemento \leftarrow GenerarEnteroAleatorio()$
+			\STATE$hormiga \leftarrow hormiga \cup \{primerElemento\}$
+			\STATE$colonia \leftarrow colonia \cup \{hormiga\}$
+			\ENDWHILE
+			\RETURN colonia
+		\end{algorithmic}
+	\end{algorithm}
+
+	\paragraph{}El funcionamiento de esta función es trivial: se inicializan todas las hormigas con un elemento generado aleatoriamente con la función "GenerarEnteroAleatorio()". Cuando tengamos "tamañoColonia" (parámetro del programa) hormigas inicializadas, devolvemos la colonia como resultado.
