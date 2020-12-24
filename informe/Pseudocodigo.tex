@@ -75,4 +75,67 @@
 		\end{algorithmic}
 	\end{algorithm}
 
-	\paragraph{}El funcionamiento de esta función es trivial: se inicializan todas las hormigas con un elemento generado aleatoriamente con la función "GenerarEnteroAleatorio()". Cuando tengamos "tamañoColonia" (parámetro del programa) hormigas inicializadas, devolvemos la colonia como resultado.
+	\paragraph{}El funcionamiento de esta función es trivial: se inicializan todas las hormigas con un elemento generado aleatoriamente con la función "GenerarEnteroAleatorio()". Cuando se tengan "tamañoColonia" (parámetro del programa) hormigas inicializadas, se devuelve la colonia como resultado.
+	
+	\subsection{Generación de la Lista Restringida de Candidatos}
+	
+	\paragraph{Entrada}La hormiga para la que se quiere obtener su Lista Restringida de Candidatos.
+	
+	\paragraph{Salida}Devuelve la Lista Restringida de Candidatos "lrc".
+	
+	\begin{algorithm}[H]
+		\caption{Generación de la Lista Restringida de Candidatos}
+		\begin{algorithmic}
+			\STATE$lrc \leftarrow \emptyset$
+			\STATE$noSeleccionados \leftarrow \emptyset$
+			\STATE$min \leftarrow +\infty$
+			\STATE$max \leftarrow -\infty$
+			\FOR{i=0;i$<$tamañoMatriz;i++}
+			\IF{$i \notin hormiga$}
+			\STATE $aporte \leftarrow 0$
+			\FOR{$elemento \in hormiga$}
+			\STATE$aporte \leftarrow aporte + MatrizCostes[elemento][i]$
+			\ENDFOR
+			\IF{min == +$\infty$}
+			\STATE$max \leftarrow aporte$
+			\STATE$min \leftarrow aporte$
+			\ENDIF
+			\IF{aporte$>$max}
+			\STATE$max \leftarrow aporte$
+			\ELSIF{aporte$<$min}
+			\STATE$min \leftarrow aporte$
+			\ENDIF
+			\STATE$noSeleccionados\leftarrow noSeleccionados \cup \{i,aporte\}$
+			\ENDIF
+			\ENDFOR
+			\STATE$valorCorte \leftarrow min + delta *$(max - min)
+			\FOR{$elemento \in noSeleccionados$}
+			\IF{elemento.aporte$>$=valorCorte}
+			\STATE$lrc \leftarrow lrc \cup {\{elemento\}}$
+			\ENDIF
+			\ENDFOR
+			\RETURN lrc
+		\end{algorithmic}
+	\end{algorithm}
+
+	\paragraph{}Lo primero que se realiza es inicializar los valores de las variables "lrc", "noSeleccionados", "min" y "max"."lrc" almacena la Lista Restringida de Candidatos, "noSeleccionados" almacena todos los elementos del problema que no forman parte de la hormiga, "min" y "max" almacena el mínimo y máximo aporte encontrado hasta el momento.
+	
+	\paragraph{}Se recorren todos los elementos del problema y se comprueba que no se encuentren ya en la hormiga.
+	
+	\paragraph{}En el caso de que no se encuentren en la hormiga, se actualiza el valor de la variable "aporte" a cero y se calcula el coste que aportaría a la hormiga si lo incluyéramos en ella. Este coste se almacena en la variable "aporte".
+	
+	\paragraph{}A continuación, se comprueba que aporte no sea mayor que "max" o menor que "min". En el caso de que se cumpla una de estas dos condiciones, se actualiza el valor de "max" o de "min" dependiendo del caso.
+	
+	\paragraph{}Para finalizar, se añade el elemento junto su aporte a la variable "noSeleccionados".
+	
+	\paragraph{}Se realiza lo anterior hasta que se haya recorrido todos los elementos del problema.
+	
+	\paragraph{} Lo siguiente que se realiza es el cálculo de "valorCorte" aplicando la siguiente fórmula, siendo "delta" un parámetro del programa:
+	
+	\begin{center}
+		$valorCorte = min + delta * ( max - min )$
+	\end{center}
+	
+	\paragraph{}Para cada elemento de "noSeleccionados", se comprueba que su aporte sea mayor que "valorCorte". Si se da este caso, se añade el elemento a la Lista Restringida de Candidatos. Cuando se haya hecho la comprobación de todos los elementos "lrc" habrá sido generada.
+	
+	\paragraph{}Una vez se haya realizado esto último, se devuelve la Lista Restringida de Candidatos generada como resultado de la ejecución de la función.
