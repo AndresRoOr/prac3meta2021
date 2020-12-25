@@ -139,3 +139,111 @@
 	\paragraph{}Para cada elemento de "noSeleccionados", se comprueba que su aporte sea mayor que "valorCorte". Si se da este caso, se añade el elemento a la Lista Restringida de Candidatos. Cuando se haya hecho la comprobación de todos los elementos "lrc" habrá sido generada.
 	
 	\paragraph{}Una vez se haya realizado esto último, se devuelve la Lista Restringida de Candidatos generada como resultado de la ejecución de la función.
+	
+	\subsection{Aplicacion de la regla de transición}
+	
+	\paragraph{Entradas}La Lista Restringida de Candidatos "lrc", y la hormiga a la que queremos aplicar la regla de la transición. 
+	
+	\begin{algorithm}[H]
+		\caption{Aplicar regla de transición}
+		\begin{algorithmic}
+			\STATE$probabilidadesTransicion \leftarrow \emptyset$
+			\STATE$sumatoria \leftarrow 0$
+			\STATE$q \leftarrow GenerarFloatAleatorio()$
+			\IF{q0$<$=q}
+			\STATE$elemento \leftarrow 0$
+			\STATE$mayorValor\leftarrow -\infty$
+			\FOR{$elementoLrc \in lrc$}
+			\STATE$sumatoria \leftarrow 0$
+			\FOR{$elementoHormiga \in hormiga$}
+			\STATE$sumatoria \leftarrow sumatoria + (matrizFeromonas[elementoHormiga][elementoLrc]^{alfa} * matrizCostes[elementoHormiga][elementoLrc]^{beta})$
+			\ENDFOR
+			\IF{mayorValor$<$=sumatoria}
+			\STATE$mayorValor \leftarrow sumatoria$
+			\STATE$elemento \leftarrow elementoLrc$
+			\ENDIF
+			\ENDFOR
+			\STATE$hormiga \leftarrow hormiga \cup \{elemento\}$
+			\ELSE
+			\FOR{$elementoLrc \in lrc$}
+			\STATE$valorSuperior \leftarrow 0$
+			\FOR{$elementoHormiga \in hormiga$}
+			\STATE$valorSuperior \leftarrow valorSuperior + (matrizFeromonas[elementoHormiga][elementoLrc]^{alfa} * matrizCostes[elementoHormiga][elementoLrc]^{beta})$
+			\ENDFOR
+			\STATE$sumatoria \leftarrow sumatoria + valorSuperior$
+			\STATE$probabilidadesTransicion \leftarrow probabilidadesTransicion \cup \{valorSuperior\}$
+			\ENDFOR
+			\STATE$indice \leftarrow 0$
+			\FOR{$valor \in probabilidadesTransicion$}
+			\STATE$probabilidad \leftarrow (valor/sumatoria)$
+			\STATE$probabilidadesTransicion[indice]\leftarrow probabilidad$
+			\STATE$indice \leftarrow indice+1$
+			\ENDFOR
+			\STATE$uniforme \leftarrow GenerarFloatAleatorio()$
+			\STATE$indice \leftarrow 0$
+			\STATE$probabilidadAcumulada \leftarrow 0$
+			\FOR{$probabilidad \in probabilidadesTransicion$}
+			\STATE$probabilidadAcumulada \leftarrow probabilidadAcumulada+probabilidad$
+			\IF{uniforme$<$= probabilidadAcumulada}
+			\STATE$hormiga \leftarrow hormiga \cup \{lrc[indice]\}$
+			\ENDIF
+			\STATE$indice \leftarrow indice+1$
+			\ENDFOR
+			\STATE$lrc \leftarrow \emptyset$
+			\ENDIF
+		\end{algorithmic}
+	\end{algorithm}
+
+	\paragraph{}Esta función selecciona uno de los candidatos de la Lista Restringida de Candidatos y la añade a la hormiga aplicando la siguiente regla:
+
+	\begin{equation}
+	p_{k}(r,s)= \left\lbrace
+	\begin{array}{ll}
+	\textup{si } q0 \leq q & \textup{arg }max_{u \in J_{k}(r)}\{(feromona_{ru})^{alfa}*(heuristica_{ru})^{beta}\}\\
+	\textup{en otro caso } & p'_{k}(r,s)
+	\end{array}
+	\right.
+	\end{equation}
+
+	\begin{equation}
+	p'_{k}(r,s)= \left\lbrace
+	\begin{array}{ll}
+	\textup{si } s \in J_{k}(r) & \frac{(feromona_{rs})^{alfa}*(heuristica_{rs})^{beta}}{\sum_{u \in J_{k}(r)}(feromona_{ru})^{alfa}*(heuristica_{ru})^{beta}}\\
+	\textup{en otro caso } & 0
+	\end{array}
+	\right.
+	\end{equation}
+	
+	\paragraph{}Lo primero que se realiza en la función es inicializar las variables "probabilidadesTransicion", "sumatoria" y "q". "probabilidadesTransicion" almacenará la distribución de probabilidades de todos los candidatos y su valor inicial será el conjunto vacío. "sumatoria" almacenará la suma de las dos ecuaciones anteriores y su valor inicial será 0. "q" almacenará un aleatorio generado por la función "GeneraFloatAleatorio()".
+	
+	\paragraph{}Después de esto se comprueba si "q0" es menor o igual que "q". Si se da este caso se realiza lo siguiente.
+	
+	\paragraph{}Se inicializa "elemento" a 0 y "mayorValor" a menos infinito. "elemento" se encargará de almacenar el elemento de "lrc" seleccionado. "mayorValor" almacenará el mayo resultado calculado hasta el momento.
+	
+	\paragraph{}Para cada elemento perteneciente a la Lista Restringida de Candidatos se calcula la fórmula de la transición respecto a cada elemento almacenado en la hormiga, y se adiciona cada resultado a la variable "sumatoria".
+	
+	\paragraph{}Una vez obtenido el valor de "sumatoria", se comprueba si mejora "mayorValor". Si se da este caso, se actualiza "mayorValoe" con "sumatoria" y se guarda el elemento de "lrc" en la variable "elemento".
+	
+	\paragraph{}Cuando se haya recorrido toda la Lista Restringida de Candidatos se añade a la hormiga el mejor elemento de "lrc", almacenado en "elemento".
+	
+	\paragraph{}En el caso de que "q" sea menor que "q0" se realiza los pasos que se describen a continuación.
+	
+	\paragraph{}Se inicia un bucle for que recorrerá todos los elementos de la Lista Restringida de Candidatos.
+	
+	\paragraph{}Dentro de este bucle se inicializa la variable "valorSuperior" a 0, esta variable almacenará el numerador de la fórmula.
+	
+	\paragraph{}A continuación se recorren todos los elementos de la hormiga y se realiza el cálculo de la fórmula del numerador y se adiciona a "valorSuperior".
+	
+	\paragraph{}Una vez se hayan hecho todos los cálculos con todos los elementos de la hormiga, se adiciona a "sumatoria" la variable "valorSuperior" y se añade a "probabilidadesTransicion" esta última.
+	
+	\paragraph{}Una vez terminado el bucle for, se inicializa la variable "indice" a 0, que hará las funciones de iterador.
+	
+	\paragraph{}Se inicia un nuevo bucle for que recorrerá todos los valores almacenado en la variable "probabilidadesTransición".
+	
+	\paragraph{}Dentro de este bucle, se calcula la probabilidad de cada elemento de "lrc" con los valores almacenados en "probabilidadesTransicion" y "sumatoria", y se almacenan en "probabilidadesTransicion". Una vez realizado esto, "probabilidadesTransicion" habrá pasado de almacenar los numeradores de la formula de transición de cada elemento de "lrc" a almacenar las probabilidades calculadas para cada elemento de "lrc".
+	
+	\paragraph{}Al terminar de recorrer todos los elementos de "probabilidadesTransicion", se genera aleatoriamente un número decimal entre 0 y 1 y se almacena en la variable "uniforme". Se inicializan las variables "indice" y "probabilidadAcumulada" a 0. "indice" sigue desempeñando la misma función y "probabilidadAcumulada" almacena la sumatoria de todos los valores de "probabilidadesTransicion" que se hayan recorrido hasta el momento.
+	
+	\paragraph{}Para terminar se inicializa un último bucle for en el que se comprobará a qué elemento de la Lista Restringida de Candidatos corresponde el valor de "uniforme" generado haciendo uso de la distribución de probabilidades almacenada en "probabilidadesTransicion". Cuando sepamos el elemento, se añade a la hormiga como parte de la solución y se termina la ejecución de la función.
+	
+	

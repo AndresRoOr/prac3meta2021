@@ -125,7 +125,6 @@ public class ColoniaHormigas {
 
                 }
 
-                double total = 0.0;
                 int index = 0;
 
                 // Obtemos las probabilidades
@@ -133,7 +132,6 @@ public class ColoniaHormigas {
 
                     Double prob = (valor / sumatoria);
                     ProbabilidadTransicion.set(index, prob);
-                    total += prob;
                     index++;
                 }
 

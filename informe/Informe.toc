@@ -51,17 +51,36 @@
 \contentsline {paragraph}{}{8}{section*.35}%
 \contentsline {paragraph}{}{8}{section*.36}%
 \contentsline {paragraph}{}{8}{section*.37}%
-\contentsline {section}{\numberline {4}Experimentos y análisis de resultados}{8}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Procedimiento de desarrollo de la práctica}{8}{subsection.4.1}%
-\contentsline {paragraph}{}{8}{section*.38}%
-\contentsline {subsubsection}{\numberline {4.1.1}Equipo de pruebas}{8}{subsubsection.4.1.1}%
-\contentsline {paragraph}{}{8}{section*.39}%
-\contentsline {subsubsection}{\numberline {4.1.2}Manual de usuario}{9}{subsubsection.4.1.2}%
-\contentsline {paragraph}{}{9}{section*.40}%
-\contentsline {paragraph}{}{9}{section*.41}%
-\contentsline {subsection}{\numberline {4.2}Parámetros de los algoritmos}{9}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Sistema de Colonias de Hormigas}{9}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Semillas}{9}{subsubsection.4.2.2}%
-\contentsline {paragraph}{}{9}{section*.42}%
-\contentsline {paragraph}{}{9}{section*.43}%
-\contentsline {subsection}{\numberline {4.3}Análisis de los resultados}{9}{subsection.4.3}%
+\contentsline {subsection}{\numberline {3.5}Aplicacion de la regla de transición}{8}{subsection.3.5}%
+\contentsline {paragraph}{Entradas}{8}{section*.38}%
+\contentsline {paragraph}{}{10}{section*.39}%
+\contentsline {paragraph}{}{10}{section*.40}%
+\contentsline {paragraph}{}{10}{section*.41}%
+\contentsline {paragraph}{}{10}{section*.42}%
+\contentsline {paragraph}{}{10}{section*.43}%
+\contentsline {paragraph}{}{10}{section*.44}%
+\contentsline {paragraph}{}{10}{section*.45}%
+\contentsline {paragraph}{}{10}{section*.46}%
+\contentsline {paragraph}{}{10}{section*.47}%
+\contentsline {paragraph}{}{10}{section*.48}%
+\contentsline {paragraph}{}{11}{section*.49}%
+\contentsline {paragraph}{}{11}{section*.50}%
+\contentsline {paragraph}{}{11}{section*.51}%
+\contentsline {paragraph}{}{11}{section*.52}%
+\contentsline {paragraph}{}{11}{section*.53}%
+\contentsline {paragraph}{}{11}{section*.54}%
+\contentsline {paragraph}{}{11}{section*.55}%
+\contentsline {section}{\numberline {4}Experimentos y análisis de resultados}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Procedimiento de desarrollo de la práctica}{11}{subsection.4.1}%
+\contentsline {paragraph}{}{11}{section*.56}%
+\contentsline {subsubsection}{\numberline {4.1.1}Equipo de pruebas}{11}{subsubsection.4.1.1}%
+\contentsline {paragraph}{}{11}{section*.57}%
+\contentsline {subsubsection}{\numberline {4.1.2}Manual de usuario}{12}{subsubsection.4.1.2}%
+\contentsline {paragraph}{}{12}{section*.58}%
+\contentsline {paragraph}{}{12}{section*.59}%
+\contentsline {subsection}{\numberline {4.2}Parámetros de los algoritmos}{12}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Sistema de Colonias de Hormigas}{12}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Semillas}{12}{subsubsection.4.2.2}%
+\contentsline {paragraph}{}{12}{section*.60}%
+\contentsline {paragraph}{}{12}{section*.61}%
+\contentsline {subsection}{\numberline {4.3}Análisis de los resultados}{13}{subsection.4.3}%
