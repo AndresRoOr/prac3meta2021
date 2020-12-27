@@ -37,25 +37,21 @@
 	\subsection{Parámetros de los algoritmos}
 	
 		\subsubsection{Sistema de Colonias de Hormigas}
-		
-			\begin{itemize}
-				\item Iteraciones: Número de iteraciones objetivo, es una de las condiciones de parada del algoritmo, en cada iteración se generan el número
-				especificado de hormigas, valor por defecto = 10000.
-				\item Tmax: Tiempo máximo expresado en segundos para cada problema, es la segunda condición de parada para el algoritmo, valor = 600.
-				\item Q0: Valor de la regla de transición, valor por defecto = 0,95.
-				\item Beta: Valor por defecto = 1.
-				\item Alfa: Valor por defecto = 1.
-				\item Rho: Actualización de la feromona global, valor por defecto = 0,1.
-				\item Phi: Actualización local de la feromona, valor por defecto = 0,1.
-				\item Delta: Valor del parámetro para LRC, un valor más alto indica un LRC más restringida, valor por defecto 0,75.
-				\item Número de hormigas: Define la cantidad de hormigas que se desarrollan en cada iteración, valor por defecto = 10.
-				
-				
-				
-				
-			\end{itemize}
 
-	
+		\paragraph{}Para regular el comportamiento del Sistema de Colonias de Hormigas, se han definido los siguientes parámetros en el archivo de configuración:
+		
+		\begin{itemize}
+			
+			\item Iteraciones:  Número máximo de iteraciones realizadas por el algoritmo principal, valor por defecto: 10.000.
+			\item Número de hormigas: Número de hormigas pertenecientes a cada colonia generada en cada iteración, valor por defecto: 10.
+			\item Q0: Probabilidad de no elegir directamente el candidato que mayor coste aporta a la hormiga en la regla de la transición, valor por defecto: 0,95.
+			\item Beta: Exponente aplicado al coste de los arcos en las fórmulas de la regla de la transición, valores por defecto: 1 y 2.
+			\item Alfa: Exponente aplicado a la feromona de los arcos en las fórmulas de la regla de la transición, valores por defecto: 1 y 2.
+			\item Rho: Constante aplicada en la fórmula de la evaporación global de feromona, valor por defecto: 0,1.
+			\item Phi: Constante aplicada en la fórmula de la evaporación local de feromona, valor por defecto: 0,1.
+			\item Delta: Porcentaje de restricción aplicado sobre la lista de candidatos total de una hormiga, valor por defecto: 0,75.
+			
+		\end{itemize}
 	\subsubsection{Semillas}
 	
 	\paragraph{}Para la generación de números pseudoaleatorios se utiliza una semilla previamente definida en el archivo de configuración, en este caso es 77356084. Esta semilla se va rotando en las 5 iteraciones de cada archivo.
