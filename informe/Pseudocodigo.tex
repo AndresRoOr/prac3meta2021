@@ -45,7 +45,7 @@
 	\paragraph{Salida}Devuelve la matriz de feromonas inicializada.
 	
 	\begin{algorithm}[H]
-		\caption{Inicialización de la matriz de feronoma}
+		\caption{InicializarFeromona()}
 		\begin{algorithmic}
 			\FOR {i=0; i$<$tamañoMatriz; i++}
 			\FOR {j=0; i$<$tamañoMatriz; j++}
@@ -58,12 +58,14 @@
 
 	\paragraph{}El funcionamiento de esta función es trivial: se inicializan todos los elementos de la matriz de feromonas con el valor de "feromonaInicial" (parámetro del programa).
 	
+	\newpage
+	
 	\subsection{Inicialización de la colonia de hormigas}
 	
 	\paragraph{Salida}Devuelve la colonia de hormigas inicializada.
 	
 	\begin{algorithm}[H]
-		\caption{Inicialización de la colonia de hormigas}
+		\caption{InicializarColonia()}
 		\begin{algorithmic}
 			\WHILE{colonia.tamaño()$<$tamañoColonia}
 			\STATE$hormiga \leftarrow \emptyset$
@@ -84,7 +86,7 @@
 	\paragraph{Salida}Devuelve la Lista Restringida de Candidatos "lrc".
 	
 	\begin{algorithm}[H]
-		\caption{Generación de la Lista Restringida de Candidatos}
+		\caption{GenerarLRC(hormiga)}
 		\begin{algorithmic}
 			\STATE$lrc \leftarrow \emptyset$
 			\STATE$noSeleccionados \leftarrow \emptyset$
@@ -145,7 +147,7 @@
 	\paragraph{Entradas}La Lista Restringida de Candidatos "lrc", y la hormiga a la que queremos aplicar la regla de la transición. 
 	
 	\begin{algorithm}[H]
-		\caption{Aplicar regla de transición}
+		\caption{AplicarReglaTransicion(lrc, hormiga)}
 		\begin{algorithmic}
 			\STATE$probabilidadesTransicion \leftarrow \emptyset$
 			\STATE$sumatoria \leftarrow 0$
@@ -246,4 +248,121 @@
 	
 	\paragraph{}Para terminar se inicializa un último bucle for en el que se comprobará a qué elemento de la Lista Restringida de Candidatos corresponde el valor de "uniforme" generado haciendo uso de la distribución de probabilidades almacenada en "probabilidadesTransicion". Cuando sepamos el elemento, se añade a la hormiga como parte de la solución y se termina la ejecución de la función.
 	
+	\subsection{Actualización de la feromona local}
 	
+	\begin{algorithm}[H]
+		\caption{ActualizarFeromonaLocal()}
+		\begin{algorithmic}
+			\FOR{$hormiga \in colonia$}
+			\STATE$elementoB \leftarrow hormiga.UltimoElmento()$
+			\FOR{i=0;i$<$=hormiga.tamaño()-1;i++}
+			\STATE$elementoA\leftarrow hormiga[i]$
+			\STATE$valorAnterior \leftarrow matrizFeromonas[elementoA][elementoB]$
+			\STATE$matrizFeromonas[elementoA][elementoB]\leftarrow (1-rho)*valorAnterior+rho*(costeGreedy)$
+			\STATE$matrizFeromonas[elementoB][elementoA]\leftarrow matrizFeromonas[elementoA][elementoB]$
+			\ENDFOR
+			\ENDFOR
+		\end{algorithmic}
+	\end{algorithm}
+
+	\paragraph{}Se recorren todas las hormigas de la colonia y se realizan las operaciones que se describen a continuación.
+	
+	\paragraph{}Se guarda en la variable "elementoB" el último elemento introducido en la hormiga.
+	
+	\paragraph{}A continuación, se inicia un nuevo bucle for que recorre todos los elementos pertenecientes a la hormiga.
+	
+	\paragraph{}Dentro de este bucle, se guarda en la variable "elementoA" el elemento 'i' de la hormiga y el valor de la feromona del arco "elementoA"-"elementoB" en la variable "valorAnterior". 
+	
+	\paragraph{}Se actualiza el valor de la feromona del arco "elementoA"-"elementoB", almacenada en "matrizFeromonas" con el resultado de la siguiente función:
+	
+	\begin{center}
+		$Feromona(elementoA,elementoB) = (1-\phi)*valorAnterior+\phi*costeGreedy$
+	\end{center}
+
+	\paragraph{}Una vez se haya actualizado la feromona de todos los arcos nuevos de todas las hormigas, se tendrá "matrizFeromonas" actualizada localmente como resultado de la ejecución de la función.
+	
+	\newpage
+	
+	\subsection{Tareas demonio}
+	
+	\begin{algorithm}[H]
+		\caption{TareasDemonio()}
+		\begin{algorithmic}
+			\STATE$mejorHormiga \leftarrow EvaluarMejorHormiga()$
+			\STATE ActualizarFeromonaGlobal(mejorHormiga())
+		\end{algorithmic}
+	\end{algorithm}
+
+	\paragraph{}El funcionamiento de esta función es trivial: se obtiene la mejor hormiga haciendo uso de la función "EvaluarMejorHormiga()" y se actualiza la feromona global.
+	
+	\subsection{Obtener la mejor hormiga de la colonia}
+	
+	\paragraph{Salida}Se devuelve la mejor hormiga de la colonia.
+	
+	\begin{algorithm}[H]
+		\caption{EvaluarMejorHormiga()}
+		\begin{algorithmic}
+		\STATE$mejorHormiga \leftarrow 0$
+		\STATE$valorMejor \leftarrow 0$
+		\FOR{$hormiga \in colonia$}
+		\STATE$coste \leftarrow CalcularCoste(hormiga)$
+		\IF{coste$>$= valorMejor}
+		\STATE$mejorHormiga \leftarrow hormiga$
+		\STATE$valorMejor \leftarrow coste$
+		\ENDIF
+		\ENDFOR	
+		\RETURN mejorHormiga
+		\end{algorithmic}
+	\end{algorithm}
+
+	\paragraph{}Se inicializan las variables "mejorHormiga" y "valorMejor" a 0. "mejorHormiga" almacenará la hormiga con mejor coste de la colonia. "valorMejor" almacenará el coste de la mejor hormiga encontrada.
+	
+	\paragraph{}Se recorren todas las hormigas pertenecientes a la colonia, se calcula el coste de cada hormiga con "CalcularCoste(hormiga)" y, si se mejora "valorMejor", se guarda la hormiga y su coste en las variables destinadas a tal efecto.
+	
+	\paragraph{}Para finalizar, cuando se haya ejecutado el bucle for, se devuelve "mejorHormiga" como resultado de la ejecución.
+	
+	\newpage
+	
+	\subsection{Actualización de la feromona global}
+	
+	\paragraph{Entrada}La mejor hormiga de la colonia.
+	
+	\begin{algorithm}[H]
+		\caption{ActualizarFeromonaGlobal(mejorHormiga)}
+		\begin{algorithmic}
+			\FOR{i=0;i$<$tamañoMatriz;i++}
+			\FOR{j=0;j$<$tamañoMatriz;j++}
+			\STATE$valorAnterior \leftarrow matrizFeromonas[i][j]$
+			\STATE$matrizFeromonas[i][j] \leftarrow (1-phi)*valorAnterior$
+			\STATE$matrizFeromonas[j][i] \leftarrow matrizFeromonas[i][j]$
+			\ENDFOR
+			\ENDFOR
+			\STATE$coste \leftarrow CalcularCoste(mejorHormiga)$
+			\FOR{i=0;i$<$mejorHormiga.Tamaño()-1;i++}
+			\FOR{j=i+1;j$<$mejorHormiga.Tamaño();j++}
+			\STATE$matrizFeromonas[i][j]\leftarrow matrizFeromonas[i][j] + phi*coste$
+			\STATE$matrizFeromonas[j][i] \leftarrow matrizFeromonas[i][j]$
+			\ENDFOR
+			\ENDFOR
+		\end{algorithmic}
+	\end{algorithm}
+
+	\paragraph{}En los dos primeros bucles for se recorre toda la matriz de feromonas evaporando el valor que contenía cada celda por el resultante de la siguiente función:
+	
+	\begin{center}
+		$EvaporacionFeromona(i,j) = (1-\rho)*valorAnterior$
+	\end{center}
+
+	\paragraph{}Una vez evaporada toda la matriz de feromonas, se procede a adicionar feromona a todos los arcos pertenecientes a la mejor hormiga de la colonia.
+	
+	\paragraph{}Para este propósito se almacena el coste de la hormiga, haciendo uso de "CalcularCoste(mejorHormiga)", en la variable "coste".
+	
+	\paragraph{}A continuación, haciendo uso de un doble bucle for, recorremos todos los arcos de la hormiga en la matriz de feromonas y añadimos la feromona resultante de la siguiente función:
+	
+	\begin{center}
+		$AdicionFeromona = \rho*coste$
+	\end{center}
+
+	\paragraph{}Cuando se hayan ejecutado los dos bucles for, tendremos la matriz de feromonas actualziada.
+	
+	\newpage

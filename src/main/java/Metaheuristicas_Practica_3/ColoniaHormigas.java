@@ -396,17 +396,16 @@ public class ColoniaHormigas {
         for (int i = 0; i < colonia.size(); i++) {
             int size = colonia.get(i).getElementos().size();
             ArrayList<Integer> aux = colonia.get(i).getElementos();
+            int b = aux.get(size - 1);
+            
             for (int j = 0; j <= size - 1; j++) {
 
                 int a = aux.get(j);
 
-                int b = aux.get(size - 1);
-
                 double valorAnterior = matrizFeromonas[a][b];
                 matrizFeromonas[a][b] = (1 - rho) * valorAnterior
                         + rho * (costeGreedy);
-                matrizFeromonas[b][a] = (1 - rho) * valorAnterior
-                        + rho * (costeGreedy);
+                matrizFeromonas[b][a] = matrizFeromonas[a][b];
             }
         }
     }
