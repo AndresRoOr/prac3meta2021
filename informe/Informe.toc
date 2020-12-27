@@ -104,4 +104,7 @@
 \contentsline {subsubsection}{\numberline {4.2.2}Semillas}{17}{subsubsection.4.2.2}%
 \contentsline {paragraph}{}{17}{section*.77}%
 \contentsline {paragraph}{}{17}{section*.78}%
-\contentsline {subsection}{\numberline {4.3}Análisis de los resultados}{17}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3}Análisis de los resultados}{18}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}SCH con $\alpha $ = 1, $\beta $ =1}{18}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}SCH con $\alpha $ = 2, $\beta $ =1}{19}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}SCH con $\alpha $ = 1, $\beta $ =2}{19}{subsection.4.6}%
