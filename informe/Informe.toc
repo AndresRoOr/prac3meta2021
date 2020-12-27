@@ -12,49 +12,51 @@
 \contentsline {paragraph}{}{3}{section*.7}%
 \contentsline {subsection}{\numberline {2.2}Configurador}{4}{subsection.2.2}%
 \contentsline {paragraph}{}{4}{section*.8}%
-\contentsline {subsection}{\numberline {2.3}GestorLog}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.3}Greedy}{4}{subsection.2.3}%
 \contentsline {paragraph}{}{4}{section*.9}%
-\contentsline {subsection}{\numberline {2.4}Metaheuristicas}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}Hormiga}{4}{subsection.2.4}%
 \contentsline {paragraph}{}{4}{section*.10}%
-\contentsline {subsection}{\numberline {2.5}Pair}{4}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.5}GestorLog}{4}{subsection.2.5}%
 \contentsline {paragraph}{}{4}{section*.11}%
-\contentsline {subsection}{\numberline {2.6}RandomP}{4}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.6}Metaheuristicas}{4}{subsection.2.6}%
 \contentsline {paragraph}{}{4}{section*.12}%
-\contentsline {subsection}{\numberline {2.7}Timer}{4}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.7}Pair}{4}{subsection.2.7}%
 \contentsline {paragraph}{}{4}{section*.13}%
+\contentsline {subsection}{\numberline {2.8}RandomP}{4}{subsection.2.8}%
+\contentsline {paragraph}{}{4}{section*.14}%
+\contentsline {subsection}{\numberline {2.9}Timer}{4}{subsection.2.9}%
+\contentsline {paragraph}{}{4}{section*.15}%
 \contentsline {section}{\numberline {3}Pseudocódigo}{5}{section.3}%
 \contentsline {subsection}{\numberline {3.1}algoritmo principal}{5}{subsection.3.1}%
-\contentsline {paragraph}{}{5}{section*.14}%
-\contentsline {paragraph}{}{5}{section*.15}%
 \contentsline {paragraph}{}{5}{section*.16}%
 \contentsline {paragraph}{}{5}{section*.17}%
-\contentsline {paragraph}{}{6}{section*.18}%
-\contentsline {paragraph}{}{6}{section*.19}%
+\contentsline {paragraph}{}{5}{section*.18}%
+\contentsline {paragraph}{}{5}{section*.19}%
 \contentsline {paragraph}{}{6}{section*.20}%
 \contentsline {paragraph}{}{6}{section*.21}%
 \contentsline {paragraph}{}{6}{section*.22}%
-\contentsline {subsection}{\numberline {3.2}Inicialización de la matriz de feronoma}{6}{subsection.3.2}%
-\contentsline {paragraph}{Salida}{6}{section*.23}%
+\contentsline {paragraph}{}{6}{section*.23}%
 \contentsline {paragraph}{}{6}{section*.24}%
+\contentsline {subsection}{\numberline {3.2}Inicialización de la matriz de feronoma}{6}{subsection.3.2}%
+\contentsline {paragraph}{Salida}{6}{section*.25}%
+\contentsline {paragraph}{}{6}{section*.26}%
 \contentsline {subsection}{\numberline {3.3}Inicialización de la colonia de hormigas}{7}{subsection.3.3}%
-\contentsline {paragraph}{Salida}{7}{section*.25}%
-\contentsline {paragraph}{}{7}{section*.26}%
+\contentsline {paragraph}{Salida}{7}{section*.27}%
+\contentsline {paragraph}{}{7}{section*.28}%
 \contentsline {subsection}{\numberline {3.4}Generación de la Lista Restringida de Candidatos}{7}{subsection.3.4}%
-\contentsline {paragraph}{Entrada}{7}{section*.27}%
-\contentsline {paragraph}{Salida}{7}{section*.28}%
-\contentsline {paragraph}{}{8}{section*.29}%
-\contentsline {paragraph}{}{8}{section*.30}%
+\contentsline {paragraph}{Entrada}{7}{section*.29}%
+\contentsline {paragraph}{Salida}{7}{section*.30}%
 \contentsline {paragraph}{}{8}{section*.31}%
-\contentsline {paragraph}{}{9}{section*.32}%
-\contentsline {paragraph}{}{9}{section*.33}%
+\contentsline {paragraph}{}{8}{section*.32}%
+\contentsline {paragraph}{}{8}{section*.33}%
 \contentsline {paragraph}{}{9}{section*.34}%
 \contentsline {paragraph}{}{9}{section*.35}%
 \contentsline {paragraph}{}{9}{section*.36}%
 \contentsline {paragraph}{}{9}{section*.37}%
+\contentsline {paragraph}{}{9}{section*.38}%
+\contentsline {paragraph}{}{9}{section*.39}%
 \contentsline {subsection}{\numberline {3.5}Aplicacion de la regla de transición}{9}{subsection.3.5}%
-\contentsline {paragraph}{Entradas}{9}{section*.38}%
-\contentsline {paragraph}{}{11}{section*.39}%
-\contentsline {paragraph}{}{11}{section*.40}%
+\contentsline {paragraph}{Entradas}{9}{section*.40}%
 \contentsline {paragraph}{}{11}{section*.41}%
 \contentsline {paragraph}{}{11}{section*.42}%
 \contentsline {paragraph}{}{11}{section*.43}%
@@ -63,46 +65,48 @@
 \contentsline {paragraph}{}{11}{section*.46}%
 \contentsline {paragraph}{}{11}{section*.47}%
 \contentsline {paragraph}{}{11}{section*.48}%
-\contentsline {paragraph}{}{12}{section*.49}%
-\contentsline {paragraph}{}{12}{section*.50}%
+\contentsline {paragraph}{}{11}{section*.49}%
+\contentsline {paragraph}{}{11}{section*.50}%
 \contentsline {paragraph}{}{12}{section*.51}%
 \contentsline {paragraph}{}{12}{section*.52}%
 \contentsline {paragraph}{}{12}{section*.53}%
 \contentsline {paragraph}{}{12}{section*.54}%
 \contentsline {paragraph}{}{12}{section*.55}%
+\contentsline {paragraph}{}{12}{section*.56}%
+\contentsline {paragraph}{}{12}{section*.57}%
 \contentsline {subsection}{\numberline {3.6}Actualización de la feromona local}{13}{subsection.3.6}%
-\contentsline {paragraph}{}{13}{section*.56}%
-\contentsline {paragraph}{}{13}{section*.57}%
 \contentsline {paragraph}{}{13}{section*.58}%
 \contentsline {paragraph}{}{13}{section*.59}%
 \contentsline {paragraph}{}{13}{section*.60}%
 \contentsline {paragraph}{}{13}{section*.61}%
+\contentsline {paragraph}{}{13}{section*.62}%
+\contentsline {paragraph}{}{13}{section*.63}%
 \contentsline {subsection}{\numberline {3.7}Tareas demonio}{14}{subsection.3.7}%
-\contentsline {paragraph}{}{14}{section*.62}%
-\contentsline {subsection}{\numberline {3.8}Obtener la mejor hormiga de la colonia}{14}{subsection.3.8}%
-\contentsline {paragraph}{Salida}{14}{section*.63}%
 \contentsline {paragraph}{}{14}{section*.64}%
-\contentsline {paragraph}{}{14}{section*.65}%
+\contentsline {subsection}{\numberline {3.8}Obtener la mejor hormiga de la colonia}{14}{subsection.3.8}%
+\contentsline {paragraph}{Salida}{14}{section*.65}%
 \contentsline {paragraph}{}{14}{section*.66}%
+\contentsline {paragraph}{}{14}{section*.67}%
+\contentsline {paragraph}{}{14}{section*.68}%
 \contentsline {subsection}{\numberline {3.9}Actualización de la feromona global}{15}{subsection.3.9}%
-\contentsline {paragraph}{Entrada}{15}{section*.67}%
-\contentsline {paragraph}{}{15}{section*.68}%
-\contentsline {paragraph}{}{15}{section*.69}%
+\contentsline {paragraph}{Entrada}{15}{section*.69}%
 \contentsline {paragraph}{}{15}{section*.70}%
 \contentsline {paragraph}{}{15}{section*.71}%
 \contentsline {paragraph}{}{15}{section*.72}%
+\contentsline {paragraph}{}{15}{section*.73}%
+\contentsline {paragraph}{}{15}{section*.74}%
 \contentsline {section}{\numberline {4}Experimentos y análisis de resultados}{16}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Procedimiento de desarrollo de la práctica}{16}{subsection.4.1}%
-\contentsline {paragraph}{}{16}{section*.73}%
-\contentsline {subsubsection}{\numberline {4.1.1}Equipo de pruebas}{16}{subsubsection.4.1.1}%
-\contentsline {paragraph}{}{16}{section*.74}%
-\contentsline {subsubsection}{\numberline {4.1.2}Manual de usuario}{16}{subsubsection.4.1.2}%
 \contentsline {paragraph}{}{16}{section*.75}%
+\contentsline {subsubsection}{\numberline {4.1.1}Equipo de pruebas}{16}{subsubsection.4.1.1}%
 \contentsline {paragraph}{}{16}{section*.76}%
+\contentsline {subsubsection}{\numberline {4.1.2}Manual de usuario}{16}{subsubsection.4.1.2}%
+\contentsline {paragraph}{}{16}{section*.77}%
+\contentsline {paragraph}{}{16}{section*.78}%
 \contentsline {subsection}{\numberline {4.2}Parámetros de los algoritmos}{17}{subsection.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.1}Sistema de Colonias de Hormigas}{17}{subsubsection.4.2.1}%
-\contentsline {paragraph}{}{17}{section*.77}%
-\contentsline {subsubsection}{\numberline {4.2.2}Semillas}{17}{subsubsection.4.2.2}%
-\contentsline {paragraph}{}{17}{section*.78}%
 \contentsline {paragraph}{}{17}{section*.79}%
+\contentsline {subsubsection}{\numberline {4.2.2}Semillas}{17}{subsubsection.4.2.2}%
+\contentsline {paragraph}{}{17}{section*.80}%
+\contentsline {paragraph}{}{17}{section*.81}%
 \contentsline {subsection}{\numberline {4.3}Análisis de los resultados}{17}{subsection.4.3}%
