@@ -38,8 +38,21 @@
 	
 		\subsubsection{Sistema de Colonias de Hormigas}
 
-
-	
+		\paragraph{}Para regular el comportamiento del Sistema de Colonias de Hormigas, se han definido los siguientes parámetros en el archivo de configuración:
+		
+		\begin{itemize}
+			
+			\item Semilla: Número utilizado para la generación de números pseudoaleatorios, valor por defecto : 77356084.
+			\item Iteraciones:  Número máximo de iteraciones realizadas por el algoritmo principal, valor por defecto: 10.000.
+			\item Número de hormigas: Número de hormigas pertenecientes a cada colonia generada en cada iteración, valor por defecto: 10.
+			\item Q0: Probabilidad de no elegir directamente el candidato que mayor coste aporta a la hormiga en la regla de la transición, valor por defecto: 0,95.
+			\item Beta: Exponente aplicado al coste de los arcos en las fórmulas de la regla de la transición, valores por defecto: 1 y 2.
+			\item Alfa: Exponente aplicado a la feromona de los arcos en las fórmulas de la regla de la transición, valores por defecto: 1 y 2.
+			\item Rho: Constante aplicada en la fórmula de la evaporación global de feromona, valor por defecto: 0,1.
+			\item Phi: Constante aplicada en la fórmula de la evaporación local de feromona, valor por defecto: 0,1.
+			\item Delta: Porcentaje de restricción aplicado sobre la lista de candidatos total de una hormiga, valor por defecto: 0,75.
+			
+		\end{itemize}
 	\subsubsection{Semillas}
 	
 	\paragraph{}Para la generación de números pseudoaleatorios se utiliza una semilla previamente definida en el archivo de configuración, en este caso es 77356084. Esta semilla se va rotando en las 5 iteraciones de cada archivo.

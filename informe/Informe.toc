@@ -101,7 +101,8 @@
 \contentsline {paragraph}{}{16}{section*.76}%
 \contentsline {subsection}{\numberline {4.2}Parámetros de los algoritmos}{17}{subsection.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.1}Sistema de Colonias de Hormigas}{17}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Semillas}{17}{subsubsection.4.2.2}%
 \contentsline {paragraph}{}{17}{section*.77}%
+\contentsline {subsubsection}{\numberline {4.2.2}Semillas}{17}{subsubsection.4.2.2}%
 \contentsline {paragraph}{}{17}{section*.78}%
+\contentsline {paragraph}{}{17}{section*.79}%
 \contentsline {subsection}{\numberline {4.3}Análisis de los resultados}{17}{subsection.4.3}%
