@@ -80,7 +80,7 @@
 					Devs. típica & 0,03\% & 476,35 & 0,03\% & 90,04 & 0,02\% & 177,47 \\ \hline
 				\end{tabular}
 				\caption{Resultados GKD}
-				\label{tab:tab2POINTE2GKD}
+				\label{tab:tabalfa1beta1GKD}
 			\end{center}
 		\end{table} 
 		
@@ -101,7 +101,7 @@
 					Devs. típica & 0,08\% & 167,70 & 0,06\% & 383,61 & 0,17\% & 7,44 \\ \hline
 				\end{tabular}
 				\caption{Resultados SOM}
-				\label{tab:tab2POINTE2SOM}
+				\label{tab:tabalfa1beta1SOM}
 			\end{center}
 		\end{table} 
 		
@@ -121,7 +121,7 @@
 					Devs. típica & 0,08\% & 94,31 & 0,10\% & 41,14 & 0,02\% & 115,73 \\ \hline
 				\end{tabular}
 				\caption{Resultados MDG}
-				\label{tab:tab2POINTE2MDG}
+				\label{tab:tabalfa1beta1MDG}
 			\end{center}
 		\end{table}
 		
@@ -133,4 +133,63 @@
 		
 		\subsection{SCH con $\alpha$ = 1, $\beta$ =2}
 	
-	
+		\begin{table}[H]
+			\begin{center}
+				\begin{tabular}{| c | c | c | c | c | c | c |}
+					\hline
+					\multicolumn{7}{ |c| }{SCH $\alpha$ = 1, $\beta$ =1} \\ \hline
+					& \multicolumn{2}{ |c| }{GKD-c\_1\_n500\_m50} & \multicolumn{2}{ |c| }{GKD-c\_2\_n500\_m50} & \multicolumn{2}{ |c| }{GKD-c\_3\_n500\_m50} \\ \hline
+					Ejecución & Coste & Tiempo & Coste & Tiempo & Coste & Tiempo \\ \hline
+					1 &19458,15 & 77625,00 & 19671,65 & 74997,00 & 19524,13 & 75122,00\\
+					2 &19464,52 & 75155,00 & 19674,24 & 75196,00 & 19517,79 & 75309,00\\
+					3 &19461,56	& 75467,00 & 19672,58 & 75163,00 & 19512,71 & 75040,00\\
+					4 &19453,08	& 76501,00 & 19663,09 & 75141,00 & 19519,27 & 75298,00\\
+					5 &19455,44 & 75050,00 & 19671,50 & 75515,00 & 19513,44 & 75086,00\\ \hline
+					Media & -0,14\% & 75959,60 & -0,16\% & 75202,40 & -0,15\% & 75171,00\\ \hline
+					Devs. típica & 0,02\% & 1093,63& 0,02\% & 190,57 & 0,02\% & 124,46\\ \hline
+				\end{tabular}
+				\caption{Resultados GKD}
+				\label{tab:tabalfa1beta2GKD}
+			\end{center}
+		\end{table} 
+		
+		
+		\begin{table}[H]
+			\begin{center}
+				\begin{tabular}{| c | c | c | c | c | c | c |}
+					\hline
+					\multicolumn{7}{ |c| }{SCH $\alpha$ = 1, $\beta$ =1} \\ \hline
+					& \multicolumn{2}{ |c| }{SOM-b\_11\_n300\_m90} & \multicolumn{2}{ |c| }{SOM-b\_12\_n300\_m120} & \multicolumn{2}{ |c| }{SOM-b\_13\_n400\_m40} \\ \hline
+					Ejecución & Coste & Tiempo & Coste & Tiempo & Coste & Tiempo\\\hline
+					1 &20622,00 & 139098,00 & 35778,00 & 213206,00 & 4623,00 & 47794,00\\
+					2 &20642,00 & 138657,00 & 35788,00 & 213358,00 & 4625,00 & 47931,00\\
+					3 &20626,00 & 139174,00 & 35801,00 & 213563,00 & 4645,00 & 47870,00\\
+					4 &20630,00 & 139116,00 & 35798,00 & 213505,00 & 4628,00 & 48003,00\\
+					5 &20659,00 & 139407,00 & 35777,00 & 213245,00 & 4630,00 & 48161,00\\\hline
+					Media &-0,52\% & 139090,40 & -0,26\% & 213375,40 & -0,60\% & 47951,80\\ \hline
+					Devs. típica & 0,07\% & 271,93 & 0,03\% & 156,52 & 0,19\% & 140,01\\ \hline
+				\end{tabular}
+				\caption{Resultados SOM}
+				\label{tab:tabalfa1beta2SOM}
+			\end{center}
+		\end{table} 
+		
+		\begin{table}[H]
+			\begin{center}
+				\begin{tabular}{| c | c | c | c | c | c | c |}
+					\hline
+					\multicolumn{7}{ |c| }{SCH $\alpha$ = 1, $\beta$ =1} \\ \hline
+					& \multicolumn{2}{ |c| }{MDG-a\_21\_n2000\_m200} & \multicolumn{2}{ |c| }{MDG-a\_22\_n2000\_m200} & \multicolumn{2}{ |c| }{MDG-a\_23\_n2000\_m200}\\\hline
+					Ejecución & Coste & Tiempo & Coste & Tiempo & Coste & Tiempo\\\hline
+					1 &113383,00 & 600256,00 & 113153,00 & 600090,00 & 113132,00 & 600032,00\\
+					2 &113539,00 & 600065,00 & 113180,00 & 600185,00 & 113110,00 & 600298,00\\
+					3 &113368,00 & 600107,00 & 113439,00 & 600184,00 & 113088,00 & 600292,00\\
+					4 &113483,00 & 600283,00 & 113232,00 & 600161,00 & 113064,00 & 600116,00\\
+					5 &113307,00 & 600149,00 & 113258,00 & 600124,00 & 113085,00 & 600223,00\\\hline
+					Media &-0,74\% & 600172,00 & -0,94\% & 600178,80 & -0,90\% & 6000192,20\\ \hline
+					Devs. típica & 0,08\% & 94,31 & 0,10\% & 41,14 & 0,02\% & 115,73 \\ \hline
+				\end{tabular}
+				\caption{Resultados MDG}
+				\label{tab:tabalfa1beta2MDG}
+			\end{center}
+		\end{table}
