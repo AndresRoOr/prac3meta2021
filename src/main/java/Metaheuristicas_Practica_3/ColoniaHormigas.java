@@ -89,7 +89,8 @@ public class ColoniaHormigas {
                         sumatoria
                                 += Math.pow(matrizFeromonas[eleHormiga][eleLrc],
                                         alfa)
-                                * Math.pow(archivoDatos.getMatrizCostes()[eleHormiga][eleLrc], beta);
+                                * Math.pow(archivoDatos.getMatrizCostes()
+                                        [eleHormiga][eleLrc], beta);
                     }
 
                     if (mayorValor == Double.MAX_VALUE) {
@@ -114,7 +115,8 @@ public class ColoniaHormigas {
 
                     for (Integer eleHormiga : aux.getElementos()) {
                         valorSuperior
-                                += Math.pow(archivoDatos.getMatrizCostes()[eleHormiga][eleLrc], beta)
+                                += Math.pow(archivoDatos.getMatrizCostes()
+                                        [eleHormiga][eleLrc], beta)
                                 * Math.pow(matrizFeromonas[eleHormiga][eleLrc],
                                         alfa);
                     }
@@ -289,8 +291,11 @@ public class ColoniaHormigas {
 
             System.out.println(mejorHormiga.getContribucion());
 
-            gestor.escribirArchivo("ITERACION: " + iteraciones + "\n" + "Mejor homiga: " + mejorHormiga.getElementos().toString() + "\n"
-                    + "Coste mejor hormiga: " + mejorHormiga.getContribucion() + "\n");
+            gestor.escribirArchivo("ITERACION: " + iteraciones + "\n" 
+                    + "Mejor homiga: " + mejorHormiga.getElementos().toString()
+                    + "\n"
+                    + "Coste mejor hormiga: " + mejorHormiga.getContribucion() 
+                    + "\n");
         }
     }
 
