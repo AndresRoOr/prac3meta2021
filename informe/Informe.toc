@@ -115,3 +115,4 @@
 \contentsline {paragraph}{}{19}{section*.83}%
 \contentsline {subsection}{\numberline {4.4}SCH con $\alpha $ = 2, $\beta $ =1}{19}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}SCH con $\alpha $ = 1, $\beta $ =2}{19}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Evolución de los resultados}{20}{subsection.4.6}%
