@@ -194,7 +194,21 @@
 			\end{center}
 		\end{table}
 
-	\subsection{Evolución de los resultados}
+	\subsection{Evolución de los resultados durante la experimentación}
+	
+	\paragraph{}En las siguientes gráficas se muestra la evolución del coste de la mejor hormiga encontrada hasta el momento en la ejecución de cada uno de los algoritmos conforme aumenta el número de iteraciones realizadas para cada uno de los valores de $\alpha$ y $\beta$ del S.C.H. La semilla utilizada para las ejecuciones ha sido 35608477.
+	
+	\paragraph{}Hemos decidido que la unidad de tiempo sea las iteraciones realizadas por el algoritmo en vez del tiempo de ejecución ya que este valor es sobre el que se comprueba la condición de parada y, además, puede arrojar información relevante a la hora de la modificación de dicho parámetro para obtener mejoras de tiempos o en el valor de las soluciones obtenidas.
+	
+	\paragraph{}Otro de los motivos por los que no se ha escogido el tiempo transcurrido como unidad de tiempo para las gráficas de convergencia de los costes es porque en un principio la única condición de parada era el número de iteraciones realizadas. No obstante, el escoger las iteraciones nos permite comparar resultados obtenidos en otros equipos de experimentación, en los que pueden variar sus tiempos de ejecución debido a su configuración de hardware.
+	
+	\paragraph{}En este apartado, se hará referencia a las diferentes configuraciones de $\alpha$ y $\beta$ haciendo uso de la siguiente codificación:
+	
+	\begin{itemize}
+		\item$\alpha$ = 1 $\beta$ = 1: \textbf{A1B1}
+		\item$\alpha$ = 1 $\beta$ = 2: \textbf{A1B2}
+		\item$\alpha$ = 2 $\beta$ = 1: \textbf{A2B1}
+	\end{itemize}
 	
 	\begin{figure}[H]
 		\centering
@@ -203,58 +217,184 @@
 		\label{gkd-c1_historico}
 	\end{figure}
 
+	\paragraph{}Para el problema GKD-c1 todas las configuraciones empiezan a encontrar soluciones aceptables desde la primera iteración realizada. Hemos considerado una solución aceptable aquella solución que difiere como máximo un 10\% respecto al óptimo global. En este problema las soluciones aceptables son todas aquellas cuyo coste es superior a 17.536,669.
+	
+	\paragraph{}En la ejecución de la configuración A1B1, el mejor coste obtenido se estabiliza en 19.462,505859375 a partir de las 5.844 iteraciones, permaneciendo inalterable hasta finalizar las 10.000 iteraciones objetivo. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 10 iteraciones.
+	
+	\paragraph{}En la ejecución de la configuración A1B2, el mejor coste obtenido se estabiliza en 19.461,5625 a partir de las 8.791 iteraciones, permaneciendo inalterable hasta finalizar las 10.000 iteraciones objetivo. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 3 iteraciones.
+	
+	\paragraph{}En la ejecución de la configuración A2B1, el mejor coste obtenido se estabiliza en 19.470,498046875 a partir de las 7.166 iteraciones, permaneciendo inalterable hasta finalizar las 10.000 iteraciones objetivo. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 7 iteraciones.
+	
+	\paragraph{}En la configuración A1B1 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0011\% aproximadamente, siendo este último 19.485,188.
+	
+	\paragraph{}En la configuración A1B2 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0012\% aproximadamente.
+	
+	\paragraph{}En la configuración A2B1 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0007\% aproximadamente.	
+
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{img/GKD2conver.png}
-		\caption{Evolución del mejor coste en la ejecución de todos los algoritmos 	respecto al número de evaluaciones para el problema GKD-c1, semilla 35608477}
+		\caption{Evolución del mejor coste en la ejecución de todos los algoritmos 	respecto al número de evaluaciones para el problema GKD-c2, semilla 35608477}
 		\label{gkd-c2_historico}
 	\end{figure}
+
+	\paragraph{}Para el problema GKD-c2 todas las configuraciones empiezan a encontrar soluciones aceptables desde la primera iteración realizada. Hemos considerado una solución aceptable aquella solución que difiere como máximo un 10\% respecto al óptimo global. En este problema las soluciones aceptables son todas aquellas cuyo coste es superior a 17.731,3833.
+	
+	\paragraph{}En la ejecución de la configuración A1B1, el mejor coste obtenido se estabiliza en 19.670,576171875 a partir de las 9.609 iteraciones, permaneciendo inalterable hasta finalizar las 10.000 iteraciones objetivo. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 11 iteraciones.
+	
+	\paragraph{}En la ejecución de la configuración A1B2, el mejor coste obtenido se estabiliza en 19.672,58203125 a partir de las 3.243 iteraciones, permaneciendo inalterable hasta finalizar las 10.000 iteraciones objetivo. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 11 iteraciones.
+	
+	\paragraph{}En la ejecución de la configuración A2B1, el mejor coste obtenido se estabiliza en 19.676,869140625 a partir de las 8.619 iteraciones, permaneciendo inalterable hasta finalizar las 10.000 iteraciones objetivo. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 8 iteraciones.
+	
+	\paragraph{}En la configuración A1B1 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0015\% aproximadamente, siendo este último 19.701,537.
+	
+	\paragraph{}En la configuración A1B2 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0014\% aproximadamente.
+	
+	\paragraph{}En la configuración A2B1 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0012\% aproximadamente.
 
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{img/GKD3conver.png}
-		\caption{Evolución del mejor coste en la ejecución de todos los algoritmos respecto al número de evaluaciones para el problema GKD-c1, semilla 35608477}
+		\caption{Evolución del mejor coste en la ejecución de todos los algoritmos respecto al número de evaluaciones para el problema GKD-c3, semilla 35608477}
 		\label{gkd-c3_historico}
 	\end{figure}
+
+	\paragraph{}Para el problema GKD-c3 todas las configuraciones empiezan a encontrar soluciones aceptables desde la primera iteración realizada. Hemos considerado una solución aceptable aquella solución que difiere como máximo un 10\% respecto al óptimo global. En este problema las soluciones aceptables son todas aquellas cuyo coste es superior a 17.592,4863.
+	
+	\paragraph{}En la ejecución de la configuración A1B1, el mejor coste obtenido se estabiliza en 19.519,779296875 a partir de las 8.244 iteraciones, permaneciendo inalterable hasta finalizar las 10.000 iteraciones objetivo. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 2 iteraciones.
+	
+	\paragraph{}En la ejecución de la configuración A1B2, el mejor coste obtenido se estabiliza en 19.512,7109375 a partir de las 7.058 iteraciones, permaneciendo inalterable hasta finalizar las 10.000 iteraciones objetivo. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 9 iteraciones.
+	
+	\paragraph{}En la ejecución de la configuración A2B1, el mejor coste obtenido se estabiliza en 19.531,783203125 a partir de las 5.114 iteraciones, permaneciendo inalterable hasta finalizar las 10.000 iteraciones objetivo. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 5 iteraciones.
+	
+	\paragraph{}En la configuración A1B1 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0014\% aproximadamente, siendo este último 19.547,207.
+	
+	\paragraph{}En la configuración A1B2 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0017\% aproximadamente.
+	
+	\paragraph{}En la configuración A2B1 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0007\% aproximadamente.
 
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{img/SOM1conver.png}
-		\caption{Evolución del mejor coste en la ejecución de todos los algoritmos respecto al número de evaluaciones para el problema GKD-c1, semilla 35608477}
+		\caption{Evolución del mejor coste en la ejecución de todos los algoritmos respecto al número de evaluaciones para el problema SOM-b11, semilla 35608477}
 		\label{SOM-b_11_historico}
 	\end{figure}
+
+	\paragraph{}Para el problema SOM-b11 todas las configuraciones empiezan a encontrar soluciones aceptables desde la primera iteración realizada. Hemos considerado una solución aceptable aquella solución que difiere como máximo un 10\% respecto al óptimo global. En este problema las soluciones aceptables son todas aquellas cuyo coste es superior a 18.668,7.
+	
+	\paragraph{}En la ejecución de la configuración A1B1, el mejor coste obtenido se estabiliza en 20.645 a partir de las 8.174 iteraciones, permaneciendo inalterable hasta finalizar las 10.000 iteraciones objetivo. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 84 iteraciones.
+	
+	\paragraph{}En la ejecución de la configuración A1B2, el mejor coste obtenido se estabiliza en 20.626 a partir de las 7.351 iteraciones, permaneciendo inalterable hasta finalizar las 10.000 iteraciones objetivo. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 82 iteraciones.
+	
+	\paragraph{}En la ejecución de la configuración A2B1, el mejor coste obtenido se estabiliza en 20.676 a partir de las 7.260 iteraciones, permaneciendo inalterable hasta finalizar las 10.000 iteraciones objetivo. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 31 iteraciones.
+	
+	\paragraph{}En la configuración A1B1 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0047\% aproximadamente, siendo este último 20.743.
+	
+	\paragraph{}En la configuración A1B2 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0056\% aproximadamente.
+	
+	\paragraph{}En la configuración A2B1 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0032\% aproximadamente.
 
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{img/SOM2conver.png}
-		\caption{Evolución del mejor coste en la ejecución de todos los algoritmos respecto al número de evaluaciones para el problema GKD-c1, semilla 35608477}
+		\caption{Evolución del mejor coste en la ejecución de todos los algoritmos respecto al número de evaluaciones para el problema SOM-b12, semilla 35608477}
 		\label{SOM-b_12_historico}
 	\end{figure}
+
+	\paragraph{}Para el problema SOM-b12 todas las configuraciones empiezan a encontrar soluciones aceptables desde la primera iteración realizada. Hemos considerado una solución aceptable aquella solución que difiere como máximo un 10\% respecto al óptimo global. En este problema las soluciones aceptables son todas aquellas cuyo coste es superior a 32.292,9.
+	
+	\paragraph{}En la ejecución de la configuración A1B1, el mejor coste obtenido se estabiliza en 35.780 a partir de las 582 iteraciones, permaneciendo inalterable hasta finalizar las 10.000 iteraciones objetivo. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 6 iteraciones.
+	
+	\paragraph{}En la ejecución de la configuración A1B2, el mejor coste obtenido se estabiliza en 35.801 a partir de las 8.356 iteraciones, permaneciendo inalterable hasta finalizar las 10.000 iteraciones objetivo. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 7 iteraciones.
+	
+	\paragraph{}En la ejecución de la configuración A2B1, el mejor coste obtenido se estabiliza en 35.854 a partir de las 2.051 iteraciones, permaneciendo inalterable hasta finalizar las 10.000 iteraciones objetivo. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 4 iteraciones.
+	
+	\paragraph{}En la configuración A1B1 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0028\% aproximadamente, siendo este último 35.881.
+	
+	\paragraph{}En la configuración A1B2 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0022\% aproximadamente.
+	
+	\paragraph{}En la configuración A2B1 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0007\% aproximadamente.
 
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{img/SOM3conver.png}
-		\caption{Evolución del mejor coste en la ejecución de todos los algoritmos respecto al número de evaluaciones para el problema GKD-c1, semilla 35608477}
+		\caption{Evolución del mejor coste en la ejecución de todos los algoritmos respecto al número de evaluaciones para el problema SOM-b13, semilla 35608477}
 		\label{SOM-b_13_historico}
 	\end{figure}
+
+	\paragraph{}Para el problema SOM-b13 todas las configuraciones empiezan a encontrar soluciones aceptables desde la primera iteración realizada. Hemos considerado una solución aceptable aquella solución que difiere como máximo un 10\% respecto al óptimo global. En este problema las soluciones aceptables son todas aquellas cuyo coste es superior a 4.192,2.
+	
+	\paragraph{}En la ejecución de la configuración A1B1, el mejor coste obtenido se estabiliza en 4.646 a partir de las 4.891 iteraciones, permaneciendo inalterable hasta finalizar las 10.000 iteraciones objetivo. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 1.225 iteraciones.
+	
+	\paragraph{}En la ejecución de la configuración A1B2, el mejor coste obtenido se estabiliza en 4.645 a partir de las 7.245 iteraciones, permaneciendo inalterable hasta finalizar las 10.000 iteraciones objetivo. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 460 iteraciones.
+	
+	\paragraph{}En la ejecución de la configuración A2B1, el mejor coste obtenido se estabiliza en 4.656 a partir de las 9.525 iteraciones, permaneciendo inalterable hasta finalizar las 10.000 iteraciones objetivo. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 67 iteraciones.
+	
+	\paragraph{}En la configuración A1B1 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0025\% aproximadamente, siendo este último 4.658.
+	
+	\paragraph{}En la configuración A1B2 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0027\% aproximadamente.
+	
+	\paragraph{}En la configuración A2B1 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0004\% aproximadamente.
 
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{img/MDG1conver.png}
-		\caption{Evolución del mejor coste en la ejecución de todos los algoritmos respecto al número de evaluaciones para el problema GKD-c1, semilla 35608477}
+		\caption{Evolución del mejor coste en la ejecución de todos los algoritmos respecto al número de evaluaciones para el problema MDG-a21, semilla 35608477}
 		\label{MDG-a_21_historico}
 	\end{figure}
+
+	\paragraph{}Para el problema MDG-a21 todas las configuraciones empiezan a encontrar soluciones aceptables desde la primera iteración realizada. Hemos considerado una solución aceptable aquella solución que difiere como máximo un 10\% respecto al óptimo global. En este problema las soluciones aceptables son todas aquellas cuyo coste es superior a 102.833,1.
+	
+	\paragraph{}En la ejecución de la configuración A1B1, el mejor coste obtenido se estabiliza en 113.368 a partir de las 1.003 iteraciones, permaneciendo inalterable hasta realizar 2.076 iteraciones, donde se termina la ejecución al haber alcanzado los 600 segundos límites de tiempo de ejecución. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 425 iteraciones.
+	
+	\paragraph{}En la ejecución de la configuración A1B2, el mejor coste obtenido se estabiliza en 113.257 a partir de las 2.196 iteraciones, permaneciendo inalterable hasta realizar 2.575 iteraciones, donde se termina la ejecución al haber alcanzado los 600 segundos límites de tiempo de ejecución. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 382 iteraciones.
+	
+	\paragraph{}En la ejecución de la configuración A2B1, el mejor coste obtenido se estabiliza en 113.831 a partir de las 2.511 iteraciones, permaneciendo inalterable hasta realizar 2.793 iteraciones, donde se termina la ejecución al haber alcanzado los 600 segundos límites de tiempo de ejecución. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 74 iteraciones.
+	
+	\paragraph{}En la configuración A1B1 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0077\% aproximadamente, siendo este último 114.259.
+	
+	\paragraph{}En la configuración A1B2 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0087\% aproximadamente.
+	
+	\paragraph{}En la configuración A2B1 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0037\% aproximadamente.
 
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{img/MDG2conver.png}
-		\caption{Evolución del mejor coste en la ejecución de todos los algoritmos respecto al número de evaluaciones para el problema GKD-c1, semilla 35608477}
+		\caption{Evolución del mejor coste en la ejecución de todos los algoritmos respecto al número de evaluaciones para el problema MDG-a22, semilla 35608477}
 		\label{MDG-a_22_historico}
 	\end{figure}
+
+	\paragraph{}Para el problema MDG-a22 todas las configuraciones empiezan a encontrar soluciones aceptables desde la primera iteración realizada. Hemos considerado una solución aceptable aquella solución que difiere como máximo un 10\% respecto al óptimo global. En este problema las soluciones aceptables son todas aquellas cuyo coste es superior a 102.894,3.
+	
+	\paragraph{}En la ejecución de la configuración A1B1, el mejor coste obtenido se estabiliza en 113.439 a partir de las 890 iteraciones, permaneciendo inalterable hasta realizar 2.121 iteraciones, donde se termina la ejecución al haber alcanzado los 600 segundos límites de tiempo de ejecución. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 337 iteraciones.
+	
+	\paragraph{}En la ejecución de la configuración A1B2, el mejor coste obtenido se estabiliza en 113.464 a partir de las 1.295 iteraciones, permaneciendo inalterable hasta realizar 2.592 iteraciones, donde se termina la ejecución al haber alcanzado los 600 segundos límites de tiempo de ejecución. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 491 iteraciones.
+	
+	\paragraph{}En la ejecución de la configuración A2B1, el mejor coste obtenido se estabiliza en 113.649 a partir de las 2.085 iteraciones, permaneciendo inalterable hasta realizar 2.758 iteraciones, donde se termina la ejecución al haber alcanzado los 600 segundos límites de tiempo de ejecución. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 100 iteraciones.
+	
+	\paragraph{}En la configuración A1B1 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0077\% aproximadamente, siendo este último 114.327.
+	
+	\paragraph{}En la configuración A1B2 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0075\% aproximadamente.
+	
+	\paragraph{}En la configuración A2B1 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0059\% aproximadamente.
 
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{img/MDG3conver.png}
-		\caption{Evolución del mejor coste en la ejecución de todos los algoritmos respecto al número de evaluaciones para el problema GKD-c1, semilla 35608477}
+		\caption{Evolución del mejor coste en la ejecución de todos los algoritmos respecto al número de evaluaciones para el problema MDG-a23, semilla 35608477}
 		\label{MDG-a_23_historico}
 	\end{figure}
+
+	\paragraph{}Para el problema MDG-a23 todas las configuraciones empiezan a encontrar soluciones aceptables desde la primera iteración realizada. Hemos considerado una solución aceptable aquella solución que difiere como máximo un 10\% respecto al óptimo global. En este problema las soluciones aceptables son todas aquellas cuyo coste es superior a 102.710,7.
+	
+	\paragraph{}En la ejecución de la configuración A1B1, el mejor coste obtenido se estabiliza en 113.088 a partir de las 1.105 iteraciones, permaneciendo inalterable hasta realizar 2.012 iteraciones, donde se termina la ejecución al haber alcanzado los 600 segundos límites de tiempo de ejecución. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 1.027 iteraciones.
+	
+	\paragraph{}En la ejecución de la configuración A1B2, el mejor coste obtenido se estabiliza en 113.136 a partir de las 1.122 iteraciones, permaneciendo inalterable hasta realizar 2.521 iteraciones, donde se termina la ejecución al haber alcanzado los 600 segundos límites de tiempo de ejecución. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 503 iteraciones.
+	
+	\paragraph{}En la ejecución de la configuración A2B1, el mejor coste obtenido se estabiliza en 113.516 a partir de las 2.372 iteraciones, permaneciendo inalterable hasta realizar 2.665 iteraciones, donde se termina la ejecución al haber alcanzado los 600 segundos límites de tiempo de ejecución. Esta configuración es capaz de encontrar costes con una diferencia inferior a un 1\% respecto al óptimo global a partir de las 79 iteraciones.
+	
+	\paragraph{}En la configuración A1B1 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0090\% aproximadamente, siendo este último 114.123.
+	
+	\paragraph{}En la configuración A1B2 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0086\% aproximadamente.
+	
+	\paragraph{}En la configuración A2B1 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0053\% aproximadamente.
