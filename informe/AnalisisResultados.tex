@@ -133,6 +133,73 @@
 		
 		\subsubsection{SCH con $\alpha$ = 2, $\beta$ =1}
 		
+		\paragraph{}De la experimentación realizada, obtenemos las siguientes tablas, correspondientes al S.C.H. con $\alpha$ = 2 y $\beta$ = 1:
+		
+		\begin{table}[H]
+			\begin{center}
+				\begin{tabular}{| c | c | c | c | c | c | c |}
+					\hline
+					\multicolumn{7}{ |c| }{SCH $\alpha$ = 2, $\beta$ =1} \\ \hline
+					& \multicolumn{2}{ |c| }{GKD-c\_1\_n500\_m50} & \multicolumn{2}{ |c| }{GKD-c\_2\_n500\_m50} & \multicolumn{2}{ |c| }{GKD-c\_3\_n500\_m50} \\ \hline
+					Ejecución & Coste & Tiempo & Coste & Tiempo & Coste & Tiempo \\ \hline
+					1 &19474,14	& 75409,00 & 19690,75 & 74542,00 & 19531,98 & 74963,00\\
+					2 &19467,52 & 74773,00 & 19684,14 & 74459,00 & 19530,92 & 75088,00\\
+					3 &19470,50	& 75609,00 & 19676,87 & 74610,00 & 19531,78 & 75081,00\\
+					4 &19470,51 & 74761,00 & 19684,42 & 74624,00 & 19528,11 & 74778,00\\
+					5 &19470,31 & 74776,00 & 19685,35 & 74741,00 & 19535,05 & 74920,00\\ \hline
+					Media &-0,07\% & 75065,60 & -0,09\% & 74595,20 & -0,08\% & 74966,00\\ \hline
+					Devs. típica & 0,01\% & 410,94 & 0,03\% & 104,51 & 0,01\% & 128,04\\ \hline
+				\end{tabular}
+				\caption{Resultados GKD}
+				\label{tab:tabalfa2beta1GKD}
+			\end{center}
+		\end{table} 
+		
+		
+		\begin{table}[H]
+			\begin{center}
+				\begin{tabular}{| c | c | c | c | c | c | c |}
+					\hline
+					\multicolumn{7}{ |c| }{SCH $\alpha$ = 2, $\beta$ =1} \\ \hline
+					& \multicolumn{2}{ |c| }{SOM-b\_11\_n300\_m90} & \multicolumn{2}{ |c| }{SOM-b\_12\_n300\_m120} & \multicolumn{2}{ |c| }{SOM-b\_13\_n400\_m40} \\ \hline
+					Ejecución & Coste & Tiempo & Coste & Tiempo & Coste & Tiempo\\\hline
+					1 &20659,00 & 137093,00 & 35850,00 & 208580,00 & 4624,00 & 45791,00\\
+					2 &20680,00 & 136936,00 & 35841,00 & 208674,00 & 4649,00 & 45878,00\\
+					3 &20676,00 & 136880,00 & 35854,00 & 208779,00 & 4656,00 & 45488,00\\
+					4 &20685,00 & 137012,00 & 35855,00 & 209401,00 & 4658,00 & 44994,00\\
+					5 &20670,00 & 136576,00 & 35853,00 & 208708,00 & 4658,00 & 45268,00\\ \hline
+					Media &-0,33\% & 136899,40 & -0,08\% & 208828,40 & -0,19\% & 45483,80\\ \hline
+					Devs. típica & 0,05\% & 197,78 & 0,02\% & 328,01 & 0,31\% & 366,15\\ \hline
+				\end{tabular}
+				\caption{Resultados SOM}
+				\label{tab:tabalfa2beta1SOM}
+			\end{center}
+		\end{table} 
+		
+		\begin{table}[H]
+			\begin{center}
+				\begin{tabular}{| c | c | c | c | c | c | c |}
+					\hline
+					\multicolumn{7}{ |c| }{SCH $\alpha$ = 2, $\beta$ =1} \\ \hline
+					& \multicolumn{2}{ |c| }{MDG-a\_21\_n2000\_m200} & \multicolumn{2}{ |c| }{MDG-a\_22\_n2000\_m200} & \multicolumn{2}{ |c| }{MDG-a\_23\_n2000\_m200}\\\hline
+					Ejecución & Coste & Tiempo & Coste & Tiempo & Coste & Tiempo\\\hline
+					1 &113803,00 & 600034,00 & 113790,00 & 600104,00 & 113361,00 & 600223,00\\
+					2 &113662,00 & 600153,00 & 113463,00 & 600130,00 & 113594,00 & 600144,00\\
+					3 &113831,00 & 600100,00 & 113649,00 & 600142,00 & 113516,00 & 600155,00\\
+					4 &113906,00 & 600218,00 & 113653,00 & 600086,00 & 113369,00 & 600057,00\\
+					5 &113879,00 & 600192,00 & 113646,00 & 600054,00 & 113505,00 & 600036,00\\ \hline
+					Media &-0,39\% & 600139,40 & -0,60\% & 600103,20 & -0,57\% & 600123,00\\ \hline
+					Devs. típica & 0,08\% & 73,81 & 0,10\% & 35,15 & 0,09\% & 76,47 \\ \hline
+				\end{tabular}
+				\caption{Resultados MDG}
+				\label{tab:tabalfa2beta1MDG}
+			\end{center}
+		\end{table}
+	
+		\paragraph{} Como puede observarse en los resultados, el algoritmo exhibe un comportamiento robusto, manteniendo las desviación típica de los resultados por debajo del 0,10\% en casi todos los archivos estudiados, a excepción de dos. En todo caso la mayor desviación típica alcanzada es de un 0,31\%. Si evaluamos la calidad de las soluciones obtenidas respecto a costes, el algoritmo solo es capaz de encontrar el óptimo global para el archivo SOM-b\_12\_n300\_m120 con los parámetros anteriormente descritos.
+		
+		\paragraph{} En lo referente a tiempos, el algoritmo consigue ejecutar las iteraciones objetivo antes de los 600 segundos para las instancias pequeñas y medianas. No es el caso de las instancias de datos más grandes, dónde el algoritmo finaliza su ejecución en torno las 2.000 iteraciones, sin sobrepasar las 3.000 iteraciones en ningún caso, para los archivos MDG.
+		
 		\subsubsection{SCH con $\alpha$ = 1, $\beta$ =2}
 		
 		\paragraph{}De la experimentación realizada, obtenemos las siguientes tablas, correspondientes al S.C.H. con $\alpha$ = 1 y $\beta$ = 2:
