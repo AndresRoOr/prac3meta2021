@@ -558,3 +558,49 @@
 	\end{figure}
 
 	\paragraph{}En el problema MDG-a23, la configuración A1B1 obtiene muy buen resultado en cuanto a robustez de las soluciones obtenidas, seguida de A1B2 y A2B1, que obtiene la peor agrupación de resultados de las tres. En cuanto a resultados, la configuración A2B1 vuelve a ser la mejor, seguida de A1B2 y A1B1.
+	
+	\paragraph{}Si bien la configuración del Sistema de Colonia de Hormigas con $\alpha$=2 y $\beta$=1 en varios de los archivos de datos no consigue obtener la mejor robustez en las soluciones obtenidas, creemos que la calidad que consigue obtener respecto a estas es motivo suficiente como para considerarla la mejor configuración de las tres.
+	
+	\paragraph{}Si atendemos a las gráficas de convergencia del epígrafe 4.4 observamos que para las series GKD esta configuración converge ligeramente más rápido que las otras dos. Para las series SOM se evidencia aún más esta rapidez de convergencia, siendo en las series más grandes de datos, MDG, donde se observa claramente cómo la configuración elegida como ganadora obtiene una clara ventaja respecto a sus competidoras en rapidez de convergencia hacia el óptimo global.
+	
+	\paragraph{}Además, como tónica general, se puede apreciar en el mismo epígrafe cómo en todas las series de datos la misma configuración es capaz de empezar a encontrar soluciones con menos de 1\% de diferencia respecto al óptimo global notablemente antes que las otras dos configuraciones contrincantes.
+	
+	\paragraph{}De este modo, teniendo en cuenta todas las evidencias detectadas y anteriormente expuestas \textbf{elegimos como configuración ganadora el Sistema de Colonias de Hormigas con $\alpha$=2 y $\beta$=1.} 
+	
+	\subsubsection{Causas del mejor resultados}
+	
+	\paragraph{}Hemos querido explicar desde un marco teórico el porqué la configuración resultante como vencedora es capaz de obtener mejores resultados, para complementar los datos experimentales del estudio.
+	
+	\paragraph{}Como hemos visto en clase, los Sistemas de Colonias de Hormigas tienen un alto componente exploratorio, aunque se apliquen las mejoras introducidas respecto a los sistemas de hormigas:
+	
+	\begin{itemize}
+		\item El equilibrio entre exploración y explotación aplicado en la regla de la transición.
+		\item La actualización de la feromona solo de la mejor hormiga de la colonia y evaporación del resto de arcos del dominio del problema.
+		\item Actualización local de la feromona online.
+	\end{itemize}
+
+	\paragraph{}Dentro de estas mejoras, la modificación de los valores de $\alpha$ y $\beta$ afecta directamente a la forma en la que distribuimos la probabilidad de transición de entre todos los arcos posibles:
+	
+	\begin{equation}
+	p_{k}(r,s)= \left\lbrace
+	\begin{array}{ll}
+	\textup{si } q0 \leq q & \textup{arg }max_{u \in J_{k}(r)}\{(\tau_{ru})^{\alpha}*(\eta_{ru})^{\beta}\}\\
+	\textup{en otro caso } & p'_{k}(r,s)
+	\end{array}
+	\right.
+	\end{equation}
+	
+	\begin{equation}
+	p'_{k}(r,s)= \left\lbrace
+	\begin{array}{ll}
+	\textup{si } s \in J_{k}(r) & \frac{(\tau_{rs})^{\alpha}*(\eta_{rs})^{\beta}}{\sum_{u \in J_{k}(r)}(\tau_{ru})^{\alpha}*(\eta_{ru})^{\beta}}\\
+	\textup{en otro caso } & 0
+	\end{array}
+	\right.
+	\end{equation}
+	
+	\paragraph{}Un mayor valor de $\beta$ ocasiona que los arcos con mejor coste de aporte a la solución actual reciban un mayor reparto de probabilidad, esto genera que las hormigas tiendan a guiarse por el coste de los arcos pudiendo llegar a estancarse en zonas de óptimos globales.
+	
+	\paragraph{}Sin embargo, un mayor valor de $\alpha$ favorece la distribución de la feromona a aquellos arcos que más feromona posean, es decir, favorece que las hormigas se desplacen a arcos que puede que no obtengan mejor aporte de solución pero que sean los más prometedores. 
+	
+	\paragraph{}Aquí entran en juego las dos mejoras: la actualización de la feromona solo de la mejor hormiga y la actualización de la feromona local. Como conclusión, las hormigas tienden a desplazarse a arcos por los que no han pasado hormigas y en entornos cercanos a los transitados por la mejor hormiga, obteniendo un gran equilibrio entre exploración y explotación.
