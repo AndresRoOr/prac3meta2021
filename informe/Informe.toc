@@ -212,3 +212,6 @@
 \contentsline {paragraph}{}{39}{section*.175}%
 \contentsline {paragraph}{}{39}{section*.176}%
 \contentsline {paragraph}{}{39}{section*.177}%
+\contentsline {subsection}{\numberline {4.6}Mejoras detectadas}{40}{subsection.4.6}%
+\contentsline {subsubsection}{\numberline {4.6.1}Actualización de la feromona local}{40}{subsubsection.4.6.1}%
+\contentsline {subsubsection}{\numberline {4.6.2}Lista Restringida de Candidatos}{40}{subsubsection.4.6.2}%
