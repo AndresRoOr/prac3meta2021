@@ -474,7 +474,9 @@
 	
 	\paragraph{}En la configuración A2B1 obtenemos una diferencia entre el coste de la solución obtenida y el óptimo global de un 0.0053\% aproximadamente.
 	
-	\subsection{S.C.H. $\alpha$ = 1, $\beta$ =1 vs S.C.H. $\alpha$ = 1, $\beta$ =2 vs S.C.H. $\alpha$ = 2, $\beta$ =1}
+	\subsection{$\alpha$ = 1, $\beta$ =1 vs $\alpha$ = 1, $\beta$ =2 vs $\alpha$ = 2, $\beta$ =1}
+	
+	\paragraph{}A continuación, se muestran los gráficos de cajas y bigotes para cada problema de la serie GKD (Figura 11, 12 y 13). En ellos se pueden comparar a simple vista tanto los resultados obtenidos como la agrupación de los mismos.
 	
 	\begin{figure}[H]
 		\centering
@@ -483,19 +485,25 @@
 		\label{gkd-c1_bigotes}
 	\end{figure}
 
+	\paragraph{}Para el problema GKD-c1, los resultados obtenidos para las configuraciones A1B1 y A1B2 son muy similares, obteniendo ligeramente un mayor agrupamiento el algoritmo con la configuración A1B2. Se puede observar como la configuración A2B1 obtiene mejores resultados y agrupamiento de los mismos.
+
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{img/BIGOTESGKD2.png}
 		\caption{Gráfica de cajas y bigotes para el problema GKD-c2}
 		\label{gkd-c2_bigotes}
 	\end{figure}
-	
+
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{img/BIGOTESGKD2.png}
 		\caption{Gráfica de cajas y bigotes para el problema GKD-c3}
 		\label{gkd-c3_bigotes}
 	\end{figure}
+
+	\paragraph{}Para los problemas GKD-c2 y GKD-c3, la configuración que obtiene un mejor agrupamiento de los resultados obtenidos es A1B2, seguida de A2B1, siendo A1B1 la que obtiene un peor agrupamiento. En cuanto a resultados obtenidos, las configuraciones A1B1 y A1B2 obtienen unas soluciones bastante similares, siendo la configuración A2B1 la mejor de todas.
+	
+	\paragraph{}Ahora, se analizarán los gráficos de cajas y bigotes correspondientes con las serie de datos SOM (Figura 14, 15 y 16).
 	
 	\begin{figure}[H]
 		\centering
@@ -511,12 +519,18 @@
 		\label{SOM-b12_bigotes}
 	\end{figure}
 
+	\paragraph{}Para los problemas SOM-b11 y SOM-b12, en cuanto a agrupamiento de los resultados, la configuración A2B1 es la mejor, seguida de A1B2 y A1B1. En cuanto a mejores resultados obtenidos, la configuración A2B1 es también la mejor, seguida de A1B2 y A1B1. En el problema SOM-b12, cabe destacar la robustez de la configuración A2B1. 
+
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{img/BIGOTESSOM3.png}
 		\caption{Gráfica de cajas y bigotes para el problema SOM-b13}
 		\label{SOM-b13_bigotes}
 	\end{figure}
+
+	\paragraph{}En el problema SOM-b13, a diferencia de los anteriores casos, la configuración A2B1 obtiene el peor agrupamiento de resultados, siendo la mejor configuración A1B1, seguida de A1B2. En cuanto a calidad de soluciones, la configuración A2B1 es la mejor, seguida de A1B1 y de A1B2 en último lugar.
+	
+	\paragraph{}Los tres últimos gráficos de cajas y bigotes se corresponden con las serie de datos MDG (Figura 17, 18 y 19). A continuación, pasamos a analizarlas.
 
 	\begin{figure}[H]
 		\centering
@@ -525,6 +539,8 @@
 		\label{MDG-a21_bigotes}
 	\end{figure}
 
+	\paragraph{}En el problema MDG-a21 las agrupaciones de los resultados de las tres configuraciones del S.C.H. son prácticamente similares. No obstante, en cuanto a resultados, la configuración A2B1 es la que mejor rendimiento obtiene, seguida de A1B1 y A1B2 en último lugar.
+
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{img/BIGOTESMDG2.png}
@@ -532,9 +548,13 @@
 		\label{MDG-a22_bigotes}
 	\end{figure}
 
+	\paragraph{}En el problema MDG-a22, al igual que en MDG-a21, el agrupamiento de las soluciones obtenidas para las tres configuraciones son similares. En cuanto a resultados obtenidos, la mejor configuración es A2B1, seguida de A1B2 y A1B1.
+
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{img/BIGOTESMDG3.png}
 		\caption{Gráfica de cajas y bigotes para el problema MDG-a23}
 		\label{MDG-a23_bigotes}
 	\end{figure}
+
+	\paragraph{}En el problema MDG-a23, la configuración A1B1 obtiene muy buen resultado en cuanto a robustez de las soluciones obtenidas, seguida de A1B2 y A2B1, que obtiene la peor agrupación de resultados de las tres. En cuanto a resultados, la configuración A2B1 vuelve a ser la mejor, seguida de A1B2 y A1B1.
