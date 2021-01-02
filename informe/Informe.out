@@ -39,3 +39,8 @@
 \BOOKMARK [2][-]{subsection.4.6}{Mejoras detectadas}{section.4}% 39
 \BOOKMARK [3][-]{subsubsection.4.6.1}{Actualizaci\363n de la feromona local}{subsection.4.6}% 40
 \BOOKMARK [3][-]{subsubsection.4.6.2}{Lista Restringida de Candidatos}{subsection.4.6}% 41
+\BOOKMARK [2][-]{subsection.4.7}{B\372squeda local vs b\372squeda tab\372 vs algoritmo gen\351tico con operador de cruce MPX elitismo 3 vs S.C.H. =2 =1}{section.4}% 42
+\BOOKMARK [3][-]{subsubsection.4.7.1}{Resultados de la b\372squeda tab\372}{subsection.4.7}% 43
+\BOOKMARK [3][-]{subsubsection.4.7.2}{Resultados del algoritmo gen\351tico con elitismo = 3}{subsection.4.7}% 44
+\BOOKMARK [3][-]{subsubsection.4.7.3}{Comparaci\363n de resultados}{subsection.4.7}% 45
+\BOOKMARK [3][-]{subsubsection.4.7.4}{Conclusiones}{subsection.4.7}% 46
