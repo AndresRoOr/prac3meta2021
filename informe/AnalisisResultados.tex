@@ -611,7 +611,74 @@
 	
 	\subsubsection{Lista Restringida de Candidatos}
 	
+		\paragraph{} Se propone definir una LRC dinámica, aumentando el valor de $\delta$ conforme más elementos se añadan a la solución, potenciando la explotación en los últimos elementos a incorporar y favoreciendo la exploración en las primeras etapas.
+	
 	\subsection{Búsqueda local vs búsqueda tabú vs algoritmo genético con operador de cruce MPX elitismo 3 vs S.C.H. $\alpha$=2 $\beta$=1}
+	
+	\subsubsection{Resultados de la búsqueda local}
+	
+	\begin{table}[H]
+		\begin{center}
+			\begin{tabular}{| c | c | c | c | c | c | c |}
+				\hline
+				\multicolumn{7}{ |c| }{Búsqueda Local} \\ \hline
+				& \multicolumn{2}{ |c| }{GKD-c\_1\_n500\_m50} & \multicolumn{2}{ |c| }{GKD-c\_2\_n500\_m50} & \multicolumn{2}{ |c| }{GKD-c\_3\_n500\_m50} \\ \hline
+				Ejecución & Coste & Tiempo & Coste & Tiempo & Coste & Tiempo \\ \hline
+				1 & 19485,188 & 75 & 19701,521 & 50 & 19542,49 & 54 \\
+				2 & 19485,19  & 46 & 19701,523 & 44 & 19539,79 & 41 \\
+				3 & 19485,188 & 42 & 19699,041 & 49 & 19542,49 & 53 \\
+				4 & 19485,188 & 47 & 19699,848 & 49 & 19542,49 & 46 \\
+				5 & 19485,188 & 37 & 19700,873 & 44 & 19542,49 & 50 \\ \hline
+				Media & 0,00\% & &0,00\% & & -0,03\% & \\ \hline
+				Desviación Típica & 0,00\% & & 0,01\% & &0,01\% & \\ \hline
+			\end{tabular}
+			\caption{Resultados GKD}
+			\label{tab:tabGKDLOCAL}
+		\end{center}
+	\end{table} 
+	
+	
+	\begin{table}[H]
+		\begin{center}
+			\begin{tabular}{| c | c | c | c | c | c | c |}
+				\hline
+				\multicolumn{7}{ |c| }{Búsqueda Local} \\ \hline
+				& \multicolumn{2}{ |c| }{SOM-b\_11\_n300\_m90} & \multicolumn{2}{ |c| }{SOM-b\_12\_n300\_m120} & \multicolumn{2}{ |c| }{SOM-b\_13\_n400\_m40} \\ \hline
+				Ejecución & Coste & Tiempo & Coste & Tiempo & Coste & Tiempo\\\hline
+				1 & 20720 & 33 & 35856 & 34 & 4482 & 15 \\
+				2 & 20622 & 29 & 35771 & 41 & 4542 & 19 \\
+				3 & 20594 & 32 & 35758 & 43 & 4553 & 20 \\
+				4 & 20652 & 35 & 35740 & 39 & 4545 & 20 \\
+				5 & 20612 & 152 & 35767 & 41 & 4506 & 16 \\ \hline
+				Media &-0,50\% & &-0,29\% & &-2,84\% & \\ \hline
+				Desviación Típica &0,24\% & &0,13\% & &0,65\% & \\ \hline
+			\end{tabular}
+			\caption{Resultados SOM}
+			\label{tab:tabSOMLOCAL}
+		\end{center}
+	\end{table} 
+	
+	\begin{table}[H]
+		\begin{center}
+			\begin{tabular}{| c | c | c | c | c | c | c |}
+				\hline
+				\multicolumn{7}{ |c| }{Búsqueda Local} \\ \hline
+				& \multicolumn{2}{ |c| }{MDG-a\_21\_n2000\_m200} & \multicolumn{2}{ |c| }{MDG-a\_22\_n2000\_m200} & \multicolumn{2}{ |c| }{MDG-a\_23\_n2000\_m200}\\\hline
+				Ejecución & Coste & Tiempo & Coste & Tiempo & Coste & Tiempo\\\hline
+				1 & 112638 & 895 & 112923 & 1472 & 113333 & 1125\\
+				2 & 112829 & 847 & 113382 & 1127 & 112874 & 1630\\
+				3 & 112945 & 943 & 112724 & 1293 & 112952 & 1015\\
+				4 & 113286 & 2224 & 113162 & 1123 & 113147 & 1709\\
+				5 & 113141 & 2731 & 112973 & 1055 & 113131 & 1047\\ \hline
+				Media &-1,13 \% & &-1,13\% & & -0,91\% & \\ \hline
+				Desviación Típica & 0,22\% & & 0,22\% & & 0,16\% & \\ \hline
+			\end{tabular}
+			\caption{Resultados MDG}
+			\label{tab:tabMDGLOCAL}
+		\end{center}
+	\end{table}
+	
+	
 	
 	\subsubsection{Resultados de la búsqueda tabú}
 	
@@ -622,16 +689,16 @@
 				\multicolumn{7}{ |c| }{Búsqueda Tabú} \\ \hline
 				& \multicolumn{2}{ |c| }{GKD-c\_1\_n500\_m50} & \multicolumn{2}{ |c| }{GKD-c\_2\_n500\_m50} & \multicolumn{2}{ |c| }{GKD-c\_3\_n500\_m50} \\ \hline
 				Ejecución & Coste & Tiempo & Coste & Tiempo & Coste & Tiempo \\ \hline
-				1 & & & & & & \\
-				2 & & & & & & \\
-				3 & & & & & & \\
-				4 & & & & & & \\
-				5 & & & & & & \\ \hline
-				Media &\% & &\% & &\% & \\ \hline
-				Desviación Típica &\% & &\% & &\% & \\ \hline
+				1 & 19485,184 & 1900 & 19701,521 & 1723 & 19547,215 & 1699 \\
+				2 & 19485,184 & 1790 & 19701,521 & 1717 & 19547,215 & 1968\\
+				3 & 19485,188 & 1734 & 19701,521 & 1715 & 19547,215 & 1717\\
+				4 & 19485,19  & 1710 & 19701,523 & 1786 & 19547,215 & 1705\\
+				5 & 19485,184 & 1700 & 19701,521 & 2041 & 19547,215 & 1693\\ \hline
+				Media & 0,00\% & &0,00\% & & 0,00\% & \\ \hline
+				Desviación Típica & 0,00\% & & 0,00\% & &0,00\% & \\ \hline
 			\end{tabular}
 			\caption{Resultados GKD}
-			\label{tab:tabMPXE3GKD}
+			\label{tab:tabGKDTABU}
 		\end{center}
 	\end{table} 
 	
@@ -643,16 +710,16 @@
 				\multicolumn{7}{ |c| }{Búsqueda Tabú} \\ \hline
 				& \multicolumn{2}{ |c| }{SOM-b\_11\_n300\_m90} & \multicolumn{2}{ |c| }{SOM-b\_12\_n300\_m120} & \multicolumn{2}{ |c| }{SOM-b\_13\_n400\_m40} \\ \hline
 				Ejecución & Coste & Tiempo & Coste & Tiempo & Coste & Tiempo\\\hline
-				1 & & & & & & \\
-				2 & & & & & & \\
-				3 & & & & & & \\
-				4 & & & & & & \\
-				5 & & & & & & \\ \hline
-				Media &\% & &\% & &\% & \\ \hline
-				Desviación Típica &\% & &\% & &\% & \\ \hline
+				1 & 20705 & 5362 & 35881 & 11727 & 4654 & 1069 \\
+				2 & 20732 & 6174 & 35881 & 11616 & 4658 & 1072 \\
+				3 & 20731 & 5345 & 35881 & 11665 & 4644 & 1075 \\
+				4 & 20725 & 5278 & 35881 & 11676 & 4627 & 1066 \\
+				5 & 20735 & 5718 & 35881 & 11611 & 4634 & 1109 \\ \hline
+				Media &-0,08\% & &0,00\% & &-0,31\% & \\ \hline
+				Desviación Típica &0,06\% & &0,00\% & &0,28\% & \\ \hline
 			\end{tabular}
 			\caption{Resultados SOM}
-			\label{tab:tabMPXE3SOM}
+			\label{tab:tabSOMTABU}
 		\end{center}
 	\end{table} 
 	
@@ -663,35 +730,35 @@
 				\multicolumn{7}{ |c| }{Búsqueda Tabú} \\ \hline
 				& \multicolumn{2}{ |c| }{MDG-a\_21\_n2000\_m200} & \multicolumn{2}{ |c| }{MDG-a\_22\_n2000\_m200} & \multicolumn{2}{ |c| }{MDG-a\_23\_n2000\_m200}\\\hline
 				Ejecución & Coste & Tiempo & Coste & Tiempo & Coste & Tiempo\\\hline
-				1 & & & & & & \\
-				2 & & & & & & \\
-				3 & & & & & & \\
-				4 & & & & & & \\
-				5 & & & & & & \\ \hline
-				Media &\% & &\% & &\% & \\ \hline
-				Desviación Típica &\% & &\% & &\% & \\ \hline
+				1 & 113613 & 51002 & 113697 & 51713 & 113429 & 51636\\
+				2 & 113199 & 51021 & 113306 & 51397 & 113517 & 51131\\
+				3 & 113831 & 51184 & 113329 & 51482 & 113540 & 51819\\
+				4 & 113565 & 50643 & 113414 & 51179 & 113385 & 51073\\
+				5 & 113647 & 51279 & 113396 & 51037 & 113693 & 51224\\ \hline
+				Media &-0,60 \% & &-0,79\% & & -0,53\% & \\ \hline
+				Desviación Típica & 0,20\% & & 0,14\% & & 0,10\% & \\ \hline
 			\end{tabular}
 			\caption{Resultados MDG}
-			\label{tab:tabMPXE3MDG}
+			\label{tab:tabMDGTABU}
 		\end{center}
 	\end{table}
 	
 	\subsubsection{Resultados del algoritmo genético con elitismo = 3}
 	
-		\begin{table}[H]
+	\begin{table}[H]
 		\begin{center}
 			\begin{tabular}{| c | c | c | c | c | c | c |}
 				\hline
 				\multicolumn{7}{ |c| }{Genético MPX elite 3} \\ \hline
 				& \multicolumn{2}{ |c| }{GKD-c\_1\_n500\_m50} & \multicolumn{2}{ |c| }{GKD-c\_2\_n500\_m50} & \multicolumn{2}{ |c| }{GKD-c\_3\_n500\_m50} \\ \hline
 				Ejecución & Coste & Tiempo & Coste & Tiempo & Coste & Tiempo \\ \hline
-				1 & & & & & & \\
-				2 & & & & & & \\
-				3 & & & & & & \\
-				4 & & & & & & \\
-				5 & & & & & & \\ \hline
-				Media &\% & &\% & &\% & \\ \hline
-				Desviación Típica &\% & &\% & &\% & \\ \hline
+				1 &19481,69 & 642 & 19701,52 & 361 & 19547,22 & 348\\
+				2 &19482,37 & 388 & 19701,52 & 367 & 19547,22 & 357\\
+				3 &19485,19 & 366 & 19701,52 & 356 & 19547,22 & 362\\
+				4 &19485,19 & 374 & 19699,48 & 351 & 19547,22 & 356\\
+				5 &19485,19 & 366 & 19701,52 & 358 & 19543,48 & 358\\ \hline
+				Media &0,00\% & 1173,40 & 0,00\% & 1118,60 & 0,00\% & 979,80\\ \hline
+				Desviación Típica & 0,01\%	& 8,02 & 0,00\% & 5,96 & 0,01\% & 209,24 \\ \hline
 			\end{tabular}
 			\caption{Resultados GKD}
 			\label{tab:tabMPXE3GKD}
@@ -706,13 +773,13 @@
 				\multicolumn{7}{ |c| }{Genético MPX elite 3} \\ \hline
 				& \multicolumn{2}{ |c| }{SOM-b\_11\_n300\_m90} & \multicolumn{2}{ |c| }{SOM-b\_12\_n300\_m120} & \multicolumn{2}{ |c| }{SOM-b\_13\_n400\_m40} \\ \hline
 				Ejecución & Coste & Tiempo & Coste & Tiempo & Coste & Tiempo\\\hline
-				1 & & & & & & \\
-				2 & & & & & & \\
-				3 & & & & & & \\
-				4 & & & & & & \\
-				5 & & & & & & \\ \hline
-				Media &\% & &\% & &\% & \\ \hline
-				Desviación Típica &\% & &\% & &\% & \\ \hline
+				1 &20648 & 848 & 35870 & 1533 & 4590 & 262\\
+				2 &20731 & 845 & 35866 & 1466 & 4625 & 266\\
+				3 &20650 & 819 & 35834 & 1525 & 4584 & 261\\
+				4 &20672 & 842 & 35879 & 1482 & 4553 & 265\\
+				5 &20647 & 840 & 35825 & 2266 & 4578 & 262\\\hline
+				Media &-0,35\% & 2217,20 & -0,07\% & 4598,80 & -1,55\% & 730,40\\ \hline
+				Desviación Típica & 0,17\%	& 52,17 & 0,07\% & 625,28 & 0,56\% & 273,21 \\ \hline
 			\end{tabular}
 			\caption{Resultados SOM}
 			\label{tab:tabMPXE3SOM}
@@ -726,18 +793,19 @@
 				\multicolumn{7}{ |c| }{Genético MPX elite 3} \\ \hline
 				& \multicolumn{2}{ |c| }{MDG-a\_21\_n2000\_m200} & \multicolumn{2}{ |c| }{MDG-a\_22\_n2000\_m200} & \multicolumn{2}{ |c| }{MDG-a\_23\_n2000\_m200}\\\hline
 				Ejecución & Coste & Tiempo & Coste & Tiempo & Coste & Tiempo\\\hline
-				1 & & & & & & \\
-				2 & & & & & & \\
-				3 & & & & & & \\
-				4 & & & & & & \\
-				5 & & & & & & \\ \hline
-				Media &\% & &\% & &\% & \\ \hline
-				Desviación Típica &\% & &\% & &\% & \\ \hline
+				1 &112931 & 8904 & 113173 & 8865 & 112978 & 8823\\
+				2 &113375 & 9597 & 113335 & 8566 & 113350 & 8614\\
+				3 &113193 & 9058 & 113402 & 8898 & 113212 & 8660\\
+				4 &113074 & 8956 & 112677 & 8093 & 113274 & 8448\\
+				5 &113445 & 8814 & 113470 & 9081 & 112600 & 8476\\\hline
+				Media &-0,92\% & 27880,20 & -0,98\% & 26612,60 & -0,91\% & 26442,80\\ \hline
+				Desviación Típica & 0,19\%	& 1015,33 & 0,28\% & 1181,95 & 0,27\% & 492,12 \\ \hline
 			\end{tabular}
 			\caption{Resultados MDG}
 			\label{tab:tabMPXE3MDG}
 		\end{center}
 	\end{table}
+	
 
 	\subsubsection{Comparación de resultados}
 	
