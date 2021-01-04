@@ -10,10 +10,10 @@
 \contentsline {paragraph}{nota:}{3}{section*.6}%
 \contentsline {subsection}{\numberline {2.1}Archivo}{3}{subsection.2.1}%
 \contentsline {paragraph}{}{3}{section*.7}%
-\contentsline {subsection}{\numberline {2.2}Configurador}{4}{subsection.2.2}%
-\contentsline {paragraph}{}{4}{section*.8}%
-\contentsline {subsection}{\numberline {2.3}Greedy}{4}{subsection.2.3}%
-\contentsline {paragraph}{}{4}{section*.9}%
+\contentsline {subsection}{\numberline {2.2}Configurador}{3}{subsection.2.2}%
+\contentsline {paragraph}{}{3}{section*.8}%
+\contentsline {subsection}{\numberline {2.3}Greedy}{3}{subsection.2.3}%
+\contentsline {paragraph}{}{3}{section*.9}%
 \contentsline {subsection}{\numberline {2.4}Hormiga}{4}{subsection.2.4}%
 \contentsline {paragraph}{}{4}{section*.10}%
 \contentsline {subsection}{\numberline {2.5}GestorLog}{4}{subsection.2.5}%
@@ -26,199 +26,199 @@
 \contentsline {paragraph}{}{4}{section*.14}%
 \contentsline {subsection}{\numberline {2.9}Timer}{4}{subsection.2.9}%
 \contentsline {paragraph}{}{4}{section*.15}%
-\contentsline {section}{\numberline {3}Pseudocódigo}{5}{section.3}%
-\contentsline {subsection}{\numberline {3.1}algoritmo principal}{5}{subsection.3.1}%
-\contentsline {paragraph}{}{5}{section*.16}%
+\contentsline {section}{\numberline {3}Pseudocódigo}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}algoritmo principal}{4}{subsection.3.1}%
+\contentsline {paragraph}{}{4}{section*.16}%
 \contentsline {paragraph}{}{5}{section*.17}%
 \contentsline {paragraph}{}{5}{section*.18}%
 \contentsline {paragraph}{}{5}{section*.19}%
-\contentsline {paragraph}{}{6}{section*.20}%
-\contentsline {paragraph}{}{6}{section*.21}%
-\contentsline {paragraph}{}{6}{section*.22}%
-\contentsline {paragraph}{}{6}{section*.23}%
-\contentsline {paragraph}{}{6}{section*.24}%
-\contentsline {subsection}{\numberline {3.2}Inicialización de la matriz de feronoma}{6}{subsection.3.2}%
-\contentsline {paragraph}{Salida}{6}{section*.25}%
-\contentsline {paragraph}{}{6}{section*.26}%
-\contentsline {subsection}{\numberline {3.3}Inicialización de la colonia de hormigas}{7}{subsection.3.3}%
-\contentsline {paragraph}{Salida}{7}{section*.27}%
-\contentsline {paragraph}{}{7}{section*.28}%
-\contentsline {subsection}{\numberline {3.4}Generación de la Lista Restringida de Candidatos}{7}{subsection.3.4}%
-\contentsline {paragraph}{Entrada}{7}{section*.29}%
-\contentsline {paragraph}{Salida}{7}{section*.30}%
-\contentsline {paragraph}{}{8}{section*.31}%
-\contentsline {paragraph}{}{8}{section*.32}%
-\contentsline {paragraph}{}{8}{section*.33}%
-\contentsline {paragraph}{}{9}{section*.34}%
-\contentsline {paragraph}{}{9}{section*.35}%
-\contentsline {paragraph}{}{9}{section*.36}%
-\contentsline {paragraph}{}{9}{section*.37}%
-\contentsline {paragraph}{}{9}{section*.38}%
-\contentsline {paragraph}{}{9}{section*.39}%
-\contentsline {subsection}{\numberline {3.5}Aplicacion de la regla de transición}{9}{subsection.3.5}%
-\contentsline {paragraph}{Entradas}{9}{section*.40}%
-\contentsline {paragraph}{}{11}{section*.41}%
-\contentsline {paragraph}{}{11}{section*.42}%
-\contentsline {paragraph}{}{11}{section*.43}%
-\contentsline {paragraph}{}{11}{section*.44}%
-\contentsline {paragraph}{}{11}{section*.45}%
-\contentsline {paragraph}{}{11}{section*.46}%
-\contentsline {paragraph}{}{11}{section*.47}%
-\contentsline {paragraph}{}{11}{section*.48}%
-\contentsline {paragraph}{}{11}{section*.49}%
-\contentsline {paragraph}{}{11}{section*.50}%
-\contentsline {paragraph}{}{12}{section*.51}%
-\contentsline {paragraph}{}{12}{section*.52}%
-\contentsline {paragraph}{}{12}{section*.53}%
-\contentsline {paragraph}{}{12}{section*.54}%
-\contentsline {paragraph}{}{12}{section*.55}%
-\contentsline {paragraph}{}{12}{section*.56}%
-\contentsline {paragraph}{}{12}{section*.57}%
-\contentsline {subsection}{\numberline {3.6}Actualización de la feromona local}{13}{subsection.3.6}%
-\contentsline {paragraph}{}{13}{section*.58}%
-\contentsline {paragraph}{}{13}{section*.59}%
-\contentsline {paragraph}{}{13}{section*.60}%
-\contentsline {paragraph}{}{13}{section*.61}%
-\contentsline {paragraph}{}{13}{section*.62}%
-\contentsline {paragraph}{}{13}{section*.63}%
-\contentsline {subsection}{\numberline {3.7}Tareas demonio}{14}{subsection.3.7}%
-\contentsline {paragraph}{}{14}{section*.64}%
-\contentsline {subsection}{\numberline {3.8}Obtener la mejor hormiga de la colonia}{14}{subsection.3.8}%
-\contentsline {paragraph}{Salida}{14}{section*.65}%
-\contentsline {paragraph}{}{14}{section*.66}%
-\contentsline {paragraph}{}{14}{section*.67}%
-\contentsline {paragraph}{}{14}{section*.68}%
-\contentsline {subsection}{\numberline {3.9}Actualización de la feromona global}{15}{subsection.3.9}%
-\contentsline {paragraph}{Entrada}{15}{section*.69}%
-\contentsline {paragraph}{}{15}{section*.70}%
-\contentsline {paragraph}{}{15}{section*.71}%
-\contentsline {paragraph}{}{15}{section*.72}%
-\contentsline {paragraph}{}{15}{section*.73}%
-\contentsline {paragraph}{}{15}{section*.74}%
-\contentsline {section}{\numberline {4}Experimentos y análisis de resultados}{16}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Procedimiento de desarrollo de la práctica}{16}{subsection.4.1}%
-\contentsline {paragraph}{}{16}{section*.75}%
-\contentsline {subsubsection}{\numberline {4.1.1}Equipo de pruebas}{16}{subsubsection.4.1.1}%
-\contentsline {paragraph}{}{16}{section*.76}%
-\contentsline {subsubsection}{\numberline {4.1.2}Manual de usuario}{16}{subsubsection.4.1.2}%
-\contentsline {paragraph}{}{16}{section*.77}%
-\contentsline {paragraph}{}{16}{section*.78}%
-\contentsline {subsection}{\numberline {4.2}Parámetros de los algoritmos}{17}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Sistema de Colonias de Hormigas}{17}{subsubsection.4.2.1}%
-\contentsline {paragraph}{}{17}{section*.79}%
-\contentsline {subsubsection}{\numberline {4.2.2}Semillas}{17}{subsubsection.4.2.2}%
-\contentsline {paragraph}{}{17}{section*.80}%
-\contentsline {paragraph}{}{17}{section*.81}%
-\contentsline {subsection}{\numberline {4.3}Análisis de los resultados}{17}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}SCH con $\alpha $ = 1, $\beta $ =1}{17}{subsubsection.4.3.1}%
-\contentsline {paragraph}{}{17}{section*.82}%
-\contentsline {paragraph}{}{18}{section*.83}%
-\contentsline {paragraph}{}{19}{section*.84}%
-\contentsline {subsubsection}{\numberline {4.3.2}SCH con $\alpha $ = 2, $\beta $ =1}{19}{subsubsection.4.3.2}%
-\contentsline {paragraph}{}{19}{section*.85}%
-\contentsline {paragraph}{}{20}{section*.86}%
-\contentsline {paragraph}{}{20}{section*.87}%
-\contentsline {subsubsection}{\numberline {4.3.3}SCH con $\alpha $ = 1, $\beta $ =2}{20}{subsubsection.4.3.3}%
-\contentsline {paragraph}{}{20}{section*.88}%
-\contentsline {paragraph}{}{21}{section*.89}%
-\contentsline {paragraph}{}{21}{section*.90}%
-\contentsline {subsection}{\numberline {4.4}Evolución de los resultados durante la experimentación}{21}{subsection.4.4}%
-\contentsline {paragraph}{}{21}{section*.91}%
-\contentsline {paragraph}{}{22}{section*.92}%
-\contentsline {paragraph}{}{22}{section*.93}%
-\contentsline {paragraph}{}{22}{section*.94}%
-\contentsline {paragraph}{}{23}{section*.95}%
-\contentsline {paragraph}{}{23}{section*.96}%
-\contentsline {paragraph}{}{23}{section*.97}%
-\contentsline {paragraph}{}{23}{section*.98}%
-\contentsline {paragraph}{}{23}{section*.99}%
-\contentsline {paragraph}{}{23}{section*.100}%
-\contentsline {paragraph}{}{23}{section*.101}%
-\contentsline {paragraph}{}{24}{section*.102}%
-\contentsline {paragraph}{}{24}{section*.103}%
-\contentsline {paragraph}{}{24}{section*.104}%
-\contentsline {paragraph}{}{24}{section*.105}%
-\contentsline {paragraph}{}{24}{section*.106}%
-\contentsline {paragraph}{}{25}{section*.107}%
-\contentsline {paragraph}{}{25}{section*.108}%
-\contentsline {paragraph}{}{25}{section*.109}%
-\contentsline {paragraph}{}{25}{section*.110}%
-\contentsline {paragraph}{}{25}{section*.111}%
-\contentsline {paragraph}{}{25}{section*.112}%
-\contentsline {paragraph}{}{26}{section*.113}%
-\contentsline {paragraph}{}{26}{section*.114}%
-\contentsline {paragraph}{}{26}{section*.115}%
-\contentsline {paragraph}{}{26}{section*.116}%
-\contentsline {paragraph}{}{26}{section*.117}%
-\contentsline {paragraph}{}{27}{section*.118}%
-\contentsline {paragraph}{}{27}{section*.119}%
-\contentsline {paragraph}{}{27}{section*.120}%
-\contentsline {paragraph}{}{27}{section*.121}%
-\contentsline {paragraph}{}{27}{section*.122}%
-\contentsline {paragraph}{}{27}{section*.123}%
-\contentsline {paragraph}{}{28}{section*.124}%
-\contentsline {paragraph}{}{28}{section*.125}%
-\contentsline {paragraph}{}{28}{section*.126}%
-\contentsline {paragraph}{}{28}{section*.127}%
-\contentsline {paragraph}{}{28}{section*.128}%
-\contentsline {paragraph}{}{28}{section*.129}%
-\contentsline {paragraph}{}{29}{section*.130}%
-\contentsline {paragraph}{}{29}{section*.131}%
-\contentsline {paragraph}{}{29}{section*.132}%
-\contentsline {paragraph}{}{29}{section*.133}%
-\contentsline {paragraph}{}{29}{section*.134}%
-\contentsline {paragraph}{}{29}{section*.135}%
-\contentsline {paragraph}{}{29}{section*.136}%
-\contentsline {paragraph}{}{30}{section*.137}%
-\contentsline {paragraph}{}{30}{section*.138}%
-\contentsline {paragraph}{}{30}{section*.139}%
-\contentsline {paragraph}{}{30}{section*.140}%
-\contentsline {paragraph}{}{31}{section*.141}%
-\contentsline {paragraph}{}{31}{section*.142}%
-\contentsline {paragraph}{}{31}{section*.143}%
-\contentsline {paragraph}{}{31}{section*.144}%
-\contentsline {paragraph}{}{31}{section*.145}%
-\contentsline {paragraph}{}{31}{section*.146}%
-\contentsline {paragraph}{}{32}{section*.147}%
-\contentsline {paragraph}{}{32}{section*.148}%
-\contentsline {paragraph}{}{32}{section*.149}%
-\contentsline {paragraph}{}{32}{section*.150}%
-\contentsline {paragraph}{}{32}{section*.151}%
-\contentsline {paragraph}{}{33}{section*.152}%
-\contentsline {paragraph}{}{33}{section*.153}%
-\contentsline {paragraph}{}{33}{section*.154}%
-\contentsline {paragraph}{}{33}{section*.155}%
-\contentsline {paragraph}{}{33}{section*.156}%
-\contentsline {paragraph}{}{33}{section*.157}%
-\contentsline {subsection}{\numberline {4.5}$\alpha $ = 1, $\beta $ =1 vs $\alpha $ = 1, $\beta $ =2 vs $\alpha $ = 2, $\beta $ =1}{33}{subsection.4.5}%
-\contentsline {paragraph}{}{33}{section*.158}%
-\contentsline {paragraph}{}{34}{section*.159}%
-\contentsline {paragraph}{}{35}{section*.160}%
-\contentsline {paragraph}{}{35}{section*.161}%
-\contentsline {paragraph}{}{36}{section*.162}%
-\contentsline {paragraph}{}{36}{section*.163}%
-\contentsline {paragraph}{}{36}{section*.164}%
-\contentsline {paragraph}{}{37}{section*.165}%
-\contentsline {paragraph}{}{37}{section*.166}%
-\contentsline {paragraph}{}{38}{section*.167}%
-\contentsline {paragraph}{}{38}{section*.168}%
-\contentsline {paragraph}{}{38}{section*.169}%
-\contentsline {paragraph}{}{38}{section*.170}%
-\contentsline {paragraph}{}{38}{section*.171}%
-\contentsline {subsubsection}{\numberline {4.5.1}Causas del mejor resultados}{39}{subsubsection.4.5.1}%
-\contentsline {paragraph}{}{39}{section*.172}%
-\contentsline {paragraph}{}{39}{section*.173}%
-\contentsline {paragraph}{}{39}{section*.174}%
-\contentsline {paragraph}{}{39}{section*.175}%
-\contentsline {paragraph}{}{39}{section*.176}%
-\contentsline {paragraph}{}{39}{section*.177}%
-\contentsline {subsection}{\numberline {4.6}Mejoras detectadas}{40}{subsection.4.6}%
-\contentsline {subsubsection}{\numberline {4.6.1}Actualización de la feromona local}{40}{subsubsection.4.6.1}%
-\contentsline {subsubsection}{\numberline {4.6.2}Lista Restringida de Candidatos}{40}{subsubsection.4.6.2}%
-\contentsline {paragraph}{}{40}{section*.178}%
-\contentsline {subsection}{\numberline {4.7}Búsqueda local vs búsqueda tabú vs algoritmo genético con operador de cruce MPX elitismo 3 vs S.C.H. $\alpha $=2 $\beta $=1}{40}{subsection.4.7}%
-\contentsline {subsubsection}{\numberline {4.7.1}Resultados de la búsqueda local}{40}{subsubsection.4.7.1}%
-\contentsline {subsubsection}{\numberline {4.7.2}Resultados de la búsqueda tabú}{41}{subsubsection.4.7.2}%
-\contentsline {subsubsection}{\numberline {4.7.3}Resultados del algoritmo genético con elitismo = 3}{42}{subsubsection.4.7.3}%
-\contentsline {subsubsection}{\numberline {4.7.4}Comparación de resultados}{43}{subsubsection.4.7.4}%
-\contentsline {subsubsection}{\numberline {4.7.5}Conclusiones}{46}{subsubsection.4.7.5}%
+\contentsline {paragraph}{}{5}{section*.20}%
+\contentsline {paragraph}{}{5}{section*.21}%
+\contentsline {paragraph}{}{5}{section*.22}%
+\contentsline {paragraph}{}{5}{section*.23}%
+\contentsline {paragraph}{}{5}{section*.24}%
+\contentsline {subsection}{\numberline {3.2}Inicialización de la matriz de feronoma}{5}{subsection.3.2}%
+\contentsline {paragraph}{Salida}{5}{section*.25}%
+\contentsline {paragraph}{}{5}{section*.26}%
+\contentsline {subsection}{\numberline {3.3}Inicialización de la colonia de hormigas}{6}{subsection.3.3}%
+\contentsline {paragraph}{Salida}{6}{section*.27}%
+\contentsline {paragraph}{}{6}{section*.28}%
+\contentsline {subsection}{\numberline {3.4}Generación de la Lista Restringida de Candidatos}{6}{subsection.3.4}%
+\contentsline {paragraph}{Entrada}{6}{section*.29}%
+\contentsline {paragraph}{Salida}{6}{section*.30}%
+\contentsline {paragraph}{}{7}{section*.31}%
+\contentsline {paragraph}{}{7}{section*.32}%
+\contentsline {paragraph}{}{7}{section*.33}%
+\contentsline {paragraph}{}{7}{section*.34}%
+\contentsline {paragraph}{}{7}{section*.35}%
+\contentsline {paragraph}{}{7}{section*.36}%
+\contentsline {paragraph}{}{7}{section*.37}%
+\contentsline {paragraph}{}{7}{section*.38}%
+\contentsline {paragraph}{}{7}{section*.39}%
+\contentsline {subsection}{\numberline {3.5}Aplicacion de la regla de transición}{7}{subsection.3.5}%
+\contentsline {paragraph}{Entradas}{7}{section*.40}%
+\contentsline {paragraph}{}{8}{section*.41}%
+\contentsline {paragraph}{}{9}{section*.42}%
+\contentsline {paragraph}{}{9}{section*.43}%
+\contentsline {paragraph}{}{9}{section*.44}%
+\contentsline {paragraph}{}{9}{section*.45}%
+\contentsline {paragraph}{}{9}{section*.46}%
+\contentsline {paragraph}{}{9}{section*.47}%
+\contentsline {paragraph}{}{9}{section*.48}%
+\contentsline {paragraph}{}{9}{section*.49}%
+\contentsline {paragraph}{}{9}{section*.50}%
+\contentsline {paragraph}{}{9}{section*.51}%
+\contentsline {paragraph}{}{9}{section*.52}%
+\contentsline {paragraph}{}{9}{section*.53}%
+\contentsline {paragraph}{}{9}{section*.54}%
+\contentsline {paragraph}{}{9}{section*.55}%
+\contentsline {paragraph}{}{10}{section*.56}%
+\contentsline {paragraph}{}{10}{section*.57}%
+\contentsline {subsection}{\numberline {3.6}Actualización de la feromona local}{10}{subsection.3.6}%
+\contentsline {paragraph}{}{10}{section*.58}%
+\contentsline {paragraph}{}{10}{section*.59}%
+\contentsline {paragraph}{}{10}{section*.60}%
+\contentsline {paragraph}{}{10}{section*.61}%
+\contentsline {paragraph}{}{10}{section*.62}%
+\contentsline {paragraph}{}{10}{section*.63}%
+\contentsline {subsection}{\numberline {3.7}Tareas demonio}{11}{subsection.3.7}%
+\contentsline {paragraph}{}{11}{section*.64}%
+\contentsline {subsection}{\numberline {3.8}Obtener la mejor hormiga de la colonia}{11}{subsection.3.8}%
+\contentsline {paragraph}{Salida}{11}{section*.65}%
+\contentsline {paragraph}{}{11}{section*.66}%
+\contentsline {paragraph}{}{11}{section*.67}%
+\contentsline {paragraph}{}{11}{section*.68}%
+\contentsline {subsection}{\numberline {3.9}Actualización de la feromona global}{12}{subsection.3.9}%
+\contentsline {paragraph}{Entrada}{12}{section*.69}%
+\contentsline {paragraph}{}{12}{section*.70}%
+\contentsline {paragraph}{}{12}{section*.71}%
+\contentsline {paragraph}{}{12}{section*.72}%
+\contentsline {paragraph}{}{12}{section*.73}%
+\contentsline {paragraph}{}{12}{section*.74}%
+\contentsline {section}{\numberline {4}Experimentos y análisis de resultados}{13}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Procedimiento de desarrollo de la práctica}{13}{subsection.4.1}%
+\contentsline {paragraph}{}{13}{section*.75}%
+\contentsline {subsubsection}{\numberline {4.1.1}Equipo de pruebas}{13}{subsubsection.4.1.1}%
+\contentsline {paragraph}{}{13}{section*.76}%
+\contentsline {subsubsection}{\numberline {4.1.2}Manual de usuario}{13}{subsubsection.4.1.2}%
+\contentsline {paragraph}{}{13}{section*.77}%
+\contentsline {paragraph}{}{13}{section*.78}%
+\contentsline {subsection}{\numberline {4.2}Parámetros de los algoritmos}{13}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Sistema de Colonias de Hormigas}{13}{subsubsection.4.2.1}%
+\contentsline {paragraph}{}{13}{section*.79}%
+\contentsline {subsubsection}{\numberline {4.2.2}Semillas}{14}{subsubsection.4.2.2}%
+\contentsline {paragraph}{}{14}{section*.80}%
+\contentsline {paragraph}{}{14}{section*.81}%
+\contentsline {subsection}{\numberline {4.3}Análisis de los resultados}{14}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}SCH con $\alpha $ = 1, $\beta $ =1}{14}{subsubsection.4.3.1}%
+\contentsline {paragraph}{}{14}{section*.82}%
+\contentsline {paragraph}{}{15}{section*.83}%
+\contentsline {paragraph}{}{15}{section*.84}%
+\contentsline {subsubsection}{\numberline {4.3.2}SCH con $\alpha $ = 2, $\beta $ =1}{15}{subsubsection.4.3.2}%
+\contentsline {paragraph}{}{15}{section*.85}%
+\contentsline {paragraph}{}{16}{section*.86}%
+\contentsline {paragraph}{}{16}{section*.87}%
+\contentsline {subsubsection}{\numberline {4.3.3}SCH con $\alpha $ = 1, $\beta $ =2}{17}{subsubsection.4.3.3}%
+\contentsline {paragraph}{}{17}{section*.88}%
+\contentsline {paragraph}{}{17}{section*.89}%
+\contentsline {paragraph}{}{17}{section*.90}%
+\contentsline {subsection}{\numberline {4.4}Evolución de los resultados durante la experimentación}{18}{subsection.4.4}%
+\contentsline {paragraph}{}{18}{section*.91}%
+\contentsline {paragraph}{}{18}{section*.92}%
+\contentsline {paragraph}{}{18}{section*.93}%
+\contentsline {paragraph}{}{18}{section*.94}%
+\contentsline {paragraph}{}{18}{section*.95}%
+\contentsline {paragraph}{}{19}{section*.96}%
+\contentsline {paragraph}{}{19}{section*.97}%
+\contentsline {paragraph}{}{19}{section*.98}%
+\contentsline {paragraph}{}{19}{section*.99}%
+\contentsline {paragraph}{}{19}{section*.100}%
+\contentsline {paragraph}{}{19}{section*.101}%
+\contentsline {paragraph}{}{19}{section*.102}%
+\contentsline {paragraph}{}{19}{section*.103}%
+\contentsline {paragraph}{}{20}{section*.104}%
+\contentsline {paragraph}{}{20}{section*.105}%
+\contentsline {paragraph}{}{20}{section*.106}%
+\contentsline {paragraph}{}{20}{section*.107}%
+\contentsline {paragraph}{}{20}{section*.108}%
+\contentsline {paragraph}{}{20}{section*.109}%
+\contentsline {paragraph}{}{20}{section*.110}%
+\contentsline {paragraph}{}{20}{section*.111}%
+\contentsline {paragraph}{}{21}{section*.112}%
+\contentsline {paragraph}{}{21}{section*.113}%
+\contentsline {paragraph}{}{21}{section*.114}%
+\contentsline {paragraph}{}{21}{section*.115}%
+\contentsline {paragraph}{}{21}{section*.116}%
+\contentsline {paragraph}{}{21}{section*.117}%
+\contentsline {paragraph}{}{21}{section*.118}%
+\contentsline {paragraph}{}{21}{section*.119}%
+\contentsline {paragraph}{}{21}{section*.120}%
+\contentsline {paragraph}{}{22}{section*.121}%
+\contentsline {paragraph}{}{22}{section*.122}%
+\contentsline {paragraph}{}{22}{section*.123}%
+\contentsline {paragraph}{}{22}{section*.124}%
+\contentsline {paragraph}{}{22}{section*.125}%
+\contentsline {paragraph}{}{22}{section*.126}%
+\contentsline {paragraph}{}{22}{section*.127}%
+\contentsline {paragraph}{}{22}{section*.128}%
+\contentsline {paragraph}{}{22}{section*.129}%
+\contentsline {paragraph}{}{23}{section*.130}%
+\contentsline {paragraph}{}{23}{section*.131}%
+\contentsline {paragraph}{}{23}{section*.132}%
+\contentsline {paragraph}{}{23}{section*.133}%
+\contentsline {paragraph}{}{23}{section*.134}%
+\contentsline {paragraph}{}{23}{section*.135}%
+\contentsline {paragraph}{}{23}{section*.136}%
+\contentsline {paragraph}{}{24}{section*.137}%
+\contentsline {paragraph}{}{24}{section*.138}%
+\contentsline {paragraph}{}{24}{section*.139}%
+\contentsline {paragraph}{}{24}{section*.140}%
+\contentsline {paragraph}{}{24}{section*.141}%
+\contentsline {paragraph}{}{24}{section*.142}%
+\contentsline {paragraph}{}{24}{section*.143}%
+\contentsline {paragraph}{}{25}{section*.144}%
+\contentsline {paragraph}{}{25}{section*.145}%
+\contentsline {paragraph}{}{25}{section*.146}%
+\contentsline {paragraph}{}{25}{section*.147}%
+\contentsline {paragraph}{}{25}{section*.148}%
+\contentsline {paragraph}{}{25}{section*.149}%
+\contentsline {paragraph}{}{25}{section*.150}%
+\contentsline {paragraph}{}{26}{section*.151}%
+\contentsline {paragraph}{}{26}{section*.152}%
+\contentsline {paragraph}{}{26}{section*.153}%
+\contentsline {paragraph}{}{26}{section*.154}%
+\contentsline {paragraph}{}{26}{section*.155}%
+\contentsline {paragraph}{}{26}{section*.156}%
+\contentsline {paragraph}{}{26}{section*.157}%
+\contentsline {subsection}{\numberline {4.5}$\alpha $ = 1, $\beta $ =1 vs $\alpha $ = 1, $\beta $ =2 vs $\alpha $ = 2, $\beta $ =1}{26}{subsection.4.5}%
+\contentsline {paragraph}{}{26}{section*.158}%
+\contentsline {paragraph}{}{27}{section*.159}%
+\contentsline {paragraph}{}{27}{section*.160}%
+\contentsline {paragraph}{}{28}{section*.161}%
+\contentsline {paragraph}{}{28}{section*.162}%
+\contentsline {paragraph}{}{29}{section*.163}%
+\contentsline {paragraph}{}{29}{section*.164}%
+\contentsline {paragraph}{}{29}{section*.165}%
+\contentsline {paragraph}{}{29}{section*.166}%
+\contentsline {paragraph}{}{30}{section*.167}%
+\contentsline {paragraph}{}{30}{section*.168}%
+\contentsline {paragraph}{}{30}{section*.169}%
+\contentsline {paragraph}{}{30}{section*.170}%
+\contentsline {paragraph}{}{30}{section*.171}%
+\contentsline {subsubsection}{\numberline {4.5.1}Causas del mejor resultados}{30}{subsubsection.4.5.1}%
+\contentsline {paragraph}{}{30}{section*.172}%
+\contentsline {paragraph}{}{30}{section*.173}%
+\contentsline {paragraph}{}{31}{section*.174}%
+\contentsline {paragraph}{}{31}{section*.175}%
+\contentsline {paragraph}{}{31}{section*.176}%
+\contentsline {paragraph}{}{31}{section*.177}%
+\contentsline {subsection}{\numberline {4.6}Mejoras detectadas}{31}{subsection.4.6}%
+\contentsline {subsubsection}{\numberline {4.6.1}Actualización de la feromona local}{31}{subsubsection.4.6.1}%
+\contentsline {subsubsection}{\numberline {4.6.2}Lista Restringida de Candidatos}{31}{subsubsection.4.6.2}%
+\contentsline {paragraph}{}{31}{section*.178}%
+\contentsline {subsection}{\numberline {4.7}Búsqueda local vs búsqueda tabú vs algoritmo genético con operador de cruce MPX elitismo 3 vs S.C.H. $\alpha $=2 $\beta $=1}{31}{subsection.4.7}%
+\contentsline {subsubsection}{\numberline {4.7.1}Resultados de la búsqueda local}{31}{subsubsection.4.7.1}%
+\contentsline {subsubsection}{\numberline {4.7.2}Resultados de la búsqueda tabú}{32}{subsubsection.4.7.2}%
+\contentsline {subsubsection}{\numberline {4.7.3}Resultados del algoritmo genético con elitismo = 3}{33}{subsubsection.4.7.3}%
+\contentsline {subsubsection}{\numberline {4.7.4}Comparación de resultados}{34}{subsubsection.4.7.4}%
+\contentsline {subsubsection}{\numberline {4.7.5}Conclusiones}{37}{subsubsection.4.7.5}%
