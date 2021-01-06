@@ -607,9 +607,31 @@
 	
 	\subsection{Mejoras detectadas}
 	
-	\subsubsection{Actualización de la feromona local}
+	\paragraph{}Si bien este apartado no se nos exige en el guión de la práctica, hemos creído interesante incluir los resultados de la pequeña investigación que hemos realizado con el fin de obtener mejores resultados en la ejecución del S.C.H.
 	
-	\paragraph{}En la realización de las pruebas 
+	\paragraph{}En el transcurso de la realización de las pruebas detectamos dos posibles cambios en el código implementado con el fin de mejorar la calidad de los resultados obtenidos. A continuación se explica cada uno de ellos.
+	
+	\subsubsection{Actualización de la feromona local} 
+	
+	\paragraph{}A la hora de recoger los resultados de las diferentes configuraciones de $\alpha$ y $\beta$ nos dimos cuenta de que en ninguna configuración se llegaba al óptimo global.
+	
+	\paragraph{}Una de las posibles causas que detectamos reside en la fórmula que se emplea para actualizar la feromona localmente, que a continuación se presenta:
+	
+	\begin{equation}
+	\tau_{rs}(t) = (1-\phi)*\tau_{rs}(t-1)+\phi*\tau_{0}
+	\end{equation}
+	
+	\paragraph{}En el programa el valor de $\tau_{0}$ que utilizamos es el coste obtenido para el problema haciendo uso del algoritmo Greedy, tal y como se nos indica en el guión de la práctica. 
+	
+	\paragraph{}Como vimos en clase de teoría, la introducción de la actualización de la feromona localmente se introduce para favorecer la exploración de los arcos que no se hayan visitado, dado que la actualización de la feromona local tiene como consecuencia que esta disminuya siempre.
+	
+	\paragraph{}No obstante, detectamos que la asignación del coste Greedy a $\tau_{0}$ era un valor demasiado grande. Esto da lugar a que la disminución de la feromona tras la disminución de la feromona local no es tan rápida como se espera o, al menos lo suficientemente rápida como para tener el efecto deseado.
+	
+	\paragraph{}En este punto tomamos la decisión de volver a ejecutar el algoritmo pero modificando el valor y asignando el valor 1/m*C(S) a $\tau_{0}$, donde m es el número de elementos de la solución y C(S) es el coste de la solución de la hormiga hasta el momento (tal y como viene indicado en las diapositivas de teoría).
+	
+	\paragraph{}Al contrario de lo que esperabamos, los resultados que obtuvimos fueron peores de los que teníamos originalmente. Al ocurrir esto, esta vez decidimos simplemente disminuir el valor del coste Greedy a la mitad, es decir,  $\tau_{0}$ = Greedy/2.
+	
+	\paragraph{}En este caso sí que obtuvimos mejoras en la mayoría de las series de datos. A continuación presentamos las gráficas de convergencias comparativas respecto a la configuración original. Si bien no vamos a comentarlas a fondo para no hacer el informe demasiado extenso, sí queremos destacar algunos aspectos de las mismas.
 	
 	\begin{figure}[H]
 		\centering
@@ -673,6 +695,10 @@
 		\caption{Evolución del mejor coste en la ejecución de la modificación para el problema MDG-a23, semilla 35608477}
 		\label{MDG-a_23_convergencia_mejora}
 	\end{figure}
+
+	\paragraph{}Observando los resultados recogidos por las gráficas, podemos observar que obtenemos una mejora significativa de la solución en las series de datos SOM-b11, MDG-a22 y MDG-a23, y una pequeña mejora para las series GDK-c1, GKD-c2 y GKD-c3. En el resto de las series no se mejoran los resultados.
+	
+	\paragraph{}Los resultados que hemos recogido son esperanzadores, lo que nos hace pensar que realizar un estudio más exhaustivo del ajuste del valor de $\tau_{0}$ podría derivarse en la obtención mejoras significativas en el rendimiento del algoritmo. 
 	
 	\subsubsection{Lista Restringida de Candidatos}
 	
