@@ -702,7 +702,13 @@
 	
 	\subsubsection{Lista Restringida de Candidatos}
 	
-		\paragraph{} Se propone definir una LRC dinámica, aumentando el valor de $\delta$ conforme más elementos se añadan a la solución, potenciando la explotación en los últimos elementos a incorporar y favoreciendo la exploración en las primeras etapas.
+	\paragraph{}Como bien sabemos, la Lista Restringida de Candidatos almacena los x elementos del dominio del problema que aún no forman parte de la solución que mayor coste aportarían a esta.
+	
+	\paragraph{}Dependiendo del valor que asignemos a $\delta$ podemos hacer que la L.R.C. sea más restrictiva o menos. Si hacemos que sea más restrictiva favoreceremos a la explotación de la búsqueda de la solución, por el contrario, si hacemos que esta sea menos restrictiva favoreceremos la exploración de la búsqueda.
+	
+	\paragraph{}Dado el alto componente exploratorio, en una primera instancia pensamos en restringir más el valor de $\delta$ pero esto podría ser contraproducente. 
+	
+	\paragraph{} Se propone finalmente definir una LRC dinámica, aumentando el valor de $\delta$ conforme más elementos se añadan a la solución, potenciando la explotación en los últimos elementos a incorporar y favoreciendo la exploración en las primeras etapas.
 	
 	\subsection{Búsqueda local vs búsqueda tabú vs algoritmo genético con operador de cruce MPX elitismo 3 vs S.C.H. $\alpha$=2 $\beta$=1}
 	

@@ -228,9 +228,12 @@
 \contentsline {paragraph}{}{35}{section*.189}%
 \contentsline {subsubsection}{\numberline {4.6.2}Lista Restringida de Candidatos}{35}{subsubsection.4.6.2}%
 \contentsline {paragraph}{}{35}{section*.190}%
-\contentsline {subsection}{\numberline {4.7}Búsqueda local vs búsqueda tabú vs algoritmo genético con operador de cruce MPX elitismo 3 vs S.C.H. $\alpha $=2 $\beta $=1}{35}{subsection.4.7}%
-\contentsline {subsubsection}{\numberline {4.7.1}Resultados de la búsqueda local}{35}{subsubsection.4.7.1}%
-\contentsline {subsubsection}{\numberline {4.7.2}Resultados de la búsqueda tabú}{36}{subsubsection.4.7.2}%
-\contentsline {subsubsection}{\numberline {4.7.3}Resultados del algoritmo genético con elitismo = 3}{37}{subsubsection.4.7.3}%
-\contentsline {subsubsection}{\numberline {4.7.4}Comparación de resultados}{38}{subsubsection.4.7.4}%
+\contentsline {paragraph}{}{35}{section*.191}%
+\contentsline {paragraph}{}{35}{section*.192}%
+\contentsline {paragraph}{}{35}{section*.193}%
+\contentsline {subsection}{\numberline {4.7}Búsqueda local vs búsqueda tabú vs algoritmo genético con operador de cruce MPX elitismo 3 vs S.C.H. $\alpha $=2 $\beta $=1}{36}{subsection.4.7}%
+\contentsline {subsubsection}{\numberline {4.7.1}Resultados de la búsqueda local}{36}{subsubsection.4.7.1}%
+\contentsline {subsubsection}{\numberline {4.7.2}Resultados de la búsqueda tabú}{37}{subsubsection.4.7.2}%
+\contentsline {subsubsection}{\numberline {4.7.3}Resultados del algoritmo genético con elitismo = 3}{38}{subsubsection.4.7.3}%
+\contentsline {subsubsection}{\numberline {4.7.4}Comparación de resultados}{39}{subsubsection.4.7.4}%
 \contentsline {subsubsection}{\numberline {4.7.5}Conclusiones}{41}{subsubsection.4.7.5}%
