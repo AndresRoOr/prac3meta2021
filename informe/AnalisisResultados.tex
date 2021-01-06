@@ -712,6 +712,10 @@
 	
 	\subsection{Búsqueda local vs búsqueda tabú vs algoritmo genético con operador de cruce MPX elitismo 3 vs S.C.H. $\alpha$=2 $\beta$=1}
 	
+	\paragraph{}Dado que para esta práctica hemos usado un equipo de pruebas diferente al usado en las prácticas anteriores, nos hemos visto obligados a volver a recoger los resultados de los algoritmos con el equipo de pruebas actual para que las comparaciones sean concluyentes.
+	
+	\paragraph{}En las secciones 4.7.1, 4.7.2 y 4.7.3 se presentan las tablas de resultados para los algoritmos de la búsqueda tabú, la búsqueda local y genético.
+	
 	\subsubsection{Resultados de la búsqueda local}
 	
 	\begin{table}[H]
@@ -907,12 +911,18 @@
 
 	\subsubsection{Comparación de resultados}
 	
+	\paragraph{}En los siguientes gráficos de cajas y bigotes se comparan las 5 ejecuciones de cada algoritmo para cada serie de datos, comentados brevemente.
+	
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{img/finalGKD1.png}
 		\caption{Gráfica de cajas y bigotes comparativas GKD-c1}
 		\label{GKD-c1_final}
 	\end{figure}
+
+	\paragraph{}En la serie de datos GKD-c1, los algoritmos de búsqueda local y búsqueda tabú obtienen unos muy buenos resultados en cuanto a agrupación de los resultados obtenidos. El algoritmo genético y el Sistema de Colonias de Hormigas son los siguientes, también con una agrupación muy similar.
+	
+	\paragraph{}En cuanto a resultados, los algoritmos de la búsqueda tabú y la búsqueda local son los mejores, seguidos muy de cerca por el algoritmo genético y el S.C.H. en último lugar.
 
 	\begin{figure}[H]
 		\centering
@@ -921,12 +931,18 @@
 		\label{GKD-c2_final}
 	\end{figure}
 
+	\paragraph{}En la serie de datos GKD-c2, el algoritmo de búsqueda tabú es el que mejor resultados obtiene en cuanto a agrupación de resultados. Le siguen el algoritmo genético y la búsqueda local también con buenos resultados. En último lugar tenemos al S.C.H.
+	
+	\paragraph{}Si hablamos de rendimiento, tanto la búsqueda local, la búsqueda tabú y el algoritmo genético obtienen unos resultados muy similares, y los mejores. Sin embargo, el S.C.H. no obtiene unos buenos resultados comparado con los anteriores algoritmos.
+
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{img/finalGKD3.png}
 		\caption{Gráfica de cajas y bigotes comparativas GKD-c3}
 		\label{GKD-c3_final}
 	\end{figure}
+
+	\paragraph{}Para la serie de datos GKD-c3 todos los algoritmos obtienen resultados prácticamente iguales tanto en agrupamiento como en rendimiento.
 
 	\begin{figure}[H]
 		\centering
@@ -935,12 +951,18 @@
 		\label{SOM-b11_final}
 	\end{figure}
 
+	\paragraph{}Para la serie de datos SOM-b11, en cuanto a agrupamiento de los resultados, el algoritmo de la búsqueda tabú y el S.C.H. obtienen los mejores resultados, muy similares. Le sigue el algoritmo genético y la búsqueda local en último lugar.
+	
+	\paragraph{}Si hablamos de mejores resultados, la búsqueda tabú es el mejor algoritmo. Le siguen el algoritmo genético y el S.C.H., siendo el primero mejor por muy poco. En último lugar tenemos a la búsqueda local.
+
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{img/finalSOM2.png}
 		\caption{Gráfica de cajas y bigotes comparativas SOM-b12}
 		\label{SOM-b12_final}
 	\end{figure}
+
+	\paragraph{}Para la serie de datos SOM-b12 todos los algoritmos obtienen resultados prácticamente iguales tanto en agrupamiento como en rendimiento.
 
 	\begin{figure}[H]
 		\centering
@@ -949,12 +971,20 @@
 		\label{SOM-b13_final}
 	\end{figure}
 
+	\paragraph{}Para la serie de datos SOM-b13, los algoritmos de la búsqueda tabú y el S.C.H. son los que mejor agrupamiento de resultados obtienen. Les siguen el algoritmo genético, y la búsqueda local en último lugar.
+	
+	\paragraph{}Centrándonos en el valor de los resultados, el S.C.H. la búsqueda tabú y el S.C.H. obtienen los mejores. Les sigue el algoritmo genético y en último lugar la búsqueda local.
+
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{img/finalMDG1.png}
 		\caption{Gráfica de cajas y bigotes comparativas MDG-a21}
 		\label{MDG-a21_final}
 	\end{figure}
+
+	\paragraph{}Para la serie de datos MDG-a21, el algoritmo que mejor agrupamiento de los resultados obtiene es el S.C.H. Le siguen la búsqueda tabú y el algoritmo genético, con unos agrupamientos muy similares. En último lugar encontramos a la búsqueda local.
+	
+	\paragraph{}Respecto a la calidad de las soluciones obtenidas, el algoritmo S.C.H. es el que mejor rendimiento obtiene. Le siguen la búsqueda tabú, el algoritmo genético y, en último lugar, la búsqueda local.
 
 	\begin{figure}[H]
 		\centering
@@ -963,11 +993,19 @@
 		\label{MDG-a22_final}
 	\end{figure}
 
+	\paragraph{}Para la serie de datos MDG-22, en cuanto a agrupamiento de datos, el el mejor algoritmo es el S.C.H., seguido de la búsqueda tabú, la búsqueda local y, en último lugar la búsqueda local.
+	
+	\paragraph{}En cuanto a resultados, el algoritmo del S.C.H. es el que obtiene mejores valores. Le siguen la búsqueda tabú, el algoritmo genético y, en último lugar, la búsqueda tabú.
+
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{img/finalMDG3.png}
 		\caption{Gráfica de cajas y bigotes comparativas MDG-a23}
 		\label{MDG-a23_final}
 	\end{figure}
+
+	\paragraph{}Para la serie de datos MDG-23, si hablamos de agrupamiento de las soluciones obtenidas, los algoritmos de S.C.H. y la búsqueda tabú son los que mejores resultados obtienen. Les siguen la búsqueda local y, en último lugar, el algoritmo genético.
+	
+	\paragraph{}Si hablamos de calidad de los resultados, el claro vencedor es la búsqueda tabú, seguida muy de cerca del S.C.H. Les siguen la búsqueda local y, en último lugar, el algoritmo genético.
 	
 	\subsubsection{Conclusiones}
