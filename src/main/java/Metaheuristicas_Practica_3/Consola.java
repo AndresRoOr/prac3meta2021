@@ -90,7 +90,7 @@ public final class Consola extends javax.swing.JFrame {
         jButtonReload = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Metaheurísticas: Práctica 2");
+        setTitle("Metaheurísticas: Práctica 3");
         setBackground(new java.awt.Color(0, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setPreferredSize(new java.awt.Dimension(730, 355));
