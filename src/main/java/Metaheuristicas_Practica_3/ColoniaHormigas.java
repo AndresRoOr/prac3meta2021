@@ -408,8 +408,8 @@ public class ColoniaHormigas {
                 int a = aux.get(j);
 
                 double valorAnterior = matrizFeromonas[a][b];
-                matrizFeromonas[a][b] = (1 - rho) * valorAnterior
-                        + rho * (costeGreedy);
+                matrizFeromonas[a][b] = (1 - phi) * valorAnterior
+                        + phi * (costeGreedy);
                 matrizFeromonas[b][a] = matrizFeromonas[a][b];
             }
         }
@@ -468,9 +468,9 @@ public class ColoniaHormigas {
                 double valorAnterior
                         = matrizFeromonas[i][j];
 
-                matrizFeromonas[i][j] = (1 - phi) * valorAnterior;
+                matrizFeromonas[i][j] = (1 - rho) * valorAnterior;
 
-                matrizFeromonas[j][i] = (1 - phi) * valorAnterior;
+                matrizFeromonas[j][i] = (1 - rho) * valorAnterior;
             }
         }
 
@@ -486,9 +486,9 @@ public class ColoniaHormigas {
             int a = (int) elementos[i];
             for (int j = i + 1; j < length; j++) {
                 int b = (int) elementos[j];
-                matrizFeromonas[a][b] += phi
+                matrizFeromonas[a][b] += rho
                         * (contribucion);
-                matrizFeromonas[b][a] += phi
+                matrizFeromonas[b][a] += rho
                         * (contribucion);
             }
         }
