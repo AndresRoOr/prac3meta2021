@@ -25,7 +25,7 @@ import java.util.logging.Logger;
  * @author David Díaz Jiménez
  * @date 22/12/2020
  */
-public class ColoniaHormigas {
+public class AlgColoniasHormigas_Clase02_Grupo06 {
 
     /**
      * @brief Clase que implementa la funcionalidad de una hormiga
@@ -106,7 +106,7 @@ public class ColoniaHormigas {
 
             } else {
 
-                Hormiga aux = new Hormiga(colonia.get(j));
+                AlgHormiga_Clase02_Grupo06 aux = new AlgHormiga_Clase02_Grupo06(colonia.get(j));
                 for (Integer eleLrc : LRC) {
 
                     // Calculamos el valor superior de la formula de transición,
@@ -159,14 +159,14 @@ public class ColoniaHormigas {
     }
 
     ///Atributos de la clase:
-    private final Archivo archivoDatos;///<Contiene los datos del problema
-    private final GestorLog gestor;///<Gestor encargado de la creación del Log
+    private final AlgArchivo_Clase02_Grupo06 archivoDatos;///<Contiene los datos del problema
+    private final AlgGestorLog_Clase02_Grupo06 gestor;///<Gestor encargado de la creación del Log
     private final double[][] matrizFeromonas;///<Contiene el valor de la 
     ///feromona de todos los arcos
-    private final Random_p generadorAleatorio;///<Utilizado para generar números
+    private final AlgRandom_p_Clase02_Grupo06 generadorAleatorio;///<Utilizado para generar números
     ///aleatorios
-    private Hormiga mejorHormiga;///<Mejor hormiga hasta el momento
-    private final ArrayList<Hormiga> colonia;///<Contiene todas las hormigas
+    private AlgHormiga_Clase02_Grupo06 mejorHormiga;///<Mejor hormiga hasta el momento
+    private final ArrayList<AlgHormiga_Clase02_Grupo06> colonia;///<Contiene todas las hormigas
     private final ArrayList<Double> aleatorios;///<Contiene números generados
     ///aleatoriamente
     private final ArrayList<Double> aleatoriosq;///<Contiene números generados
@@ -190,11 +190,11 @@ public class ColoniaHormigas {
      * @author David Díaz Jiménez
      * @author Andrés Rojas Ortega
      * @date 22/11/2020
-     * @param _archivoDatos Archivo
-     * @param _gestor GestorLog
+     * @param _archivoDatos AlgArchivo_Clase02_Grupo06
+     * @param _gestor AlgGestorLog_Clase02_Grupo06
      * @param _iteraciones int
      * @param _numeroHormigas int
-     * @param _semilla Random_p
+     * @param _semilla AlgRandom_p_Clase02_Grupo06
      * @param _q0 float
      * @param _phi float
      * @param _beta float
@@ -203,8 +203,8 @@ public class ColoniaHormigas {
      * @param _alfa float
      * @param _coste float
      */
-    public ColoniaHormigas(Archivo _archivoDatos, GestorLog _gestor,
-            int _iteraciones, int _numeroHormigas, Random_p _semilla, float _q0,
+    public AlgColoniasHormigas_Clase02_Grupo06(AlgArchivo_Clase02_Grupo06 _archivoDatos, AlgGestorLog_Clase02_Grupo06 _gestor,
+            int _iteraciones, int _numeroHormigas, AlgRandom_p_Clase02_Grupo06 _semilla, float _q0,
             float _phi, float _beta, float _rho, float _delta, float _alfa,
             float _coste) {
 
@@ -212,7 +212,7 @@ public class ColoniaHormigas {
         this.matrizFeromonas = new double[tam][tam];
         this.archivoDatos = _archivoDatos;
         this.gestor = _gestor;
-        this.mejorHormiga = new Hormiga(new ArrayList<>(), 0.0f);
+        this.mejorHormiga = new AlgHormiga_Clase02_Grupo06(new ArrayList<>(), 0.0f);
         this.colonia = new ArrayList<>();
         this.tamColonia = _numeroHormigas;
         this.tamHormiga = archivoDatos.getTama_Solucion();
@@ -262,7 +262,7 @@ public class ColoniaHormigas {
                 //hilo independiente para cada hormiga
                 for (int a = 0; a < tamColonia; a++) {
 
-                    futures.add(Main.exec.submit(new ApliclarRTTask(a)));
+                    futures.add(AlgMain_Clase02_Grupo06.exec.submit(new ApliclarRTTask(a)));
 
                 }
 
@@ -271,7 +271,7 @@ public class ColoniaHormigas {
                     try {
                         futures.get(j).get();
                     } catch (InterruptedException | ExecutionException ex) {
-                        Logger.getLogger(ColoniaHormigas.class.getName())
+                        Logger.getLogger(AlgColoniasHormigas_Clase02_Grupo06.class.getName())
                                 .log(Level.SEVERE, null, ex);
                     }
                 }
@@ -311,7 +311,7 @@ public class ColoniaHormigas {
             int primerElemento = generadorAleatorio.Randint(0, tamMatriz - 1);
             ArrayList<Integer> aux = new ArrayList<>();
             aux.add(primerElemento);
-            Hormiga hormiga = new Hormiga(aux, 0.0f);
+            AlgHormiga_Clase02_Grupo06 hormiga = new AlgHormiga_Clase02_Grupo06(aux, 0.0f);
             colonia.add(hormiga);
         }
     }
@@ -337,7 +337,7 @@ public class ColoniaHormigas {
      * @author David Díaz Jiménez
      * @author Andrés Rojas Ortega
      * @date 22/12/2020
-     * @param j int Hormiga para la que queremos obtener la LRC
+     * @param j int AlgHormiga_Clase02_Grupo06 para la que queremos obtener la LRC
      * @return LRC ArrayList<Integer> Lista Restringida de Candidatos
      */
     private ArrayList<Integer> generarLRC(int j) {
@@ -519,7 +519,7 @@ public class ColoniaHormigas {
         }
 
         if (valorMejor >= mejorHormiga.getContribucion()) {
-            mejorHormiga = new Hormiga(colonia.get(indexMejorH));
+            mejorHormiga = new AlgHormiga_Clase02_Grupo06(colonia.get(indexMejorH));
         }
         return indexMejorH;
 
@@ -542,10 +542,10 @@ public class ColoniaHormigas {
         gestor.escribirArchivo("Mejor hormiga: "
                 + mejorHormiga.getElementos());
 
-        Main.console.presentarSalida("Mejor Coste:  "
+        AlgMain_Clase02_Grupo06.console.presentarSalida("Mejor Coste:  "
                 + mejorHormiga.getContribucion());
-        Main.console.presentarSalida("Iteraciones completadas: " + iteraciones);
-        Main.console.presentarSalida("");
+        AlgMain_Clase02_Grupo06.console.presentarSalida("Iteraciones completadas: " + iteraciones);
+        AlgMain_Clase02_Grupo06.console.presentarSalida("");
 
     }
 }

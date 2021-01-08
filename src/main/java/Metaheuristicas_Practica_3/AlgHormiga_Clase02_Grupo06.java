@@ -18,7 +18,7 @@ import java.util.Set;
  * @author David Díaz Jiménez
  * @date 22/12/2020
  */
-public final class Hormiga implements Comparable<Hormiga> {
+public final class AlgHormiga_Clase02_Grupo06 implements Comparable<AlgHormiga_Clase02_Grupo06> {
 
     ///Atributos de la clase:
     private ArrayList<Integer> elementos;///<Conjunte de elementos solución del 
@@ -34,7 +34,7 @@ public final class Hormiga implements Comparable<Hormiga> {
      * @param _elementos ArrayList<Integer>
      * @param _contribucion Float
      */
-    public Hormiga(ArrayList<Integer> _elementos, float _contribucion) {
+    public AlgHormiga_Clase02_Grupo06(ArrayList<Integer> _elementos, float _contribucion) {
         this.elementos = _elementos;
         this._contribucion = _contribucion;
         this.aux = new HashSet<>(elementos);
@@ -50,7 +50,7 @@ public final class Hormiga implements Comparable<Hormiga> {
      * @param _contribucion float
      * @param recal boolean
      */
-    public Hormiga(ArrayList<Integer> _elementos, float _contribucion, boolean recal) {
+    public AlgHormiga_Clase02_Grupo06(ArrayList<Integer> _elementos, float _contribucion, boolean recal) {
         this.elementos = _elementos;
         this._contribucion = _contribucion;
         this.aux = new HashSet<>(elementos);
@@ -64,7 +64,7 @@ public final class Hormiga implements Comparable<Hormiga> {
      * @date 22/12/2020
      * @param otro Hormiga
      */
-    public Hormiga(Hormiga otro) {
+    public AlgHormiga_Clase02_Grupo06(AlgHormiga_Clase02_Grupo06 otro) {
         this.elementos = new ArrayList<>(otro.getElementos());
         this._contribucion = otro.getContribucion();
         this.aux = new HashSet<>(elementos);
@@ -79,7 +79,7 @@ public final class Hormiga implements Comparable<Hormiga> {
      * @date 22/12/2020
      * @return int
      */
-    public int compareTo(Hormiga otro) {
+    public int compareTo(AlgHormiga_Clase02_Grupo06 otro) {
         Double ele1 = this.getContribucion();
         Double ele2 = otro.getContribucion();
         int comparativa = ele1.compareTo(ele2);

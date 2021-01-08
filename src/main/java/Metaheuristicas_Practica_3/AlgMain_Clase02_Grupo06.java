@@ -24,10 +24,10 @@ import javax.swing.UIManager;
  * @author David Díaz Jiménez
  * @date 22/12/2020
  */
-public class Main {
+public class AlgMain_Clase02_Grupo06 {
 
-    public static Consola console = new Consola();
-    public static GestorLog gestor = new GestorLog("");
+    public static AlgConsola_Clase02_Grupo06 console = new AlgConsola_Clase02_Grupo06();
+    public static AlgGestorLog_Clase02_Grupo06 gestor = new AlgGestorLog_Clase02_Grupo06("");
     public static final ExecutorService exec = Executors.newFixedThreadPool(
             Runtime.getRuntime().availableProcessors());
 
@@ -46,7 +46,7 @@ public class Main {
             System.err.println("Failed to initialize LaF");
         }
 
-        Configurador config = new Configurador("./config.txt");
+        AlgConfigurador_Clase02_Grupo06 config = new AlgConfigurador_Clase02_Grupo06("./config.txt");
 
         ArrayList<File> directorios = new ArrayList<>();
         directorios.add(new File("./archivos"));
@@ -67,12 +67,12 @@ public class Main {
                 try {
                     Thread.sleep(500);
                 } catch (InterruptedException ex) {
-                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(AlgMain_Clase02_Grupo06.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
 
             for (int i = 0; i < config.getDirectoriosDatos().size(); i++) {
-                Metaheuristicas M1 = new Metaheuristicas(config.getDirectoriosDatos().get(i),
+                AlgMetaheuristicas_Clase02_Grupo06 M1 = new AlgMetaheuristicas_Clase02_Grupo06(config.getDirectoriosDatos().get(i),
                         config.getDirectoriosDatos().get(i), config);
                 M1.lector_Archivos();
 
@@ -91,7 +91,7 @@ public class Main {
 
             if (console.getEleccion() == 2) {
                 config = null;
-                config = new Configurador("./config.txt");
+                config = new AlgConfigurador_Clase02_Grupo06("./config.txt");
 
             }
             console.restaurarEleccion();

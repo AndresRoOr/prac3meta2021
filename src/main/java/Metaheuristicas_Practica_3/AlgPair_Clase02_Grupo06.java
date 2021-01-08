@@ -13,7 +13,7 @@ package Metaheuristicas_Practica_3;
  * @author David Díaz Jiménez
  * @date 30/09/2020
  */
-public class Pair {
+public class AlgPair_Clase02_Grupo06 {
 
     ///Atributos de la clase:
     Integer candidato;
@@ -27,7 +27,7 @@ public class Pair {
      * @param candidato Integer
      * @param coste double
      */
-    public Pair(Integer candidato, float coste) {
+    public AlgPair_Clase02_Grupo06(Integer candidato, float coste) {
         this.candidato = candidato;
         this.coste = coste;
     }

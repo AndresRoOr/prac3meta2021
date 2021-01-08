@@ -18,10 +18,10 @@ import java.util.Set;
  * @author David Díaz Jiménez
  * @date 27/09/2020
  */
-public class Greedy {
+public class AlgGreedy_Clase02_Grupo06 {
 
     ///Atributos de la clase:
-    Archivo _archivoDatos;///<Contiene los datos sobre los que operar.
+    AlgArchivo_Clase02_Grupo06 _archivoDatos;///<Contiene los datos sobre los que operar.
     Set<Integer> _solucionB;
     Float _suma_Resultado;///<Almacena la suma del valor heurístico.
 
@@ -30,9 +30,9 @@ public class Greedy {
      * @author Andrés Rojas Ortega
      * @author David Díaz Jiménez
      * @date 27/09/2020
-     * @param archivoDatos Archivo Contiene los datos sobre los que operar
+     * @param archivoDatos AlgArchivo_Clase02_Grupo06 Contiene los datos sobre los que operar
      */
-    public Greedy(Archivo archivoDatos) {
+    public AlgGreedy_Clase02_Grupo06(AlgArchivo_Clase02_Grupo06 archivoDatos) {
         _archivoDatos = archivoDatos;
         _suma_Resultado = 0.0f;
         _solucionB = new HashSet<>();
@@ -46,15 +46,15 @@ public class Greedy {
      * @date 27/09/2020
      * @param aleatorioSemilla Random Semilla generada aleatoriamente
      */
-    float greedy(Random_p aleatorioSemilla) {
+    float greedy(AlgRandom_p_Clase02_Grupo06 aleatorioSemilla) {
 
         //Generación del primer elemento
         Integer ultimo = GenSolucionIni(aleatorioSemilla);
 
         //Generación del conjunto de candidatos
-        ArrayList<Pair> candidatos = GenCandidatos();
+        ArrayList<AlgPair_Clase02_Grupo06> candidatos = GenCandidatos();
 
-        Pair candidato;
+        AlgPair_Clase02_Grupo06 candidato;
 
         int ite = 1;
 
@@ -84,12 +84,12 @@ public class Greedy {
      * @date 30/09/2020
      * @return candidatos ArrayList El conjunto de candidatos inicial.
      */
-    ArrayList<Pair> GenCandidatos() {
-        ArrayList<Pair> candidatos = new ArrayList<>();
+    ArrayList<AlgPair_Clase02_Grupo06> GenCandidatos() {
+        ArrayList<AlgPair_Clase02_Grupo06> candidatos = new ArrayList<>();
 
         for (int i = 0; i < _archivoDatos.getTama_Matriz(); i++) {
             if (!_solucionB.contains(i)) {
-                candidatos.add(new Pair(i, 0.0f));
+                candidatos.add(new AlgPair_Clase02_Grupo06(i, 0.0f));
             }
         }
 
@@ -105,13 +105,13 @@ public class Greedy {
      * @param candidatos ArrayList El conjunto de todos los candidatos
      * @param ultimo Integer El último elemento que ha formado parte de la
      * solución
-     * @return candidato Pair El candidato más prometedor
+     * @return candidato AlgPair_Clase02_Grupo06 El candidato más prometedor
      */
-    Pair FuncionSeleccion(ArrayList<Pair> candidatos, Integer ultimo) {
+    AlgPair_Clase02_Grupo06 FuncionSeleccion(ArrayList<AlgPair_Clase02_Grupo06> candidatos, Integer ultimo) {
         double max = 0.0;
-        Iterator<Pair> iterador = candidatos.iterator();
-        Pair candidato = null;
-        Pair seleccionado = null;
+        Iterator<AlgPair_Clase02_Grupo06> iterador = candidatos.iterator();
+        AlgPair_Clase02_Grupo06 candidato = null;
+        AlgPair_Clase02_Grupo06 seleccionado = null;
 
         while (iterador.hasNext()) {
             candidato = iterador.next();
@@ -162,7 +162,7 @@ public class Greedy {
      * @param aleatorioSemilla Random Utilizado para generar un número aleatorio
      * @return sol_Inicial Integer El primer elemento de la solución elegido.
      */
-    Integer GenSolucionIni(Random_p aleatorioSemilla) {
+    Integer GenSolucionIni(AlgRandom_p_Clase02_Grupo06 aleatorioSemilla) {
         _solucionB.clear();
         Integer sol_Inicial
                 = aleatorioSemilla.Randint(0, _archivoDatos.getTama_Matriz());
@@ -179,7 +179,7 @@ public class Greedy {
      */
     void PresentarResultados() {
         _suma_Resultado = calculoValorSolucion();
-        Main.console.presentarSalida("Coste de la solución: " + _suma_Resultado + "\n");
+        AlgMain_Clase02_Grupo06.console.presentarSalida("Coste de la solución: " + _suma_Resultado + "\n");
 
         _solucionB = null;
 

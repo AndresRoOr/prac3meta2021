@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
  *
  * @author David
  */
-public final class Consola extends javax.swing.JFrame {
+public final class AlgConsola_Clase02_Grupo06 extends javax.swing.JFrame {
 
     private int eleccion;
     
@@ -22,7 +22,7 @@ public final class Consola extends javax.swing.JFrame {
     /**
      * Creates new form Consola
      */
-    public Consola() {
+    public AlgConsola_Clase02_Grupo06() {
         List<Image> lista = new LinkedList<>();
         lista.add(new ImageIcon(
                 "src/main/resources/icons/ant_16.png").getImage());
@@ -93,7 +93,6 @@ public final class Consola extends javax.swing.JFrame {
         setTitle("Metaheurísticas: Práctica 3");
         setBackground(new java.awt.Color(0, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setPreferredSize(new java.awt.Dimension(730, 355));
 
         jPanel1.setBackground(new java.awt.Color(34, 43, 53));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -220,7 +219,7 @@ public final class Consola extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonGreedyActionPerformed
 
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
-        Main.exec.shutdownNow();
+        AlgMain_Clase02_Grupo06.exec.shutdownNow();
         System.exit(0);
     }//GEN-LAST:event_jButtonExitActionPerformed
 
