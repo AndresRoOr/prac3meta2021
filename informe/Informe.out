@@ -30,18 +30,19 @@
 \BOOKMARK [3][-]{subsubsection.4.2.1}{Sistema de Colonias de Hormigas}{subsection.4.2}% 30
 \BOOKMARK [3][-]{subsubsection.4.2.2}{Semillas}{subsection.4.2}% 31
 \BOOKMARK [2][-]{subsection.4.3}{An\341lisis de los resultados}{section.4}% 32
-\BOOKMARK [3][-]{subsubsection.4.3.1}{SCH con \040= 1, \040=1}{subsection.4.3}% 33
-\BOOKMARK [3][-]{subsubsection.4.3.2}{SCH con \040= 2, \040=1}{subsection.4.3}% 34
-\BOOKMARK [3][-]{subsubsection.4.3.3}{SCH con \040= 1, \040=2}{subsection.4.3}% 35
-\BOOKMARK [2][-]{subsection.4.4}{Evoluci\363n de los resultados durante la experimentaci\363n}{section.4}% 36
-\BOOKMARK [2][-]{subsection.4.5}{ = 1, \040=1 vs \040= 1, \040=2 vs \040= 2, \040=1}{section.4}% 37
-\BOOKMARK [3][-]{subsubsection.4.5.1}{Causas del mejor resultados}{subsection.4.5}% 38
-\BOOKMARK [2][-]{subsection.4.6}{Mejoras detectadas}{section.4}% 39
-\BOOKMARK [3][-]{subsubsection.4.6.1}{Actualizaci\363n de la feromona local}{subsection.4.6}% 40
-\BOOKMARK [3][-]{subsubsection.4.6.2}{Lista Restringida de Candidatos}{subsection.4.6}% 41
-\BOOKMARK [2][-]{subsection.4.7}{B\372squeda local vs b\372squeda tab\372 vs algoritmo gen\351tico con operador de cruce MPX elitismo 3 vs S.C.H. =2 =1}{section.4}% 42
-\BOOKMARK [3][-]{subsubsection.4.7.1}{Resultados de la b\372squeda local}{subsection.4.7}% 43
-\BOOKMARK [3][-]{subsubsection.4.7.2}{Resultados de la b\372squeda tab\372}{subsection.4.7}% 44
-\BOOKMARK [3][-]{subsubsection.4.7.3}{Resultados del algoritmo gen\351tico con elitismo = 3}{subsection.4.7}% 45
-\BOOKMARK [3][-]{subsubsection.4.7.4}{Comparaci\363n de resultados}{subsection.4.7}% 46
-\BOOKMARK [3][-]{subsubsection.4.7.5}{Conclusiones}{subsection.4.7}% 47
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Archivos Log}{subsection.4.3}% 33
+\BOOKMARK [3][-]{subsubsection.4.3.2}{SCH con \040= 1, \040=1}{subsection.4.3}% 34
+\BOOKMARK [3][-]{subsubsection.4.3.3}{SCH con \040= 2, \040=1}{subsection.4.3}% 35
+\BOOKMARK [3][-]{subsubsection.4.3.4}{SCH con \040= 1, \040=2}{subsection.4.3}% 36
+\BOOKMARK [2][-]{subsection.4.4}{Evoluci\363n de los resultados durante la experimentaci\363n}{section.4}% 37
+\BOOKMARK [2][-]{subsection.4.5}{ = 1, \040=1 vs \040= 1, \040=2 vs \040= 2, \040=1}{section.4}% 38
+\BOOKMARK [3][-]{subsubsection.4.5.1}{Causas del mejor resultados}{subsection.4.5}% 39
+\BOOKMARK [2][-]{subsection.4.6}{Mejoras detectadas}{section.4}% 40
+\BOOKMARK [3][-]{subsubsection.4.6.1}{Actualizaci\363n de la feromona local}{subsection.4.6}% 41
+\BOOKMARK [3][-]{subsubsection.4.6.2}{Lista Restringida de Candidatos}{subsection.4.6}% 42
+\BOOKMARK [2][-]{subsection.4.7}{B\372squeda local vs b\372squeda tab\372 vs algoritmo gen\351tico con operador de cruce MPX elitismo 3 vs S.C.H. =2 =1}{section.4}% 43
+\BOOKMARK [3][-]{subsubsection.4.7.1}{Resultados de la b\372squeda local}{subsection.4.7}% 44
+\BOOKMARK [3][-]{subsubsection.4.7.2}{Resultados de la b\372squeda tab\372}{subsection.4.7}% 45
+\BOOKMARK [3][-]{subsubsection.4.7.3}{Resultados del algoritmo gen\351tico con elitismo = 3}{subsection.4.7}% 46
+\BOOKMARK [3][-]{subsubsection.4.7.4}{Comparaci\363n de resultados}{subsection.4.7}% 47
+\BOOKMARK [3][-]{subsubsection.4.7.5}{Conclusiones}{subsection.4.7}% 48
