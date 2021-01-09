@@ -93,6 +93,7 @@ public final class AlgConsola_Clase02_Grupo06 extends javax.swing.JFrame {
         setTitle("Metaheurísticas: Práctica 3");
         setBackground(new java.awt.Color(0, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMinimumSize(new java.awt.Dimension(730, 361));
 
         jPanel1.setBackground(new java.awt.Color(34, 43, 53));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
