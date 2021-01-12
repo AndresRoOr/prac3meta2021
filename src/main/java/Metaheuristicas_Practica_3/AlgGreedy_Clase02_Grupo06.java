@@ -1,4 +1,4 @@
-/** @file    Greedy.java
+/** @file    AlgGreedy_Clase02_Grupo06.java
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
  * @version 1.0
@@ -13,7 +13,7 @@ import java.util.Set;
 
 /**
  * @brief Clase que implementa la funcionalidad del algoritmo Greedy
- * @class Greedy
+ * @class AlgGreedy_Clase02_Grupo06
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
  * @date 27/09/2020

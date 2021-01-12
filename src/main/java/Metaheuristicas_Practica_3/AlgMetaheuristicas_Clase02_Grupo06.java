@@ -1,5 +1,5 @@
 /**
- * @file    Metaheuristicas.java
+ * @file    AlgMetaheuristicas_Clase02_Grupo06.java
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
  * @version 1.0
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 /**
  * @brief Clase que calcula todos los resultados con los algoritmos solicitados
  * sobre todos los datos facilitados
- * @class Metaheuristicas
+ * @class AlgMetaheuristicas_Clase02_Grupo06
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
  * @date 22/12/2020

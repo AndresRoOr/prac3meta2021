@@ -1,5 +1,5 @@
 /**
- * @file    Main.java
+ * @file    AlgMain_Clase02_Grupo06.java
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
  * @version 1.0
@@ -19,7 +19,7 @@ import javax.swing.UIManager;
 
 /**
  * @brief Clase Main del programa
- * @class Main
+ * @class AlgMain_Clase02_Grupo06
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
  * @date 22/12/2020

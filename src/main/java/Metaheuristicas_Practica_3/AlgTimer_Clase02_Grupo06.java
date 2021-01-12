@@ -1,4 +1,4 @@
-/** @file    Timer.java
+/** @file    AlgTimer_Clase02_Grupo06.java
  * @author David Díaz Jiménez
  * @version 1.0
  * @date 03/10/2020
@@ -7,7 +7,7 @@ package Metaheuristicas_Practica_3;
 
 /**
  * @brief Clase para gestionar los tiempos de ejecución del algoritmo
- * @class Timer
+ * @class AlgTimer_Clase02_Grupo06
  * @author David Díaz Jiménez
  * @date 03/10/2020
  */

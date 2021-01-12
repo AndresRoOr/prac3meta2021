@@ -1,5 +1,5 @@
 /**
- * @file    Configurador.java
+ * @file    AlgConfigurador_Clase02_Grupo06.java
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
  * @version 1.0
@@ -16,7 +16,7 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * @brief Clase que almacena todos los parámetros principales del programa
- * @class Configurador
+ * @class AlgConfigurador_Clase02_Grupo06
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
  * @date 27/09/2020

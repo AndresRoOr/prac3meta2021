@@ -1,4 +1,4 @@
-/** @file    Random_p.java
+/** @file    AlgRandom_p_Clase02_Grupo06.java
  * @author David Díaz Jiménez
  * @version 1.0
  * @date 03/10/2020
@@ -7,7 +7,7 @@ package Metaheuristicas_Practica_3;
 
 /**
  * @brief Clase para generar números aleatorios
- * @class Random_p
+ * @class AlgRandom_p_Clase02_Grupo06
  * @author David Díaz Jiménez
  * @date 03/10/2020
  */

@@ -1,5 +1,5 @@
 /**
- * @file    ColoniaHormigas.java
+ * @file    AlgColoniasHormigas_Clase02_Grupo06.java
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
  * @version 1.0
@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 /**
  * @brief Clase que implementa la funcionalidad de un sistema de colonias de
  * hormigas
- * @class ColoniaHormigas
+ * @class AlgColoniasHormigas_Clase02_Grupo06
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
  * @date 22/12/2020
@@ -288,8 +288,6 @@ public class AlgColoniasHormigas_Clase02_Grupo06 {
             colonia.clear();
 
             iteraciones++;
-
-            System.out.println(mejorHormiga.getContribucion());
 
             gestor.escribirArchivo("ITERACION: " + iteraciones + "\n" 
                     + "Mejor homiga: " + mejorHormiga.getElementos().toString()

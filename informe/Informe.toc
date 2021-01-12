@@ -55,9 +55,9 @@
 \contentsline {paragraph}{}{7}{section*.37}%
 \contentsline {paragraph}{}{7}{section*.38}%
 \contentsline {paragraph}{}{7}{section*.39}%
-\contentsline {subsection}{\numberline {3.5}Aplicacion de la regla de transición}{7}{subsection.3.5}%
-\contentsline {paragraph}{Entradas}{7}{section*.40}%
-\contentsline {paragraph}{}{8}{section*.41}%
+\contentsline {subsection}{\numberline {3.5}Aplicacion de la regla de transición}{8}{subsection.3.5}%
+\contentsline {paragraph}{Entradas}{8}{section*.40}%
+\contentsline {paragraph}{}{9}{section*.41}%
 \contentsline {paragraph}{}{9}{section*.42}%
 \contentsline {paragraph}{}{9}{section*.43}%
 \contentsline {paragraph}{}{9}{section*.44}%
@@ -71,7 +71,7 @@
 \contentsline {paragraph}{}{9}{section*.52}%
 \contentsline {paragraph}{}{9}{section*.53}%
 \contentsline {paragraph}{}{9}{section*.54}%
-\contentsline {paragraph}{}{9}{section*.55}%
+\contentsline {paragraph}{}{10}{section*.55}%
 \contentsline {paragraph}{}{10}{section*.56}%
 \contentsline {paragraph}{}{10}{section*.57}%
 \contentsline {subsection}{\numberline {3.6}Actualización de la feromona local}{10}{subsection.3.6}%
@@ -103,23 +103,23 @@
 \contentsline {subsubsection}{\numberline {4.1.2}Manual de usuario}{13}{subsubsection.4.1.2}%
 \contentsline {paragraph}{}{13}{section*.77}%
 \contentsline {paragraph}{}{13}{section*.78}%
-\contentsline {subsection}{\numberline {4.2}Parámetros de los algoritmos}{13}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Sistema de Colonias de Hormigas}{13}{subsubsection.4.2.1}%
-\contentsline {paragraph}{}{13}{section*.79}%
+\contentsline {subsection}{\numberline {4.2}Parámetros de los algoritmos}{14}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Sistema de Colonias de Hormigas}{14}{subsubsection.4.2.1}%
+\contentsline {paragraph}{}{14}{section*.79}%
 \contentsline {subsubsection}{\numberline {4.2.2}Semillas}{14}{subsubsection.4.2.2}%
 \contentsline {paragraph}{}{14}{section*.80}%
 \contentsline {paragraph}{}{14}{section*.81}%
 \contentsline {subsection}{\numberline {4.3}Análisis de los resultados}{14}{subsection.4.3}%
 \contentsline {subsubsection}{\numberline {4.3.1}Archivos Log}{14}{subsubsection.4.3.1}%
 \contentsline {paragraph}{}{14}{section*.82}%
-\contentsline {subsubsection}{\numberline {4.3.2}SCH con $\alpha $ = 1, $\beta $ =1}{14}{subsubsection.4.3.2}%
-\contentsline {paragraph}{}{14}{section*.83}%
+\contentsline {subsubsection}{\numberline {4.3.2}SCH con $\alpha $ = 1, $\beta $ =1}{15}{subsubsection.4.3.2}%
+\contentsline {paragraph}{}{15}{section*.83}%
 \contentsline {paragraph}{}{15}{section*.84}%
 \contentsline {paragraph}{}{15}{section*.85}%
 \contentsline {subsubsection}{\numberline {4.3.3}SCH con $\alpha $ = 2, $\beta $ =1}{16}{subsubsection.4.3.3}%
 \contentsline {paragraph}{}{16}{section*.86}%
 \contentsline {paragraph}{}{16}{section*.87}%
-\contentsline {paragraph}{}{16}{section*.88}%
+\contentsline {paragraph}{}{17}{section*.88}%
 \contentsline {subsubsection}{\numberline {4.3.4}SCH con $\alpha $ = 1, $\beta $ =2}{17}{subsubsection.4.3.4}%
 \contentsline {paragraph}{}{17}{section*.89}%
 \contentsline {paragraph}{}{17}{section*.90}%
@@ -129,7 +129,7 @@
 \contentsline {paragraph}{}{18}{section*.93}%
 \contentsline {paragraph}{}{18}{section*.94}%
 \contentsline {paragraph}{}{18}{section*.95}%
-\contentsline {paragraph}{}{18}{section*.96}%
+\contentsline {paragraph}{}{19}{section*.96}%
 \contentsline {paragraph}{}{19}{section*.97}%
 \contentsline {paragraph}{}{19}{section*.98}%
 \contentsline {paragraph}{}{19}{section*.99}%
@@ -137,7 +137,7 @@
 \contentsline {paragraph}{}{19}{section*.101}%
 \contentsline {paragraph}{}{19}{section*.102}%
 \contentsline {paragraph}{}{19}{section*.103}%
-\contentsline {paragraph}{}{19}{section*.104}%
+\contentsline {paragraph}{}{20}{section*.104}%
 \contentsline {paragraph}{}{20}{section*.105}%
 \contentsline {paragraph}{}{20}{section*.106}%
 \contentsline {paragraph}{}{20}{section*.107}%
@@ -145,7 +145,7 @@
 \contentsline {paragraph}{}{20}{section*.109}%
 \contentsline {paragraph}{}{20}{section*.110}%
 \contentsline {paragraph}{}{20}{section*.111}%
-\contentsline {paragraph}{}{20}{section*.112}%
+\contentsline {paragraph}{}{21}{section*.112}%
 \contentsline {paragraph}{}{21}{section*.113}%
 \contentsline {paragraph}{}{21}{section*.114}%
 \contentsline {paragraph}{}{21}{section*.115}%
@@ -153,8 +153,8 @@
 \contentsline {paragraph}{}{21}{section*.117}%
 \contentsline {paragraph}{}{21}{section*.118}%
 \contentsline {paragraph}{}{21}{section*.119}%
-\contentsline {paragraph}{}{21}{section*.120}%
-\contentsline {paragraph}{}{21}{section*.121}%
+\contentsline {paragraph}{}{22}{section*.120}%
+\contentsline {paragraph}{}{22}{section*.121}%
 \contentsline {paragraph}{}{22}{section*.122}%
 \contentsline {paragraph}{}{22}{section*.123}%
 \contentsline {paragraph}{}{22}{section*.124}%
@@ -162,8 +162,8 @@
 \contentsline {paragraph}{}{22}{section*.126}%
 \contentsline {paragraph}{}{22}{section*.127}%
 \contentsline {paragraph}{}{22}{section*.128}%
-\contentsline {paragraph}{}{22}{section*.129}%
-\contentsline {paragraph}{}{22}{section*.130}%
+\contentsline {paragraph}{}{23}{section*.129}%
+\contentsline {paragraph}{}{23}{section*.130}%
 \contentsline {paragraph}{}{23}{section*.131}%
 \contentsline {paragraph}{}{23}{section*.132}%
 \contentsline {paragraph}{}{23}{section*.133}%
@@ -192,24 +192,24 @@
 \contentsline {paragraph}{}{26}{section*.156}%
 \contentsline {paragraph}{}{26}{section*.157}%
 \contentsline {paragraph}{}{26}{section*.158}%
-\contentsline {subsection}{\numberline {4.5}$\alpha $ = 1, $\beta $ =1 vs $\alpha $ = 1, $\beta $ =2 vs $\alpha $ = 2, $\beta $ =1}{26}{subsection.4.5}%
-\contentsline {paragraph}{}{26}{section*.159}%
+\contentsline {subsection}{\numberline {4.5}$\alpha $ = 1, $\beta $ =1 vs $\alpha $ = 1, $\beta $ =2 vs $\alpha $ = 2, $\beta $ =1}{27}{subsection.4.5}%
+\contentsline {paragraph}{}{27}{section*.159}%
 \contentsline {paragraph}{}{27}{section*.160}%
-\contentsline {paragraph}{}{27}{section*.161}%
+\contentsline {paragraph}{}{28}{section*.161}%
 \contentsline {paragraph}{}{28}{section*.162}%
-\contentsline {paragraph}{}{28}{section*.163}%
+\contentsline {paragraph}{}{29}{section*.163}%
 \contentsline {paragraph}{}{29}{section*.164}%
 \contentsline {paragraph}{}{29}{section*.165}%
 \contentsline {paragraph}{}{29}{section*.166}%
-\contentsline {paragraph}{}{29}{section*.167}%
+\contentsline {paragraph}{}{30}{section*.167}%
 \contentsline {paragraph}{}{30}{section*.168}%
 \contentsline {paragraph}{}{30}{section*.169}%
 \contentsline {paragraph}{}{30}{section*.170}%
 \contentsline {paragraph}{}{30}{section*.171}%
-\contentsline {paragraph}{}{30}{section*.172}%
-\contentsline {subsubsection}{\numberline {4.5.1}Causas del mejor algoritmo}{30}{subsubsection.4.5.1}%
-\contentsline {paragraph}{}{30}{section*.173}%
-\contentsline {paragraph}{}{30}{section*.174}%
+\contentsline {paragraph}{}{31}{section*.172}%
+\contentsline {subsubsection}{\numberline {4.5.1}Causas del mejor algoritmo}{31}{subsubsection.4.5.1}%
+\contentsline {paragraph}{}{31}{section*.173}%
+\contentsline {paragraph}{}{31}{section*.174}%
 \contentsline {paragraph}{}{31}{section*.175}%
 \contentsline {paragraph}{}{31}{section*.176}%
 \contentsline {paragraph}{}{31}{section*.177}%
@@ -217,12 +217,12 @@
 \contentsline {subsection}{\numberline {4.6}Mejoras detectadas}{31}{subsection.4.6}%
 \contentsline {paragraph}{}{31}{section*.179}%
 \contentsline {paragraph}{}{31}{section*.180}%
-\contentsline {subsubsection}{\numberline {4.6.1}Actualización de la feromona local}{31}{subsubsection.4.6.1}%
-\contentsline {paragraph}{}{31}{section*.181}%
-\contentsline {paragraph}{}{31}{section*.182}%
-\contentsline {paragraph}{}{31}{section*.183}%
-\contentsline {paragraph}{}{31}{section*.184}%
-\contentsline {paragraph}{}{31}{section*.185}%
+\contentsline {subsubsection}{\numberline {4.6.1}Actualización de la feromona local}{32}{subsubsection.4.6.1}%
+\contentsline {paragraph}{}{32}{section*.181}%
+\contentsline {paragraph}{}{32}{section*.182}%
+\contentsline {paragraph}{}{32}{section*.183}%
+\contentsline {paragraph}{}{32}{section*.184}%
+\contentsline {paragraph}{}{32}{section*.185}%
 \contentsline {paragraph}{}{32}{section*.186}%
 \contentsline {paragraph}{}{32}{section*.187}%
 \contentsline {paragraph}{}{32}{section*.188}%
@@ -231,21 +231,21 @@
 \contentsline {subsubsection}{\numberline {4.6.2}Lista Restringida de Candidatos}{35}{subsubsection.4.6.2}%
 \contentsline {paragraph}{}{35}{section*.191}%
 \contentsline {paragraph}{}{35}{section*.192}%
-\contentsline {paragraph}{}{35}{section*.193}%
-\contentsline {paragraph}{}{35}{section*.194}%
-\contentsline {paragraph}{}{35}{section*.195}%
-\contentsline {subsection}{\numberline {4.7}Búsqueda local vs búsqueda tabú vs algoritmo genético con operador de cruce MPX elitismo 3 vs S.C.H. $\alpha $=2 $\beta $=1}{35}{subsection.4.7}%
-\contentsline {paragraph}{}{35}{section*.196}%
+\contentsline {paragraph}{}{36}{section*.193}%
+\contentsline {paragraph}{}{36}{section*.194}%
+\contentsline {paragraph}{}{36}{section*.195}%
+\contentsline {subsection}{\numberline {4.7}Búsqueda local vs búsqueda tabú vs algoritmo genético con operador de cruce MPX elitismo 3 vs S.C.H. $\alpha $=2 $\beta $=1}{36}{subsection.4.7}%
+\contentsline {paragraph}{}{36}{section*.196}%
 \contentsline {paragraph}{}{36}{section*.197}%
 \contentsline {subsubsection}{\numberline {4.7.1}Resultados de la búsqueda local}{36}{subsubsection.4.7.1}%
 \contentsline {subsubsection}{\numberline {4.7.2}Resultados de la búsqueda tabú}{37}{subsubsection.4.7.2}%
 \contentsline {subsubsection}{\numberline {4.7.3}Resultados del algoritmo genético con elitismo = 3}{38}{subsubsection.4.7.3}%
-\contentsline {subsubsection}{\numberline {4.7.4}Comparación de resultados}{38}{subsubsection.4.7.4}%
-\contentsline {paragraph}{}{38}{section*.198}%
+\contentsline {subsubsection}{\numberline {4.7.4}Comparación de resultados}{39}{subsubsection.4.7.4}%
+\contentsline {paragraph}{}{39}{section*.198}%
 \contentsline {paragraph}{}{39}{section*.199}%
 \contentsline {paragraph}{}{39}{section*.200}%
-\contentsline {paragraph}{}{39}{section*.201}%
-\contentsline {paragraph}{}{39}{section*.202}%
+\contentsline {paragraph}{}{40}{section*.201}%
+\contentsline {paragraph}{}{40}{section*.202}%
 \contentsline {paragraph}{}{40}{section*.203}%
 \contentsline {paragraph}{}{40}{section*.204}%
 \contentsline {paragraph}{}{40}{section*.205}%
@@ -253,7 +253,7 @@
 \contentsline {paragraph}{}{41}{section*.207}%
 \contentsline {paragraph}{}{41}{section*.208}%
 \contentsline {paragraph}{}{41}{section*.209}%
-\contentsline {paragraph}{}{41}{section*.210}%
+\contentsline {paragraph}{}{42}{section*.210}%
 \contentsline {paragraph}{}{42}{section*.211}%
 \contentsline {paragraph}{}{42}{section*.212}%
 \contentsline {paragraph}{}{42}{section*.213}%
@@ -267,4 +267,4 @@
 \contentsline {paragraph}{}{43}{section*.220}%
 \contentsline {paragraph}{}{43}{section*.221}%
 \contentsline {paragraph}{}{43}{section*.222}%
-\contentsline {paragraph}{}{43}{section*.223}%
+\contentsline {paragraph}{}{44}{section*.223}%

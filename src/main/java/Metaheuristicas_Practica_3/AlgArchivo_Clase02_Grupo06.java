@@ -1,5 +1,5 @@
 /**
- * @file    Archivo.java
+ * @file    AlgArchivo_Clase02_Grupo06.java
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
  * @version 1.0
@@ -16,7 +16,7 @@ import java.io.IOException;
 /**
  * @brief Clase que almacena toda la información que se encuentra dentro de un
  * archivo
- * @class Archivo
+ * @class AlgArchivo_Clase02_Grupo06
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
  * @date 27/09/2020

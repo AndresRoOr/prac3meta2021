@@ -1,5 +1,5 @@
 /**
- * @file    GestorLog.java
+ * @file    AlgGestorLog_Clase02_Grupo06.java
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
  * @version 1.0
@@ -13,7 +13,7 @@ import java.io.PrintWriter;
 
 /**
  * @brief Clase encargada de crear y escribir los archivos log del programa
- * @class GestorLog
+ * @class AlgGestorLog_Clase02_Grupo06
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
  * @date 02/11/2020

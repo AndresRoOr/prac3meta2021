@@ -1,4 +1,4 @@
-/** @file    Hormiga.java
+/** @file    AlgHormiga_Clase02_Grupo06.java
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
  * @version 1.0
@@ -13,7 +13,7 @@ import java.util.Set;
 /**
  * @brief Clase que almacena la información de cada hormiga que forma parte de
  * una colonia
- * @class Hormiga
+ * @class AlgHormiga_Clase02_Grupo06
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
  * @date 22/12/2020

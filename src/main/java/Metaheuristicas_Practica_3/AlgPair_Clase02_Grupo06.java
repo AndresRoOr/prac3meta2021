@@ -1,4 +1,4 @@
-/** @file    Pair.java
+/** @file    AlgPair_Clase02_Grupo06.java
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
  * @version 1.0
@@ -8,7 +8,7 @@ package Metaheuristicas_Practica_3;
 
 /**
  * @brief Representa un par formado por un candidato y un coste asociado a este.
- * @class Pair
+ * @class AlgPair_Clase02_Grupo06
  * @author Andrés Rojas Ortega
  * @author David Díaz Jiménez
  * @date 30/09/2020
