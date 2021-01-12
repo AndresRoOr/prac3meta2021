@@ -126,11 +126,11 @@
 	
 	\paragraph{}En el caso de que no se encuentren en la hormiga, se actualiza el valor de la variable "aporte" a cero y se calcula el coste que aportaría a la hormiga si lo incluyéramos en ella. Este coste se almacena en la variable "aporte".
 	
-	\paragraph{}A continuación, se comprueba que aporte no sea mayor que "max" o menor que "min". En el caso de que se cumpla una de estas dos condiciones, se actualiza el valor de "max" o de "min" dependiendo del caso.
+	\paragraph{}A continuación, se comprueba que "aporte" no sea mayor que "max" o menor que "min". En el caso de que se cumpla una de estas dos condiciones, se actualiza el valor de "max" o de "min" dependiendo del caso.
 	
 	\paragraph{}Para finalizar, se añade el elemento junto su aporte a la variable "noSeleccionados".
 	
-	\paragraph{}Se realiza lo anterior hasta que se haya recorrido todos los elementos del problema.
+	\paragraph{}Se realiza lo anterior hasta que se hayan recorrido todos los elementos del problema.
 	
 	\paragraph{} Lo siguiente que se realiza es el cálculo de "valorCorte" aplicando la siguiente fórmula, siendo "delta" un parámetro del programa:
 	
@@ -138,7 +138,7 @@
 		$valorCorte = min + delta * ( max - min )$
 	\end{center}
 	
-	\paragraph{}Para cada elemento de "noSeleccionados", se comprueba que su aporte sea mayor que "valorCorte". Si se da este caso, se añade el elemento a la Lista Restringida de Candidatos. Cuando se haya hecho la comprobación de todos los elementos "lrc" habrá sido generada.
+	\paragraph{}Para cada elemento de "noSeleccionados", se comprueba que su aporte sea mayor que "valorCorte". Si se da este caso, se añade el elemento a la Lista Restringida de Candidatos. Cuando se haya hecho la comprobación de todos los elementos, "lrc" habrá sido generada.
 	
 	\paragraph{}Una vez se haya realizado esto último, se devuelve la Lista Restringida de Candidatos generada como resultado de la ejecución de la función.
 	
@@ -224,7 +224,7 @@
 	
 	\paragraph{}Para cada elemento perteneciente a la Lista Restringida de Candidatos se calcula la fórmula de la transición respecto a cada elemento almacenado en la hormiga, y se adiciona cada resultado a la variable "sumatoria".
 	
-	\paragraph{}Una vez obtenido el valor de "sumatoria", se comprueba si mejora "mayorValor". Si se da este caso, se actualiza "mayorValoe" con "sumatoria" y se guarda el elemento de "lrc" en la variable "elemento".
+	\paragraph{}Una vez obtenido el valor de "sumatoria", se comprueba si mejora "mayorValor". Si se da este caso, se actualiza "mayorValor" con "sumatoria" y se guarda el elemento de "lrc" en la variable "elemento".
 	
 	\paragraph{}Cuando se haya recorrido toda la Lista Restringida de Candidatos se añade a la hormiga el mejor elemento de "lrc", almacenado en "elemento".
 	
@@ -234,15 +234,15 @@
 	
 	\paragraph{}Dentro de este bucle se inicializa la variable "valorSuperior" a 0, esta variable almacenará el numerador de la fórmula.
 	
-	\paragraph{}A continuación se recorren todos los elementos de la hormiga y se realiza el cálculo de la fórmula del numerador y se adiciona a "valorSuperior".
+	\paragraph{}A continuación se recorren todos los elementos de la hormiga y se realiza el cálculo de la fórmula del numerador, el valor obtenido se adiciona a "valorSuperior".
 	
 	\paragraph{}Una vez se hayan hecho todos los cálculos con todos los elementos de la hormiga, se adiciona a "sumatoria" la variable "valorSuperior" y se añade a "probabilidadesTransicion" esta última.
 	
 	\paragraph{}Una vez terminado el bucle for, se inicializa la variable "indice" a 0, que hará las funciones de iterador.
 	
-	\paragraph{}Se inicia un nuevo bucle for que recorrerá todos los valores almacenado en la variable "probabilidadesTransición".
+	\paragraph{}Se inicia un nuevo bucle for que recorrerá todos los valores almacenados en la variable "probabilidadesTransición".
 	
-	\paragraph{}Dentro de este bucle, se calcula la probabilidad de cada elemento de "lrc" con los valores almacenados en "probabilidadesTransicion" y "sumatoria", y se almacenan en "probabilidadesTransicion". Una vez realizado esto, "probabilidadesTransicion" habrá pasado de almacenar los numeradores de la formula de transición de cada elemento de "lrc" a almacenar las probabilidades calculadas para cada elemento de "lrc".
+	\paragraph{}Dentro de este bucle, se calcula la probabilidad de cada elemento de "lrc" con los valores almacenados en "probabilidadesTransicion" y "sumatoria", y se almacenan en la misma "probabilidadesTransicion". Una vez realizado esto, "probabilidadesTransicion" habrá pasado de almacenar los numeradores de la formula de transición de cada elemento de "lrc" a almacenar las probabilidades calculadas para cada elemento de "lrc".
 	
 	\paragraph{}Al terminar de recorrer todos los elementos de "probabilidadesTransicion", se genera aleatoriamente un número decimal entre 0 y 1 y se almacena en la variable "uniforme". Se inicializan las variables "indice" y "probabilidadAcumulada" a 0. "indice" sigue desempeñando la misma función y "probabilidadAcumulada" almacena la sumatoria de todos los valores de "probabilidadesTransicion" que se hayan recorrido hasta el momento.
 	
@@ -258,7 +258,7 @@
 			\FOR{i=0;i$<$=hormiga.tamaño()-1;i++}
 			\STATE$elementoA\leftarrow hormiga[i]$
 			\STATE$valorAnterior \leftarrow matrizFeromonas[elementoA][elementoB]$
-			\STATE$matrizFeromonas[elementoA][elementoB]\leftarrow (1-rho)*valorAnterior+rho*(costeGreedy)$
+			\STATE$matrizFeromonas[elementoA][elementoB]\leftarrow (1-rho)*valorAnterior+phi*(costeGreedy)$
 			\STATE$matrizFeromonas[elementoB][elementoA]\leftarrow matrizFeromonas[elementoA][elementoB]$
 			\ENDFOR
 			\ENDFOR
@@ -321,8 +321,6 @@
 	
 	\paragraph{}Para finalizar, cuando se haya ejecutado el bucle for, se devuelve "mejorHormiga" como resultado de la ejecución.
 	
-	\newpage
-	
 	\subsection{Actualización de la feromona global}
 	
 	\paragraph{Entrada}La mejor hormiga de la colonia.
@@ -333,14 +331,14 @@
 			\FOR{i=0;i$<$tamañoMatriz;i++}
 			\FOR{j=0;j$<$tamañoMatriz;j++}
 			\STATE$valorAnterior \leftarrow matrizFeromonas[i][j]$
-			\STATE$matrizFeromonas[i][j] \leftarrow (1-phi)*valorAnterior$
+			\STATE$matrizFeromonas[i][j] \leftarrow (1-rho)*valorAnterior$
 			\STATE$matrizFeromonas[j][i] \leftarrow matrizFeromonas[i][j]$
 			\ENDFOR
 			\ENDFOR
 			\STATE$coste \leftarrow CalcularCoste(mejorHormiga)$
 			\FOR{i=0;i$<$mejorHormiga.Tamaño()-1;i++}
 			\FOR{j=i+1;j$<$mejorHormiga.Tamaño();j++}
-			\STATE$matrizFeromonas[i][j]\leftarrow matrizFeromonas[i][j] + phi*coste$
+			\STATE$matrizFeromonas[i][j]\leftarrow matrizFeromonas[i][j] + rho*coste$
 			\STATE$matrizFeromonas[j][i] \leftarrow matrizFeromonas[i][j]$
 			\ENDFOR
 			\ENDFOR

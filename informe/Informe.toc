@@ -88,8 +88,8 @@
 \contentsline {paragraph}{}{11}{section*.66}%
 \contentsline {paragraph}{}{11}{section*.67}%
 \contentsline {paragraph}{}{11}{section*.68}%
-\contentsline {subsection}{\numberline {3.9}Actualización de la feromona global}{12}{subsection.3.9}%
-\contentsline {paragraph}{Entrada}{12}{section*.69}%
+\contentsline {subsection}{\numberline {3.9}Actualización de la feromona global}{11}{subsection.3.9}%
+\contentsline {paragraph}{Entrada}{11}{section*.69}%
 \contentsline {paragraph}{}{12}{section*.70}%
 \contentsline {paragraph}{}{12}{section*.71}%
 \contentsline {paragraph}{}{12}{section*.72}%
@@ -207,7 +207,7 @@
 \contentsline {paragraph}{}{30}{section*.170}%
 \contentsline {paragraph}{}{30}{section*.171}%
 \contentsline {paragraph}{}{30}{section*.172}%
-\contentsline {subsubsection}{\numberline {4.5.1}Causas del mejor resultados}{30}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.1}Causas del mejor algoritmo}{30}{subsubsection.4.5.1}%
 \contentsline {paragraph}{}{30}{section*.173}%
 \contentsline {paragraph}{}{30}{section*.174}%
 \contentsline {paragraph}{}{31}{section*.175}%
@@ -233,33 +233,33 @@
 \contentsline {paragraph}{}{35}{section*.192}%
 \contentsline {paragraph}{}{35}{section*.193}%
 \contentsline {paragraph}{}{35}{section*.194}%
-\contentsline {subsection}{\numberline {4.7}Búsqueda local vs búsqueda tabú vs algoritmo genético con operador de cruce MPX elitismo 3 vs S.C.H. $\alpha $=2 $\beta $=1}{35}{subsection.4.7}%
 \contentsline {paragraph}{}{35}{section*.195}%
+\contentsline {subsection}{\numberline {4.7}Búsqueda local vs búsqueda tabú vs algoritmo genético con operador de cruce MPX elitismo 3 vs S.C.H. $\alpha $=2 $\beta $=1}{35}{subsection.4.7}%
 \contentsline {paragraph}{}{35}{section*.196}%
+\contentsline {paragraph}{}{36}{section*.197}%
 \contentsline {subsubsection}{\numberline {4.7.1}Resultados de la búsqueda local}{36}{subsubsection.4.7.1}%
 \contentsline {subsubsection}{\numberline {4.7.2}Resultados de la búsqueda tabú}{37}{subsubsection.4.7.2}%
 \contentsline {subsubsection}{\numberline {4.7.3}Resultados del algoritmo genético con elitismo = 3}{38}{subsubsection.4.7.3}%
 \contentsline {subsubsection}{\numberline {4.7.4}Comparación de resultados}{38}{subsubsection.4.7.4}%
-\contentsline {paragraph}{}{38}{section*.197}%
-\contentsline {paragraph}{}{39}{section*.198}%
+\contentsline {paragraph}{}{38}{section*.198}%
 \contentsline {paragraph}{}{39}{section*.199}%
 \contentsline {paragraph}{}{39}{section*.200}%
 \contentsline {paragraph}{}{39}{section*.201}%
-\contentsline {paragraph}{}{40}{section*.202}%
+\contentsline {paragraph}{}{39}{section*.202}%
 \contentsline {paragraph}{}{40}{section*.203}%
 \contentsline {paragraph}{}{40}{section*.204}%
-\contentsline {paragraph}{}{41}{section*.205}%
+\contentsline {paragraph}{}{40}{section*.205}%
 \contentsline {paragraph}{}{41}{section*.206}%
 \contentsline {paragraph}{}{41}{section*.207}%
 \contentsline {paragraph}{}{41}{section*.208}%
 \contentsline {paragraph}{}{41}{section*.209}%
-\contentsline {paragraph}{}{42}{section*.210}%
+\contentsline {paragraph}{}{41}{section*.210}%
 \contentsline {paragraph}{}{42}{section*.211}%
 \contentsline {paragraph}{}{42}{section*.212}%
-\contentsline {paragraph}{}{43}{section*.213}%
-\contentsline {paragraph}{}{43}{section*.214}%
-\contentsline {subsubsection}{\numberline {4.7.5}Conclusiones}{43}{subsubsection.4.7.5}%
+\contentsline {paragraph}{}{42}{section*.213}%
+\contentsline {paragraph}{}{42}{section*.214}%
 \contentsline {paragraph}{}{43}{section*.215}%
+\contentsline {subsubsection}{\numberline {4.7.5}Conclusiones}{43}{subsubsection.4.7.5}%
 \contentsline {paragraph}{}{43}{section*.216}%
 \contentsline {paragraph}{}{43}{section*.217}%
 \contentsline {paragraph}{}{43}{section*.218}%
@@ -267,3 +267,4 @@
 \contentsline {paragraph}{}{43}{section*.220}%
 \contentsline {paragraph}{}{43}{section*.221}%
 \contentsline {paragraph}{}{43}{section*.222}%
+\contentsline {paragraph}{}{43}{section*.223}%
